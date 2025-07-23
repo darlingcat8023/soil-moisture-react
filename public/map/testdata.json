@@ -1,0 +1,6655 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.80568,
+          -40.86364
+        ]
+      },
+      "properties": {
+        "observation_id": 1,
+        "station_id": "28805",
+        "station_name": "Takaka Ews",
+        "record_start_date": "2002-04-30",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.98437,
+          -40.90392
+        ]
+      },
+      "properties": {
+        "observation_id": 2,
+        "station_id": "49905",
+        "station_name": "Paraparaumu Ews",
+        "record_start_date": "2000-01-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.60915,
+          -40.38195
+        ]
+      },
+      "properties": {
+        "observation_id": 3,
+        "station_id": "53613",
+        "station_name": "Palmerston North Ews",
+        "record_start_date": "2013-12-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.26193,
+          -40.62699
+        ]
+      },
+      "properties": {
+        "observation_id": 4,
+        "station_id": "56211",
+        "station_name": "Levin Ews",
+        "record_start_date": "2016-04-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.70836,
+          -40.95511
+        ]
+      },
+      "properties": {
+        "observation_id": 5,
+        "station_id": "59704",
+        "station_name": "Masterton, Te Ore Ore Cws",
+        "record_start_date": "2009-10-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.11026,
+          -40.20812
+        ]
+      },
+      "properties": {
+        "observation_id": 6,
+        "station_id": "62104",
+        "station_name": "Dannevirke Ews",
+        "record_start_date": "2007-06-13",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.3032426,
+          -40.46040005
+        ]
+      },
+      "properties": {
+        "observation_id": 7,
+        "station_id": "64303",
+        "station_name": "Waione Raws",
+        "record_start_date": "1999-12-01",
+        "record_end_date": "1999-12-01",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.44889,
+          -40.57728
+        ]
+      },
+      "properties": {
+        "observation_id": 8,
+        "station_id": "65401",
+        "station_name": "Akitio Ews",
+        "record_start_date": "2010-03-18",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.61187,
+          -41.74326
+        ]
+      },
+      "properties": {
+        "observation_id": 9,
+        "station_id": "117605",
+        "station_name": "Westport Ews",
+        "record_start_date": "2016-04-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.15568,
+          -41.27058
+        ]
+      },
+      "properties": {
+        "observation_id": 10,
+        "station_id": "122105",
+        "station_name": "Arapito Ews",
+        "record_start_date": "2005-04-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.09482,
+          -41.31727
+        ]
+      },
+      "properties": {
+        "observation_id": 11,
+        "station_id": "133005",
+        "station_name": "Appleby 2 Ews",
+        "record_start_date": "2001-03-19",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.18615,
+          -41.32773
+        ]
+      },
+      "properties": {
+        "observation_id": 12,
+        "station_id": "133104",
+        "station_name": "Richmond Ews",
+        "record_start_date": "2015-05-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.96285,
+          -41.49891
+        ]
+      },
+      "properties": {
+        "observation_id": 13,
+        "station_id": "134905",
+        "station_name": "Blenheim Research Ews",
+        "record_start_date": "2001-06-26",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.497,
+          -41.572
+        ]
+      },
+      "properties": {
+        "observation_id": 14,
+        "station_id": "135403",
+        "station_name": "Wairau Valley, Mill Road Cws",
+        "record_start_date": "2009-02-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.1507779,
+          -41.61040038
+        ]
+      },
+      "properties": {
+        "observation_id": 15,
+        "station_id": "146004",
+        "station_name": "Awatere Valley, Dashwood Raws",
+        "record_start_date": "2000-08-30",
+        "record_end_date": "2000-08-30",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.0523602,
+          -41.13530225
+        ]
+      },
+      "properties": {
+        "observation_id": 16,
+        "station_id": "151016",
+        "station_name": "Wallaceville EWS",
+        "record_start_date": "2006-03-25",
+        "record_end_date": "2006-03-25",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.04283,
+          -41.14027
+        ]
+      },
+      "properties": {
+        "observation_id": 17,
+        "station_id": "151022",
+        "station_name": "Upper Hutt, Trentham Ews",
+        "record_start_date": "2015-01-02",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.38965,
+          -41.25405
+        ]
+      },
+      "properties": {
+        "observation_id": 18,
+        "station_id": "152304",
+        "station_name": "Martinborough Ews",
+        "record_start_date": "2001-04-03",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.98428,
+          -42.71228
+        ]
+      },
+      "properties": {
+        "observation_id": 19,
+        "station_id": "207906",
+        "station_name": "Hokitika Ews",
+        "record_start_date": "2016-01-09",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.85993,
+          -42.11738
+        ]
+      },
+      "properties": {
+        "observation_id": 20,
+        "station_id": "211802",
+        "station_name": "Reefton Ews",
+        "record_start_date": "2000-05-09",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.19157,
+          -42.46022
+        ]
+      },
+      "properties": {
+        "observation_id": 21,
+        "station_id": "214205",
+        "station_name": "Greymouth Aero Ews",
+        "record_start_date": "2002-07-17",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.56275,
+          -42.94318
+        ]
+      },
+      "properties": {
+        "observation_id": 22,
+        "station_id": "219506",
+        "station_name": "Arthurs Pass Ews",
+        "record_start_date": "2005-11-27",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.85098,
+          -42.53433
+        ]
+      },
+      "properties": {
+        "observation_id": 23,
+        "station_id": "225802",
+        "station_name": "Hanmer Forest Ews",
+        "record_start_date": "2000-11-09",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.043,
+          -42.653
+        ]
+      },
+      "properties": {
+        "observation_id": 24,
+        "station_id": "236005",
+        "station_name": "Waiau School Cws",
+        "record_start_date": "2008-09-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.2273863,
+          -42.82894299
+        ]
+      },
+      "properties": {
+        "observation_id": 25,
+        "station_id": "238203",
+        "station_name": "Cheviot",
+        "record_start_date": "2003-11-13",
+        "record_end_date": "2003-11-13",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.22382,
+          -42.8289
+        ]
+      },
+      "properties": {
+        "observation_id": 26,
+        "station_id": "238205",
+        "station_name": "Cheviot Ews",
+        "record_start_date": "2007-07-18",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.13428,
+          -43.36548
+        ]
+      },
+      "properties": {
+        "observation_id": 27,
+        "station_id": "303103",
+        "station_name": "Franz Josef Ews",
+        "record_start_date": "2003-05-30",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.75999,
+          -43.03447
+        ]
+      },
+      "properties": {
+        "observation_id": 28,
+        "station_id": "310703",
+        "station_name": "Cass Ews",
+        "record_start_date": "2021-02-17",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.5884,
+          -43.67767
+        ]
+      },
+      "properties": {
+        "observation_id": 29,
+        "station_id": "316506",
+        "station_name": "Methven, Three Springs Cws",
+        "record_start_date": "2010-01-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.65205,
+          -43.63978
+        ]
+      },
+      "properties": {
+        "observation_id": 30,
+        "station_id": "316605",
+        "station_name": "Methven Cws",
+        "record_start_date": "2009-01-13",
+        "record_end_date": "2009-01-13",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.79029,
+          -43.78916
+        ]
+      },
+      "properties": {
+        "observation_id": 31,
+        "station_id": "317702",
+        "station_name": "Winchmore 2 Ews",
+        "record_start_date": "2017-06-30",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.7932783,
+          -43.79394123
+        ]
+      },
+      "properties": {
+        "observation_id": 32,
+        "station_id": "318803",
+        "station_name": "Winchmore EWS",
+        "record_start_date": "1999-12-15",
+        "record_end_date": "1999-12-15",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.4856,
+          -43.9207
+        ]
+      },
+      "properties": {
+        "observation_id": 33,
+        "station_id": "319404",
+        "station_name": "Lismore, Racemans House Cws",
+        "record_start_date": "2012-09-06",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.81097,
+          -43.97167
+        ]
+      },
+      "properties": {
+        "observation_id": 34,
+        "station_id": "319806",
+        "station_name": "Wakanui 2 Cws",
+        "record_start_date": "2015-11-02",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.65344,
+          -43.07026
+        ]
+      },
+      "properties": {
+        "observation_id": 35,
+        "station_id": "320603",
+        "station_name": "Waipara West Ews",
+        "record_start_date": "2015-09-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.43224,
+          -43.3573
+        ]
+      },
+      "properties": {
+        "observation_id": 36,
+        "station_id": "323401",
+        "station_name": "West Eyreton, Larundel Farm Cws",
+        "record_start_date": "2011-10-27",
+        "record_end_date": "2011-10-27",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.61114,
+          -43.32858
+        ]
+      },
+      "properties": {
+        "observation_id": 37,
+        "station_id": "323604",
+        "station_name": "Rangiora Ews",
+        "record_start_date": "1999-11-09",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.1503439,
+          -43.49558013
+        ]
+      },
+      "properties": {
+        "observation_id": 38,
+        "station_id": "324106",
+        "station_name": "Darfield EWS",
+        "record_start_date": "1999-10-01",
+        "record_end_date": "1999-10-01",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.62,
+          -43.529
+        ]
+      },
+      "properties": {
+        "observation_id": 39,
+        "station_id": "325626",
+        "station_name": "Christchurch Botanic Gardens Ews",
+        "record_start_date": "2021-06-02",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.72096,
+          -43.52828
+        ]
+      },
+      "properties": {
+        "observation_id": 40,
+        "station_id": "325719",
+        "station_name": "Bromley Ews",
+        "record_start_date": "2019-12-09",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.4704,
+          -43.62615
+        ]
+      },
+      "properties": {
+        "observation_id": 41,
+        "station_id": "326405",
+        "station_name": "Lincoln, Broadfield Ews",
+        "record_start_date": "2000-02-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.72808,
+          -43.63324
+        ]
+      },
+      "properties": {
+        "observation_id": 42,
+        "station_id": "326704",
+        "station_name": "Diamond Harbour EWS",
+        "record_start_date": "2015-09-17",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.3126902,
+          -43.79188714
+        ]
+      },
+      "properties": {
+        "observation_id": 43,
+        "station_id": "327304",
+        "station_name": "Leeston Harts Ck CWS",
+        "record_start_date": "2009-10-18",
+        "record_end_date": "2009-10-18",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.96574,
+          -43.80938
+        ]
+      },
+      "properties": {
+        "observation_id": 44,
+        "station_id": "328905",
+        "station_name": "Akaroa Ews",
+        "record_start_date": "2008-12-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.26703,
+          -43.71882
+        ]
+      },
+      "properties": {
+        "observation_id": 45,
+        "station_id": "397202",
+        "station_name": "Lake Moeraki Ews",
+        "record_start_date": "2005-04-19",
+        "record_end_date": "2005-04-19",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.44319,
+          -44.00173
+        ]
+      },
+      "properties": {
+        "observation_id": 46,
+        "station_id": "400402",
+        "station_name": "Lake Tekapo Ews",
+        "record_start_date": "2003-06-19",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.2278313,
+          -44.30336814
+        ]
+      },
+      "properties": {
+        "observation_id": 47,
+        "station_id": "413206",
+        "station_name": "Timaru",
+        "record_start_date": "2001-07-23",
+        "record_end_date": "2001-07-23",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.64731,
+          -44.63466
+        ]
+      },
+      "properties": {
+        "observation_id": 48,
+        "station_id": "406601",
+        "station_name": "Hakataramea Valley Cws",
+        "record_start_date": "2011-06-20",
+        "record_end_date": "2011-06-20",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.31075,
+          -44.12476
+        ]
+      },
+      "properties": {
+        "observation_id": 49,
+        "station_id": "411302",
+        "station_name": "Orari Estate Ews",
+        "record_start_date": "2008-07-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.25426,
+          -44.41052
+        ]
+      },
+      "properties": {
+        "observation_id": 50,
+        "station_id": "414205",
+        "station_name": "Timaru Ews",
+        "record_start_date": "2008-06-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.0631,
+          -44.74127
+        ]
+      },
+      "properties": {
+        "observation_id": 51,
+        "station_id": "417002",
+        "station_name": "Waimate Cws",
+        "record_start_date": "2011-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.92299,
+          -44.67399
+        ]
+      },
+      "properties": {
+        "observation_id": 52,
+        "station_id": "476904",
+        "station_name": "Milford Sound Ews",
+        "record_start_date": "2016-01-30",
+        "record_end_date": "2016-01-30",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.82287,
+          -45.00829
+        ]
+      },
+      "properties": {
+        "observation_id": 53,
+        "station_id": "500807",
+        "station_name": "Windsor Ews",
+        "record_start_date": "2000-11-22",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.10031,
+          -45.1254
+        ]
+      },
+      "properties": {
+        "observation_id": 54,
+        "station_id": "501105",
+        "station_name": "Ranfurly Ews",
+        "record_start_date": "2000-11-21",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.13561,
+          -45.51814
+        ]
+      },
+      "properties": {
+        "observation_id": 55,
+        "station_id": "505103",
+        "station_name": "Middlemarch Ews",
+        "record_start_date": "2000-08-30",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.5147,
+          -45.90129
+        ]
+      },
+      "properties": {
+        "observation_id": 56,
+        "station_id": "509504",
+        "station_name": "Dunedin, Musselburgh Ews",
+        "record_start_date": "2000-05-26",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.02315,
+          -45.05626
+        ]
+      },
+      "properties": {
+        "observation_id": 57,
+        "station_id": "510003",
+        "station_name": "Oamaru Ews",
+        "record_start_date": "2015-09-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.26294,
+          -35.13352
+        ]
+      },
+      "properties": {
+        "observation_id": 58,
+        "station_id": "531207",
+        "station_name": "Kaitaia Ews",
+        "record_start_date": "1999-10-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.93027,
+          -35.17855
+        ]
+      },
+      "properties": {
+        "observation_id": 59,
+        "station_id": "531901",
+        "station_name": "Kerikeri Ews",
+        "record_start_date": "2001-09-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.85325,
+          -35.93153
+        ]
+      },
+      "properties": {
+        "observation_id": 60,
+        "station_id": "539807",
+        "station_name": "Dargaville 2 Ews",
+        "record_start_date": "2003-10-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.32868,
+          -35.7444
+        ]
+      },
+      "properties": {
+        "observation_id": 61,
+        "station_id": "547308",
+        "station_name": "Whangarei Ews",
+        "record_start_date": "2015-11-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.36702,
+          -45.6259
+        ]
+      },
+      "properties": {
+        "observation_id": 62,
+        "station_id": "586302",
+        "station_name": "Five Rivers Cws",
+        "record_start_date": "2014-12-12",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.716,
+          -45.825
+        ]
+      },
+      "properties": {
+        "observation_id": 63,
+        "station_id": "588702",
+        "station_name": "Waipounamu Cws",
+        "record_start_date": "2014-06-27",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.1955,
+          -45.03392
+        ]
+      },
+      "properties": {
+        "observation_id": 64,
+        "station_id": "590103",
+        "station_name": "Cromwell Ews",
+        "record_start_date": "2006-04-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.68419,
+          -45.0401
+        ]
+      },
+      "properties": {
+        "observation_id": 65,
+        "station_id": "590605",
+        "station_name": "Lauder Ews",
+        "record_start_date": "2000-07-18",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.3182,
+          -45.20342
+        ]
+      },
+      "properties": {
+        "observation_id": 66,
+        "station_id": "592312",
+        "station_name": "Clyde 2 Ews",
+        "record_start_date": "2012-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.38448,
+          -45.25458
+        ]
+      },
+      "properties": {
+        "observation_id": 67,
+        "station_id": "592314",
+        "station_name": "Alexandra Ews",
+        "record_start_date": "2019-04-18",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.66756,
+          -36.43436
+        ]
+      },
+      "properties": {
+        "observation_id": 68,
+        "station_id": "644604",
+        "station_name": "Warkworth Ews",
+        "record_start_date": "1999-11-02",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.71185,
+          -36.86297
+        ]
+      },
+      "properties": {
+        "observation_id": 69,
+        "station_id": "648716",
+        "station_name": "Auckland, Motat Ews",
+        "record_start_date": "2016-02-12",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.78052,
+          -36.9648
+        ]
+      },
+      "properties": {
+        "observation_id": 70,
+        "station_id": "649703",
+        "station_name": "Auckland, Mangere 2 Ews",
+        "record_start_date": "2018-09-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.67231,
+          -36.82817
+        ]
+      },
+      "properties": {
+        "observation_id": 71,
+        "station_id": "658603",
+        "station_name": "Whitianga Ews",
+        "record_start_date": "2017-02-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.1069555,
+          -46.02847293
+        ]
+      },
+      "properties": {
+        "observation_id": 72,
+        "station_id": "680101",
+        "station_name": "Wreys Bush Raws",
+        "record_start_date": "2000-12-01",
+        "record_end_date": "2000-12-01",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.8873987,
+          -46.11321172
+        ]
+      },
+      "properties": {
+        "observation_id": 73,
+        "station_id": "681803",
+        "station_name": "Gore 2",
+        "record_start_date": "2001-06-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.91938,
+          -46.12375
+        ]
+      },
+      "properties": {
+        "observation_id": 74,
+        "station_id": "681907",
+        "station_name": "Gore Ews",
+        "record_start_date": "2017-06-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.33045,
+          -46.41727
+        ]
+      },
+      "properties": {
+        "observation_id": 75,
+        "station_id": "684307",
+        "station_name": "Invercargill Aero 2 Ews",
+        "record_start_date": "2000-06-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.7315,
+          -46.29282
+        ]
+      },
+      "properties": {
+        "observation_id": 76,
+        "station_id": "692706",
+        "station_name": "Balclutha, Telford Ews",
+        "record_start_date": "2005-12-14",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.86384,
+          -37.20642
+        ]
+      },
+      "properties": {
+        "observation_id": 77,
+        "station_id": "742803",
+        "station_name": "Pukekohe Ews",
+        "record_start_date": "2000-07-04",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.45045,
+          -37.21514
+        ]
+      },
+      "properties": {
+        "observation_id": 78,
+        "station_id": "752401",
+        "station_name": "Firth Of Thames Ews",
+        "record_start_date": "2021-04-14",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.3134334,
+          -37.77995592
+        ]
+      },
+      "properties": {
+        "observation_id": 79,
+        "station_id": "757303",
+        "station_name": "Ruakura EWS",
+        "record_start_date": "2000-09-15",
+        "record_end_date": "2000-09-15",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.30506,
+          -37.77567
+        ]
+      },
+      "properties": {
+        "observation_id": 80,
+        "station_id": "757304",
+        "station_name": "Hamilton, Ruakura 2 Ews",
+        "record_start_date": "2005-11-27",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.73496,
+          -37.87683
+        ]
+      },
+      "properties": {
+        "observation_id": 81,
+        "station_id": "758705",
+        "station_name": "Matamata, Hinuera Ews",
+        "record_start_date": "2000-09-25",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.16303,
+          -37.6741
+        ]
+      },
+      "properties": {
+        "observation_id": 82,
+        "station_id": "766102",
+        "station_name": "Tauranga Cws",
+        "record_start_date": "2016-05-05",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.32048,
+          -37.82455
+        ]
+      },
+      "properties": {
+        "observation_id": 83,
+        "station_id": "768308",
+        "station_name": "Te Puke Ews",
+        "record_start_date": "2001-08-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.96773,
+          -37.94815
+        ]
+      },
+      "properties": {
+        "observation_id": 84,
+        "station_id": "769909",
+        "station_name": "Whakatane Ews",
+        "record_start_date": "2018-05-02",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.3876,
+          -38.09468
+        ]
+      },
+      "properties": {
+        "observation_id": 85,
+        "station_id": "850304",
+        "station_name": "Waikeria Ews",
+        "record_start_date": "2016-03-23",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.1534,
+          -38.33356
+        ]
+      },
+      "properties": {
+        "observation_id": 86,
+        "station_id": "853106",
+        "station_name": "Te Kuiti Ews",
+        "record_start_date": "2002-06-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.23805,
+          -38.86145
+        ]
+      },
+      "properties": {
+        "observation_id": 87,
+        "station_id": "858206",
+        "station_name": "Taumarunui Ews",
+        "record_start_date": "2015-09-02",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.7908,
+          -38.97532
+        ]
+      },
+      "properties": {
+        "observation_id": 88,
+        "station_id": "859707",
+        "station_name": "Turangi 2 Ews",
+        "record_start_date": "2005-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.2578,
+          -38.14635
+        ]
+      },
+      "properties": {
+        "observation_id": 89,
+        "station_id": "861208",
+        "station_name": "Rotorua Ews",
+        "record_start_date": "2015-09-25",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.07956,
+          -38.67812
+        ]
+      },
+      "properties": {
+        "observation_id": 90,
+        "station_id": "866009",
+        "station_name": "Taupo Cws",
+        "record_start_date": "2016-04-22",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.9236496,
+          -38.61285723
+        ]
+      },
+      "properties": {
+        "observation_id": 91,
+        "station_id": "876906",
+        "station_name": "Gisborne",
+        "record_start_date": "2001-06-28",
+        "record_end_date": "2001-06-28",
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.9218,
+          -38.62747
+        ]
+      },
+      "properties": {
+        "observation_id": 92,
+        "station_id": "876907",
+        "station_name": "Gisborne Ews",
+        "record_start_date": "2003-06-12",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.30502,
+          -39.33546
+        ]
+      },
+      "properties": {
+        "observation_id": 93,
+        "station_id": "943304",
+        "station_name": "Stratford Ews",
+        "record_start_date": "2002-06-12",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.41278,
+          -39.41755
+        ]
+      },
+      "properties": {
+        "observation_id": 94,
+        "station_id": "954409",
+        "station_name": "Ohakune Ews",
+        "record_start_date": "2007-06-27",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.83882,
+          -39.22428
+        ]
+      },
+      "properties": {
+        "observation_id": 95,
+        "station_id": "962806",
+        "station_name": "Tutira Cws",
+        "record_start_date": "2015-05-26",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.91189,
+          -39.49846
+        ]
+      },
+      "properties": {
+        "observation_id": 96,
+        "station_id": "964904",
+        "station_name": "Napier Ews",
+        "record_start_date": "2016-05-12",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.68206,
+          -39.63795
+        ]
+      },
+      "properties": {
+        "observation_id": 97,
+        "station_id": "966602",
+        "station_name": "Maraekakaho Cws",
+        "record_start_date": "2014-08-05",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.91121,
+          -39.60876
+        ]
+      },
+      "properties": {
+        "observation_id": 98,
+        "station_id": "966906",
+        "station_name": "Whakatu Ews",
+        "record_start_date": "2000-05-09",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.61706,
+          -39.9515
+        ]
+      },
+      "properties": {
+        "observation_id": 99,
+        "station_id": "969602",
+        "station_name": "Waipawa Ews",
+        "record_start_date": "2007-06-27",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.51056,
+          -36.3405
+        ]
+      },
+      "properties": {
+        "observation_id": 100,
+        "station_id": "643510",
+        "station_name": "Hoteo at Oldfields",
+        "record_start_date": "2018-07-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7329,
+          -36.32776
+        ]
+      },
+      "properties": {
+        "observation_id": 101,
+        "station_id": "643713",
+        "station_name": "Tamahunga at Quintals Rd",
+        "record_start_date": "2014-05-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.23629,
+          -36.4332
+        ]
+      },
+      "properties": {
+        "observation_id": 102,
+        "station_id": "644211",
+        "station_name": "Kaipara Heads at Wallers",
+        "record_start_date": "2014-06-05",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.55596,
+          -36.70363
+        ]
+      },
+      "properties": {
+        "observation_id": 103,
+        "station_id": "647510",
+        "station_name": "Ararimu at  Zanders",
+        "record_start_date": "2014-05-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.72483,
+          -36.88585
+        ]
+      },
+      "properties": {
+        "observation_id": 104,
+        "station_id": "648717",
+        "station_name": "Mount Albert at School",
+        "record_start_date": "2018-07-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.93266,
+          -36.93553
+        ]
+      },
+      "properties": {
+        "observation_id": 105,
+        "station_id": "649937",
+        "station_name": "Mangemangeroa at Craigs",
+        "record_start_date": "2014-05-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.65119,
+          -37.08824
+        ]
+      },
+      "properties": {
+        "observation_id": 106,
+        "station_id": "741611",
+        "station_name": "Awhitu at Brook Road",
+        "record_start_date": "2014-05-27",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.83955,
+          -37.19076
+        ]
+      },
+      "properties": {
+        "observation_id": 107,
+        "station_id": "741813",
+        "station_name": "Whangamaire at Culvert",
+        "record_start_date": "2014-05-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.76563,
+          -37.21235
+        ]
+      },
+      "properties": {
+        "observation_id": 108,
+        "station_id": "742736",
+        "station_name": "Waitangi at Diver Rd",
+        "record_start_date": "2014-05-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.76563,
+          -37.21235
+        ]
+      },
+      "properties": {
+        "observation_id": 109,
+        "station_id": "64068001",
+        "station_name": "Tomarata at Briens Farm",
+        "record_start_date": "2018-07-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7135131,
+          -38.89760677
+        ]
+      },
+      "properties": {
+        "observation_id": 110,
+        "station_id": "848702",
+        "station_name": "Kotare at O'Sullivan's",
+        "record_start_date": "2012-01-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.2842938,
+          -39.00341779
+        ]
+      },
+      "properties": {
+        "observation_id": 111,
+        "station_id": "849204",
+        "station_name": "Motunui M39 at Weston W3",
+        "record_start_date": "2008-05-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.7586404,
+          -39.27408608
+        ]
+      },
+      "properties": {
+        "observation_id": 112,
+        "station_id": "932701",
+        "station_name": "Kapoaiaia at Lighthouse",
+        "record_start_date": "2004-10-15",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.8970523,
+          -39.22528762
+        ]
+      },
+      "properties": {
+        "observation_id": 113,
+        "station_id": "932801",
+        "station_name": "Stony at Mangatete Bridge",
+        "record_start_date": "2015-12-22",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.9549089,
+          -39.43439788
+        ]
+      },
+      "properties": {
+        "observation_id": 114,
+        "station_id": "934903",
+        "station_name": "Taungatara at Eltham Rd",
+        "record_start_date": "2007-11-12",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.1375376,
+          -39.06449537
+        ]
+      },
+      "properties": {
+        "observation_id": 115,
+        "station_id": "940106",
+        "station_name": "Hillsborough",
+        "record_start_date": "2012-03-06",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.5573547,
+          -39.02695035
+        ]
+      },
+      "properties": {
+        "observation_id": 116,
+        "station_id": "940501",
+        "station_name": "Uruti at Kaka Rd",
+        "record_start_date": "2003-12-04",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.6277222,
+          -39.16741228
+        ]
+      },
+      "properties": {
+        "observation_id": 117,
+        "station_id": "941601",
+        "station_name": "Pohokura Saddle",
+        "record_start_date": "2005-10-05",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.0805514,
+          -39.54253955
+        ]
+      },
+      "properties": {
+        "observation_id": 118,
+        "station_id": "945002",
+        "station_name": "Kaupokonui at Glenn Rd",
+        "record_start_date": "2004-10-06",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.8388339,
+          -39.61288514
+        ]
+      },
+      "properties": {
+        "observation_id": 119,
+        "station_id": "946801",
+        "station_name": "Waitotara at Rimunui Station",
+        "record_start_date": "2005-11-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.4583563,
+          -39.74096358
+        ]
+      },
+      "properties": {
+        "observation_id": 120,
+        "station_id": "947407",
+        "station_name": "Patea at Bore 3",
+        "record_start_date": "2006-04-03",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.722972,
+          -39.82975375
+        ]
+      },
+      "properties": {
+        "observation_id": 121,
+        "station_id": "948701",
+        "station_name": "Waitotara at Hawken Rd",
+        "record_start_date": "2015-09-23",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.8840931,
+          -37.96566429
+        ]
+      },
+      "properties": {
+        "observation_id": 122,
+        "station_id": "650395",
+        "station_name": "Rangitaiki Plains at McLean Rd",
+        "record_start_date": "2011-04-21",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.0294,
+          -37.79836877
+        ]
+      },
+      "properties": {
+        "observation_id": 123,
+        "station_id": "767004",
+        "station_name": "Wairoa at Lower Kaimai",
+        "record_start_date": "2013-06-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.3467976,
+          -37.74445403
+        ]
+      },
+      "properties": {
+        "observation_id": 124,
+        "station_id": "767306",
+        "station_name": "Kaituna at Marshalls Farm",
+        "record_start_date": "2007-04-26",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.3159822,
+          -37.76400259
+        ]
+      },
+      "properties": {
+        "observation_id": 125,
+        "station_id": "767307",
+        "station_name": "Raparapahoe at Collins Lane",
+        "record_start_date": "2015-01-23",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.3032816,
+          -37.88843748
+        ]
+      },
+      "properties": {
+        "observation_id": 126,
+        "station_id": "768307",
+        "station_name": "Paraiti (Mangorewa) at Upper Rangiuru Rd",
+        "record_start_date": "2013-07-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.4853988,
+          -37.90590983
+        ]
+      },
+      "properties": {
+        "observation_id": 127,
+        "station_id": "769402",
+        "station_name": "Pongakawa at Pongakawa Bush Rd",
+        "record_start_date": "2010-07-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.7678085,
+          -37.91453782
+        ]
+      },
+      "properties": {
+        "observation_id": 128,
+        "station_id": "769706",
+        "station_name": "Rangitaiki Plains at Flax Rd",
+        "record_start_date": "2011-03-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.1027027,
+          -38.03711018
+        ]
+      },
+      "properties": {
+        "observation_id": 129,
+        "station_id": "860105",
+        "station_name": "Rotorua at Upper Oturoa Rd",
+        "record_start_date": "2008-06-25",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.2673906,
+          -38.01079656
+        ]
+      },
+      "properties": {
+        "observation_id": 130,
+        "station_id": "860206",
+        "station_name": "Paraiti (Mangorewa) at Kaharoa",
+        "record_start_date": "2013-06-25",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.7247938,
+          -38.03979986
+        ]
+      },
+      "properties": {
+        "observation_id": 131,
+        "station_id": "860707",
+        "station_name": "Tarawera at Hogg Rd",
+        "record_start_date": "2016-04-13",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.3849087,
+          -38.29913245
+        ]
+      },
+      "properties": {
+        "observation_id": 132,
+        "station_id": "862304",
+        "station_name": "Okaro at Okaro Rd",
+        "record_start_date": "2008-03-03",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.5312922,
+          -38.33118823
+        ]
+      },
+      "properties": {
+        "observation_id": 133,
+        "station_id": "863502",
+        "station_name": "Rerewhakaaitu at Republican Rd",
+        "record_start_date": "2019-03-04",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.7892821,
+          -38.37223623
+        ]
+      },
+      "properties": {
+        "observation_id": 134,
+        "station_id": "863702",
+        "station_name": "Galatea Basin at Horomanga Rd",
+        "record_start_date": "2018-08-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.4880665,
+          -38.81929036
+        ]
+      },
+      "properties": {
+        "observation_id": 135,
+        "station_id": "868410",
+        "station_name": "Rangitaiki at Kokomoka",
+        "record_start_date": "2013-10-23",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.5675503,
+          -45.51616979
+        ]
+      },
+      "properties": {
+        "observation_id": 136,
+        "station_id": "2000",
+        "station_name": "Athol at Eyre Street",
+        "record_start_date": "2015-12-18",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.4975003,
+          -45.81532659
+        ]
+      },
+      "properties": {
+        "observation_id": 137,
+        "station_id": "2001",
+        "station_name": "Balfour at Glenure St Patricks Road",
+        "record_start_date": "2010-11-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.1726797,
+          -46.05958681
+        ]
+      },
+      "properties": {
+        "observation_id": 138,
+        "station_id": "2002",
+        "station_name": "Central Plains Aquifer at Heddon Bush",
+        "record_start_date": "2005-06-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.0566721,
+          -46.05112978
+        ]
+      },
+      "properties": {
+        "observation_id": 139,
+        "station_id": "2003",
+        "station_name": "Chatton Aquifer at Cunningham Road",
+        "record_start_date": "2007-06-26",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.3108754,
+          -45.89690973
+        ]
+      },
+      "properties": {
+        "observation_id": 140,
+        "station_id": "2004",
+        "station_name": "Dipton at English Road",
+        "record_start_date": "2014-10-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.7959959,
+          -46.28899246
+        ]
+      },
+      "properties": {
+        "observation_id": 141,
+        "station_id": "2005",
+        "station_name": "Edendale at Coal Pit Road",
+        "record_start_date": "2010-10-13",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.9102594,
+          -46.19705872
+        ]
+      },
+      "properties": {
+        "observation_id": 142,
+        "station_id": "2006",
+        "station_name": "Ferndale at Waddle Road",
+        "record_start_date": "2010-06-25",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.3671932,
+          -45.62643926
+        ]
+      },
+      "properties": {
+        "observation_id": 143,
+        "station_id": "2007",
+        "station_name": "Five River Aquifer at Mossburn Five Riv",
+        "record_start_date": "2009-10-30",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.0341122,
+          -46.33169106
+        ]
+      },
+      "properties": {
+        "observation_id": 144,
+        "station_id": "2008",
+        "station_name": "Lower Aparima Aquifer at Riverton",
+        "record_start_date": "2014-10-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.3885504,
+          -46.24136288
+        ]
+      },
+      "properties": {
+        "observation_id": 145,
+        "station_id": "2009",
+        "station_name": "Makarewa Aquifer at Mckinnon Road",
+        "record_start_date": "2007-06-15",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.6659463,
+          -45.49639568
+        ]
+      },
+      "properties": {
+        "observation_id": 146,
+        "station_id": "2010",
+        "station_name": "Upper Mataura Aquifer at Nokomai",
+        "record_start_date": "2014-10-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.7173664,
+          -46.02901818
+        ]
+      },
+      "properties": {
+        "observation_id": 147,
+        "station_id": "2011",
+        "station_name": "Waiau at Clifden",
+        "record_start_date": "2006-11-22",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.1482428,
+          -46.22106123
+        ]
+      },
+      "properties": {
+        "observation_id": 148,
+        "station_id": "2012",
+        "station_name": "Waimatuku Aquifer at Isla Bank",
+        "record_start_date": "2014-10-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.7165023,
+          -45.82525717
+        ]
+      },
+      "properties": {
+        "observation_id": 149,
+        "station_id": "2013",
+        "station_name": "Waipounamu at Waipounamu Road",
+        "record_start_date": "2016-02-03",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.0286264,
+          -46.01270097
+        ]
+      },
+      "properties": {
+        "observation_id": 150,
+        "station_id": "2014",
+        "station_name": "Wairio at Otautau Nightcaps Road",
+        "record_start_date": "2014-10-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.5760043,
+          -46.47562986
+        ]
+      },
+      "properties": {
+        "observation_id": 151,
+        "station_id": "2015",
+        "station_name": "Waituna at Lawson Road",
+        "record_start_date": "2009-12-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.2732756,
+          -46.31845733
+        ]
+      },
+      "properties": {
+        "observation_id": 152,
+        "station_id": "2016",
+        "station_name": "Wallacetown at Price Road",
+        "record_start_date": "2015-02-25",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.7920227,
+          -45.47867648
+        ]
+      },
+      "properties": {
+        "observation_id": 153,
+        "station_id": "2017",
+        "station_name": "Whitestone Aquifer at Lynwood",
+        "record_start_date": "2007-05-15",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.5762216,
+          -46.35087521
+        ]
+      },
+      "properties": {
+        "observation_id": 154,
+        "station_id": "2018",
+        "station_name": "Woodlands at Garvie Road",
+        "record_start_date": "2008-10-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.745106,
+          -40.565174
+        ]
+      },
+      "properties": {
+        "observation_id": 155,
+        "station_id": "1000",
+        "station_name": "Makakahi at Hamua",
+        "record_start_date": "2011-03-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.116379,
+          -40.239468
+        ]
+      },
+      "properties": {
+        "observation_id": 156,
+        "station_id": "1001",
+        "station_name": "Manawatu at Weber Road",
+        "record_start_date": "2011-03-31",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.79173,
+          -40.436111
+        ]
+      },
+      "properties": {
+        "observation_id": 157,
+        "station_id": "1002",
+        "station_name": "Mangahao at Ballance",
+        "record_start_date": "2011-05-03",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.84664,
+          -40.340157
+        ]
+      },
+      "properties": {
+        "observation_id": 158,
+        "station_id": "1003",
+        "station_name": "Mangapapa at Troup Rd",
+        "record_start_date": "2011-05-04",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.995426,
+          -40.322873
+        ]
+      },
+      "properties": {
+        "observation_id": 159,
+        "station_id": "1004",
+        "station_name": "Raparapawai at Jackson Rd",
+        "record_start_date": "2003-10-02",
+        "record_end_date": "2003-10-02",
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.302447,
+          -40.630793
+        ]
+      },
+      "properties": {
+        "observation_id": 160,
+        "station_id": "25103",
+        "station_name": "Owahanga at Branscombe Bridge",
+        "record_start_date": "2002-05-10",
+        "record_end_date": "2002-05-10",
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.531474,
+          -40.194335
+        ]
+      },
+      "properties": {
+        "observation_id": 161,
+        "station_id": "51504",
+        "station_name": "Makino at Halcombe Road",
+        "record_start_date": "2001-07-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.636498,
+          -40.115382
+        ]
+      },
+      "properties": {
+        "observation_id": 162,
+        "station_id": "51602",
+        "station_name": "Makino at Cheltenham",
+        "record_start_date": "2001-07-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.602069,
+          -40.318908
+        ]
+      },
+      "properties": {
+        "observation_id": 163,
+        "station_id": "53614",
+        "station_name": "Mangaone at Milson Line",
+        "record_start_date": "2001-06-08",
+        "record_end_date": "2001-06-08",
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.142643,
+          -40.044999
+        ]
+      },
+      "properties": {
+        "observation_id": 164,
+        "station_id": "60101",
+        "station_name": "Manawatu at Apiti Track",
+        "record_start_date": "2011-04-21",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.033002,
+          -40.189424
+        ]
+      },
+      "properties": {
+        "observation_id": 165,
+        "station_id": "61001",
+        "station_name": "Kumeti at Rua Roa",
+        "record_start_date": "2003-07-04",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.04142,
+          -38.911031
+        ]
+      },
+      "properties": {
+        "observation_id": 166,
+        "station_id": "858001",
+        "station_name": "Ohura at Ohura River Road",
+        "record_start_date": "2014-02-26",
+        "record_end_date": "2014-02-26",
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.165057,
+          -39.943237
+        ]
+      },
+      "properties": {
+        "observation_id": 167,
+        "station_id": "959110",
+        "station_name": "Matarawa at Matarawa Valley",
+        "record_start_date": "2000-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.580886,
+          -40.19594
+        ]
+      },
+      "properties": {
+        "observation_id": 168,
+        "station_id": "1732571",
+        "station_name": "Makino at Reids Line",
+        "record_start_date": "2000-01-18",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.709173,
+          -40.2011
+        ]
+      },
+      "properties": {
+        "observation_id": 169,
+        "station_id": "1732572",
+        "station_name": "Mangaone at Valley Road",
+        "record_start_date": "2000-01-19",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.763474,
+          -39.64598533
+        ]
+      },
+      "properties": {
+        "observation_id": 170,
+        "station_id": "500",
+        "station_name": "Bridge Pa Climate",
+        "record_start_date": "2003-07-03",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.1344479,
+          -38.96875629
+        ]
+      },
+      "properties": {
+        "observation_id": 171,
+        "station_id": "501",
+        "station_name": "Cricklewood Climate",
+        "record_start_date": "2011-03-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.5622794,
+          -39.55680735
+        ]
+      },
+      "properties": {
+        "observation_id": 172,
+        "station_id": "502",
+        "station_name": "Crownthorpe Climate",
+        "record_start_date": "2003-07-21",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.4434028,
+          -39.73085144
+        ]
+      },
+      "properties": {
+        "observation_id": 173,
+        "station_id": "503",
+        "station_name": "Gwavas HQ Climate",
+        "record_start_date": "2010-10-12",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.5843398,
+          -38.73342978
+        ]
+      },
+      "properties": {
+        "observation_id": 174,
+        "station_id": "504",
+        "station_name": "Hangaroa River at Doneraille Park",
+        "record_start_date": "2002-06-13",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.8705864,
+          -39.27191598
+        ]
+      },
+      "properties": {
+        "observation_id": 175,
+        "station_id": "505",
+        "station_name": "Kaiwaka Tareha Climate",
+        "record_start_date": "2011-02-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.7987316,
+          -40.02809239
+        ]
+      },
+      "properties": {
+        "observation_id": 176,
+        "station_id": "506",
+        "station_name": "Omakere Climate",
+        "record_start_date": "2011-04-08",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.4541354,
+          -39.92071759
+        ]
+      },
+      "properties": {
+        "observation_id": 177,
+        "station_id": "507",
+        "station_name": "Onga Onga Climate",
+        "record_start_date": "2006-07-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.5973818,
+          -40.18832908
+        ]
+      },
+      "properties": {
+        "observation_id": 178,
+        "station_id": "508",
+        "station_name": "Porangahau Climate",
+        "record_start_date": "2010-10-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.720299,
+          -38.94691894
+        ]
+      },
+      "properties": {
+        "observation_id": 179,
+        "station_id": "509",
+        "station_name": "Pukeorapa Climate",
+        "record_start_date": "2014-10-14",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.4798526,
+          -38.80358912
+        ]
+      },
+      "properties": {
+        "observation_id": 180,
+        "station_id": "510",
+        "station_name": "Ruakituri River at Tauwharetoi Climate",
+        "record_start_date": "2013-03-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.2819977,
+          -39.01170277
+        ]
+      },
+      "properties": {
+        "observation_id": 181,
+        "station_id": "511",
+        "station_name": "Taharua Climate",
+        "record_start_date": "2008-12-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.66153,
+          -39.88845727
+        ]
+      },
+      "properties": {
+        "observation_id": 182,
+        "station_id": "512",
+        "station_name": "Te Aute Drumpeel Rd Climate",
+        "record_start_date": "2010-08-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.6116751,
+          -39.15593992
+        ]
+      },
+      "properties": {
+        "observation_id": 183,
+        "station_id": "513",
+        "station_name": "Te Haroto Climate",
+        "record_start_date": "2011-02-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.6824764,
+          -39.2681882
+        ]
+      },
+      "properties": {
+        "observation_id": 184,
+        "station_id": "514",
+        "station_name": "Te Pohue No.2 Climate",
+        "record_start_date": "2011-02-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.9428002,
+          -38.93762772
+        ]
+      },
+      "properties": {
+        "observation_id": 185,
+        "station_id": "515",
+        "station_name": "Upper Waiau at Monarae",
+        "record_start_date": "2014-08-27",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.5607153,
+          -39.39175672
+        ]
+      },
+      "properties": {
+        "observation_id": 186,
+        "station_id": "516",
+        "station_name": "Waihau Climate",
+        "record_start_date": "2011-01-19",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.9610376,
+          -39.84963822
+        ]
+      },
+      "properties": {
+        "observation_id": 187,
+        "station_id": "517",
+        "station_name": "Waimarama Climate",
+        "record_start_date": "2015-04-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.5341083,
+          -39.99580871
+        ]
+      },
+      "properties": {
+        "observation_id": 188,
+        "station_id": "518",
+        "station_name": "Waipukurau Climate",
+        "record_start_date": "2011-01-20",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "UNKNOWN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.9186684,
+          -38.56784383
+        ]
+      },
+      "properties": {
+        "observation_id": 189,
+        "station_id": "10",
+        "station_name": "Caesar Rd No1 Bore",
+        "record_start_date": "2013-09-18",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.9818525,
+          -38.64466403
+        ]
+      },
+      "properties": {
+        "observation_id": 190,
+        "station_id": "20",
+        "station_name": "Cameron Rd No1 Bore",
+        "record_start_date": "2015-05-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.915706,
+          -38.60287922
+        ]
+      },
+      "properties": {
+        "observation_id": 191,
+        "station_id": "30",
+        "station_name": "Hika No1 Bore Ferry Road GPE032",
+        "record_start_date": "2014-09-23",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.9749554,
+          -38.17835821
+        ]
+      },
+      "properties": {
+        "observation_id": 192,
+        "station_id": "871902",
+        "station_name": "Tauwhare Station",
+        "record_start_date": "2014-10-22",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          178.0852362,
+          -38.18719948
+        ]
+      },
+      "properties": {
+        "observation_id": 193,
+        "station_id": "881002",
+        "station_name": "Puketawa Station",
+        "record_start_date": "2014-10-22",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          178.1409017,
+          -38.65271883
+        ]
+      },
+      "properties": {
+        "observation_id": 194,
+        "station_id": "886103",
+        "station_name": "Tatapouri Hill",
+        "record_start_date": "2013-02-06",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.672,
+          -43.47
+        ]
+      },
+      "properties": {
+        "observation_id": 195,
+        "station_id": "17610",
+        "station_name": "Snowdon Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.07274,
+          -41.64724
+        ]
+      },
+      "properties": {
+        "observation_id": 196,
+        "station_id": "18468",
+        "station_name": "Awatere Valley, Dashwood Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.11083,
+          -46.02861
+        ]
+      },
+      "properties": {
+        "observation_id": 197,
+        "station_id": "18603",
+        "station_name": "Wreys Bush Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.84213,
+          -41.80779
+        ]
+      },
+      "properties": {
+        "observation_id": 198,
+        "station_id": "31850",
+        "station_name": "St Arnaud Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.47119,
+          -41.42747
+        ]
+      },
+      "properties": {
+        "observation_id": 199,
+        "station_id": "37754",
+        "station_name": "Stony Creek Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.25,
+          -42.08333
+        ]
+      },
+      "properties": {
+        "observation_id": 200,
+        "station_id": "37755",
+        "station_name": "Molesworth Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.25,
+          -45.71111
+        ]
+      },
+      "properties": {
+        "observation_id": 201,
+        "station_id": "37756",
+        "station_name": "Barnhill Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.69889,
+          -45.485
+        ]
+      },
+      "properties": {
+        "observation_id": 202,
+        "station_id": "37757",
+        "station_name": "Garston Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.67972,
+          -45.76556
+        ]
+      },
+      "properties": {
+        "observation_id": 203,
+        "station_id": "37758",
+        "station_name": "Blackmount Raws",
+        "record_start_date": "2018-05-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.6241547,
+          -41.2144476
+        ]
+      },
+      "properties": {
+        "observation_id": 204,
+        "station_id": "37759",
+        "station_name": "Rai Valley Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.18641,
+          -39.39923
+        ]
+      },
+      "properties": {
+        "observation_id": 205,
+        "station_id": "37987",
+        "station_name": "Waimarino Forest Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.42167,
+          -39.16583
+        ]
+      },
+      "properties": {
+        "observation_id": 206,
+        "station_id": "37990",
+        "station_name": "National Park Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.68222,
+          -43.47028
+        ]
+      },
+      "properties": {
+        "observation_id": 207,
+        "station_id": "38611",
+        "station_name": "Bottle Lake Forest Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.30495,
+          -43.76153
+        ]
+      },
+      "properties": {
+        "observation_id": 208,
+        "station_id": "39066",
+        "station_name": "Leeston Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.33,
+          -45.33292
+        ]
+      },
+      "properties": {
+        "observation_id": 209,
+        "station_id": "39728",
+        "station_name": "Butchers Dam Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.33667,
+          -41.28194
+        ]
+      },
+      "properties": {
+        "observation_id": 210,
+        "station_id": "39729",
+        "station_name": "Hira Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.93639,
+          -44.35889
+        ]
+      },
+      "properties": {
+        "observation_id": 211,
+        "station_id": "39732",
+        "station_name": "Cannington Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.51139,
+          -43.17278
+        ]
+      },
+      "properties": {
+        "observation_id": 212,
+        "station_id": "39733",
+        "station_name": "Ashley Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.76389,
+          -42.81139
+        ]
+      },
+      "properties": {
+        "observation_id": 213,
+        "station_id": "39734",
+        "station_name": "Balmoral Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.21361,
+          -41.27139
+        ]
+      },
+      "properties": {
+        "observation_id": 214,
+        "station_id": "39736",
+        "station_name": "Opua Bay Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.5275,
+          -40.89528
+        ]
+      },
+      "properties": {
+        "observation_id": 215,
+        "station_id": "39750",
+        "station_name": "Holdsworth Station Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.91083,
+          -41.35306
+        ]
+      },
+      "properties": {
+        "observation_id": 216,
+        "station_id": "39751",
+        "station_name": "Remutaka Forest Park Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.26778,
+          -45.03389
+        ]
+      },
+      "properties": {
+        "observation_id": 217,
+        "station_id": "39753",
+        "station_name": "Dansey Pass Raws",
+        "record_start_date": "2019-05-14",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.81583,
+          -46.08639
+        ]
+      },
+      "properties": {
+        "observation_id": 218,
+        "station_id": "39756",
+        "station_name": "Tuatapere Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.13167,
+          -46.39194
+        ]
+      },
+      "properties": {
+        "observation_id": 219,
+        "station_id": "39757",
+        "station_name": "Slopedown Raws",
+        "record_start_date": "2018-06-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.60117,
+          -39.77474
+        ]
+      },
+      "properties": {
+        "observation_id": 220,
+        "station_id": "39759",
+        "station_name": "Waverly Raws",
+        "record_start_date": "2018-06-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.25833,
+          -41.44167
+        ]
+      },
+      "properties": {
+        "observation_id": 221,
+        "station_id": "39760",
+        "station_name": "Haurangi Raws",
+        "record_start_date": "2018-05-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.88295,
+          -39.18865
+        ]
+      },
+      "properties": {
+        "observation_id": 222,
+        "station_id": "39766",
+        "station_name": "Okato Raws",
+        "record_start_date": "2018-06-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.825,
+          -41.52778
+        ]
+      },
+      "properties": {
+        "observation_id": 223,
+        "station_id": "39781",
+        "station_name": "Western Boundary Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.30629,
+          -39.46199
+        ]
+      },
+      "properties": {
+        "observation_id": 224,
+        "station_id": "39782",
+        "station_name": "Eltham Raws",
+        "record_start_date": "2018-06-29",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.225,
+          -43.11667
+        ]
+      },
+      "properties": {
+        "observation_id": 225,
+        "station_id": "39785",
+        "station_name": "Lees Valley Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.59,
+          -43.72111
+        ]
+      },
+      "properties": {
+        "observation_id": 226,
+        "station_id": "39788",
+        "station_name": "Motukarara Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.3817,
+          -43.67769
+        ]
+      },
+      "properties": {
+        "observation_id": 227,
+        "station_id": "39789",
+        "station_name": "Mount Somers Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.775,
+          -44.70417
+        ]
+      },
+      "properties": {
+        "observation_id": 228,
+        "station_id": "39790",
+        "station_name": "Waihaorunga Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.51667,
+          -42.4
+        ]
+      },
+      "properties": {
+        "observation_id": 229,
+        "station_id": "39791",
+        "station_name": "Nelson Creek Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.15389,
+          -43.60972
+        ]
+      },
+      "properties": {
+        "observation_id": 230,
+        "station_id": "39799",
+        "station_name": "Hakatere Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.41333,
+          -45.44222
+        ]
+      },
+      "properties": {
+        "observation_id": 231,
+        "station_id": "39801",
+        "station_name": "Mcraes Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.68583,
+          -45.25583
+        ]
+      },
+      "properties": {
+        "observation_id": 232,
+        "station_id": "39807",
+        "station_name": "Herbert Raws",
+        "record_start_date": "2019-02-04",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.72653,
+          -41.44637
+        ]
+      },
+      "properties": {
+        "observation_id": 233,
+        "station_id": "39813",
+        "station_name": "Onamalutu",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.53125,
+          -41.58718
+        ]
+      },
+      "properties": {
+        "observation_id": 234,
+        "station_id": "40416",
+        "station_name": "Landsdowne Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.63643,
+          -40.97865
+        ]
+      },
+      "properties": {
+        "observation_id": 235,
+        "station_id": "40446",
+        "station_name": "Homebush Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.23289,
+          -41.59148
+        ]
+      },
+      "properties": {
+        "observation_id": 236,
+        "station_id": "40447",
+        "station_name": "Palliser Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.85798,
+          -45.51532
+        ]
+      },
+      "properties": {
+        "observation_id": 237,
+        "station_id": "40448",
+        "station_name": "Wilderness Raws",
+        "record_start_date": "2018-05-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.39772,
+          -46.44182
+        ]
+      },
+      "properties": {
+        "observation_id": 238,
+        "station_id": "40449",
+        "station_name": "Tisbury Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.07723,
+          -41.83862
+        ]
+      },
+      "properties": {
+        "observation_id": 239,
+        "station_id": "40580",
+        "station_name": "Ward Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.54694,
+          -42.37833
+        ]
+      },
+      "properties": {
+        "observation_id": 240,
+        "station_id": "40638",
+        "station_name": "Glenveigh Kaikoura Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.21198,
+          -40.90689
+        ]
+      },
+      "properties": {
+        "observation_id": 241,
+        "station_id": "40673",
+        "station_name": "Crofoot Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.50583,
+          -41.73944
+        ]
+      },
+      "properties": {
+        "observation_id": 242,
+        "station_id": "40798",
+        "station_name": "Tor Darroch Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.92238,
+          -43.9015
+        ]
+      },
+      "properties": {
+        "observation_id": 243,
+        "station_id": "40846",
+        "station_name": "Clayton Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.22158,
+          -44.30493
+        ]
+      },
+      "properties": {
+        "observation_id": 244,
+        "station_id": "40847",
+        "station_name": "TIMARU COASTAL RAWS",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.6784,
+          -44.51219
+        ]
+      },
+      "properties": {
+        "observation_id": 245,
+        "station_id": "40848",
+        "station_name": "Cattle Creek Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.93989,
+          -44.70627
+        ]
+      },
+      "properties": {
+        "observation_id": 246,
+        "station_id": "40849",
+        "station_name": "Waimate Forest Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.10312,
+          -44.09098
+        ]
+      },
+      "properties": {
+        "observation_id": 247,
+        "station_id": "40850",
+        "station_name": "Geraldine Forest Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.79817,
+          -43.9057
+        ]
+      },
+      "properties": {
+        "observation_id": 248,
+        "station_id": "40926",
+        "station_name": "Ashburton Aero Raws",
+        "record_start_date": "2018-05-16",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.38761,
+          -43.31386
+        ]
+      },
+      "properties": {
+        "observation_id": 249,
+        "station_id": "40946",
+        "station_name": "Glenaan Station Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.92517,
+          -41.46818
+        ]
+      },
+      "properties": {
+        "observation_id": 250,
+        "station_id": "41018",
+        "station_name": "Lower Wairau Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.117,
+          -44.233
+        ]
+      },
+      "properties": {
+        "observation_id": 251,
+        "station_id": "41055",
+        "station_name": "Pukaki Aero Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.8137,
+          -45.91513
+        ]
+      },
+      "properties": {
+        "observation_id": 252,
+        "station_id": "41116",
+        "station_name": "Otama Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.7765,
+          -40.81531
+        ]
+      },
+      "properties": {
+        "observation_id": 253,
+        "station_id": "41196",
+        "station_name": "Takaka Aero Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.82919,
+          -41.05346
+        ]
+      },
+      "properties": {
+        "observation_id": 254,
+        "station_id": "41211",
+        "station_name": "Ngaumu Forest 2 Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.85691,
+          -41.19427
+        ]
+      },
+      "properties": {
+        "observation_id": 255,
+        "station_id": "41217",
+        "station_name": "Big Pokororo 2 Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.30888,
+          -41.12397
+        ]
+      },
+      "properties": {
+        "observation_id": 256,
+        "station_id": "41408",
+        "station_name": "Featherston Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.31457,
+          -38.10594
+        ]
+      },
+      "properties": {
+        "observation_id": 257,
+        "station_id": "41547",
+        "station_name": "Rotorua Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.08089,
+          -38.74264
+        ]
+      },
+      "properties": {
+        "observation_id": 258,
+        "station_id": "41548",
+        "station_name": "Taupo Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.19777,
+          -37.67704
+        ]
+      },
+      "properties": {
+        "observation_id": 259,
+        "station_id": "41549",
+        "station_name": "Tauranga Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.41773,
+          -42.21282
+        ]
+      },
+      "properties": {
+        "observation_id": 260,
+        "station_id": "41581",
+        "station_name": "Upper Clarence Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.0573,
+          -38.13732
+        ]
+      },
+      "properties": {
+        "observation_id": 261,
+        "station_id": "42074",
+        "station_name": "Waimana Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.92117,
+          -37.40926
+        ]
+      },
+      "properties": {
+        "observation_id": 262,
+        "station_id": "42075",
+        "station_name": "Waihi Beach Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.14142,
+          -37.93963
+        ]
+      },
+      "properties": {
+        "observation_id": 263,
+        "station_id": "42076",
+        "station_name": "Tect All Terrain ParkRaws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.1956,
+          -44.6177
+        ]
+      },
+      "properties": {
+        "observation_id": 264,
+        "station_id": "42133",
+        "station_name": "Otematata Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.72791,
+          -41.31198
+        ]
+      },
+      "properties": {
+        "observation_id": 265,
+        "station_id": "42402",
+        "station_name": "Long Gully Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.53212,
+          -43.47984
+        ]
+      },
+      "properties": {
+        "observation_id": 266,
+        "station_id": "42496",
+        "station_name": "Mcleans Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.33151,
+          -37.86079
+        ]
+      },
+      "properties": {
+        "observation_id": 267,
+        "station_id": "42501",
+        "station_name": "Hamilton Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.81824,
+          -35.4516
+        ]
+      },
+      "properties": {
+        "observation_id": 268,
+        "station_id": "42502",
+        "station_name": "Kaikohe Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.35944,
+          -35.76843
+        ]
+      },
+      "properties": {
+        "observation_id": 269,
+        "station_id": "42503",
+        "station_name": "Whangarei Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.983,
+          -38.65917
+        ]
+      },
+      "properties": {
+        "observation_id": 270,
+        "station_id": "42532",
+        "station_name": "Gisborne Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.86382,
+          -39.46961
+        ]
+      },
+      "properties": {
+        "observation_id": 271,
+        "station_id": "42533",
+        "station_name": "Napier Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.91725,
+          -39.10997
+        ]
+      },
+      "properties": {
+        "observation_id": 272,
+        "station_id": "42534",
+        "station_name": "Mahia Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.82866,
+          -37.40685
+        ]
+      },
+      "properties": {
+        "observation_id": 273,
+        "station_id": "42714",
+        "station_name": "Waihi Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.04956,
+          -37.71557
+        ]
+      },
+      "properties": {
+        "observation_id": 274,
+        "station_id": "42715",
+        "station_name": "Minden Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.65738,
+          -37.34922
+        ]
+      },
+      "properties": {
+        "observation_id": 275,
+        "station_id": "42716",
+        "station_name": "Paeroa Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.77245,
+          -38.15823
+        ]
+      },
+      "properties": {
+        "observation_id": 276,
+        "station_id": "42717",
+        "station_name": "Taharoa Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.40352,
+          -39.01648
+        ]
+      },
+      "properties": {
+        "observation_id": 277,
+        "station_id": "42718",
+        "station_name": "Wairoa Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.0204,
+          -39.96387
+        ]
+      },
+      "properties": {
+        "observation_id": 278,
+        "station_id": "42719",
+        "station_name": "Whanganui Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.6243,
+          -43.74333
+        ]
+      },
+      "properties": {
+        "observation_id": 279,
+        "station_id": "42725",
+        "station_name": "Ashburton Plains 2 Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.62582,
+          -41.8886
+        ]
+      },
+      "properties": {
+        "observation_id": 280,
+        "station_id": "42726",
+        "station_name": "Mid Awatere Valley Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.20342,
+          -44.68122
+        ]
+      },
+      "properties": {
+        "observation_id": 281,
+        "station_id": "42727",
+        "station_name": "Hawera Flats Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.758,
+          -45.01791
+        ]
+      },
+      "properties": {
+        "observation_id": 282,
+        "station_id": "42728",
+        "station_name": "Queenstown Aero Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.29659,
+          -40.45861
+        ]
+      },
+      "properties": {
+        "observation_id": 283,
+        "station_id": "42919",
+        "station_name": "Waione 2 Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.64935,
+          -40.27957
+        ]
+      },
+      "properties": {
+        "observation_id": 284,
+        "station_id": "42920",
+        "station_name": "Porangahau Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.21578,
+          -41.30085
+        ]
+      },
+      "properties": {
+        "observation_id": 285,
+        "station_id": "42921",
+        "station_name": "Nelson Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.85501,
+          -40.69721
+        ]
+      },
+      "properties": {
+        "observation_id": 286,
+        "station_id": "42922",
+        "station_name": "Alfredton 2 Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.72115,
+          -43.64197
+        ]
+      },
+      "properties": {
+        "observation_id": 287,
+        "station_id": "42926",
+        "station_name": "Diamond Harbour Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.43881,
+          -41.90647
+        ]
+      },
+      "properties": {
+        "observation_id": 288,
+        "station_id": "42927",
+        "station_name": "Charleston Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.8,
+          -43.58801
+        ]
+      },
+      "properties": {
+        "observation_id": 289,
+        "station_id": "42928",
+        "station_name": "Godley Head Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.56,
+          -39.0
+        ]
+      },
+      "properties": {
+        "observation_id": 290,
+        "station_id": "42929",
+        "station_name": "Hautu Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.98398,
+          -42.71376
+        ]
+      },
+      "properties": {
+        "observation_id": 291,
+        "station_id": "42930",
+        "station_name": "Hokitika Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.13205,
+          -38.80705
+        ]
+      },
+      "properties": {
+        "observation_id": 292,
+        "station_id": "42931",
+        "station_name": "Kaitawa Tuai Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.95362,
+          -41.35116
+        ]
+      },
+      "properties": {
+        "observation_id": 293,
+        "station_id": "42932",
+        "station_name": "Koromiko Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.04528,
+          -43.75705
+        ]
+      },
+      "properties": {
+        "observation_id": 294,
+        "station_id": "42933",
+        "station_name": "Panama Road Raws",
+        "record_start_date": "2018-04-15",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.8418,
+          -39.5837
+        ]
+      },
+      "properties": {
+        "observation_id": 295,
+        "station_id": "42934",
+        "station_name": "Ngamatapouri Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.08189,
+          -44.97182
+        ]
+      },
+      "properties": {
+        "observation_id": 296,
+        "station_id": "42935",
+        "station_name": "Oamaru Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.86026,
+          -39.42262
+        ]
+      },
+      "properties": {
+        "observation_id": 297,
+        "station_id": "42936",
+        "station_name": "Opunake Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.6,
+          -38.85556
+        ]
+      },
+      "properties": {
+        "observation_id": 298,
+        "station_id": "42937",
+        "station_name": "Rotoaira Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.9548,
+          -38.61392
+        ]
+      },
+      "properties": {
+        "observation_id": 299,
+        "station_id": "42938",
+        "station_name": "Ruatahuna Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.70284,
+          -38.61301
+        ]
+      },
+      "properties": {
+        "observation_id": 300,
+        "station_id": "42939",
+        "station_name": "Tihoi Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.30165,
+          -39.04882
+        ]
+      },
+      "properties": {
+        "observation_id": 301,
+        "station_id": "42940",
+        "station_name": "Tikorangi Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.30838,
+          -39.60221
+        ]
+      },
+      "properties": {
+        "observation_id": 302,
+        "station_id": "42941",
+        "station_name": "Whareroa Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.16527,
+          -41.2675
+        ]
+      },
+      "properties": {
+        "observation_id": 303,
+        "station_id": "42987",
+        "station_name": "Karamea Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.91278,
+          -42.95987
+        ]
+      },
+      "properties": {
+        "observation_id": 304,
+        "station_id": "42988",
+        "station_name": "Omihi Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.22209,
+          -42.81234
+        ]
+      },
+      "properties": {
+        "observation_id": 305,
+        "station_id": "42989",
+        "station_name": "Cheviot Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.04139,
+          -43.86194
+        ]
+      },
+      "properties": {
+        "observation_id": 306,
+        "station_id": "43205",
+        "station_name": "Haast Junction Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.75237,
+          -43.03828
+        ]
+      },
+      "properties": {
+        "observation_id": 307,
+        "station_id": "43206",
+        "station_name": "Cass Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.25856,
+          -43.84945
+        ]
+      },
+      "properties": {
+        "observation_id": 308,
+        "station_id": "43207",
+        "station_name": "Southbridge Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.22916,
+          -42.17694
+        ]
+      },
+      "properties": {
+        "observation_id": 309,
+        "station_id": "43208",
+        "station_name": "Maruia Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.49667,
+          -42.55528
+        ]
+      },
+      "properties": {
+        "observation_id": 310,
+        "station_id": "43209",
+        "station_name": "Lake Brunner Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.97121,
+          -38.44561
+        ]
+      },
+      "properties": {
+        "observation_id": 311,
+        "station_id": "43210",
+        "station_name": "Piopio Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.10474,
+          -39.58138
+        ]
+      },
+      "properties": {
+        "observation_id": 312,
+        "station_id": "43211",
+        "station_name": "Ranana Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.6024,
+          -40.2526
+        ]
+      },
+      "properties": {
+        "observation_id": 313,
+        "station_id": "43212",
+        "station_name": "Fielding Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.12862,
+          -43.91498
+        ]
+      },
+      "properties": {
+        "observation_id": 314,
+        "station_id": "43213",
+        "station_name": "Glentanner Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.34116,
+          -37.35065
+        ]
+      },
+      "properties": {
+        "observation_id": 315,
+        "station_id": "43214",
+        "station_name": "Waeranga Raws",
+        "record_start_date": "2018-06-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.64464,
+          -39.96903
+        ]
+      },
+      "properties": {
+        "observation_id": 316,
+        "station_id": "43280",
+        "station_name": "Hunterville Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.22501,
+          -43.29526
+        ]
+      },
+      "properties": {
+        "observation_id": 317,
+        "station_id": "43290",
+        "station_name": "Oxford 2 Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.84293,
+          -44.24772
+        ]
+      },
+      "properties": {
+        "observation_id": 318,
+        "station_id": "43291",
+        "station_name": "Albury Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.13203,
+          -35.50545
+        ]
+      },
+      "properties": {
+        "observation_id": 319,
+        "station_id": "43313",
+        "station_name": "Towai Raws",
+        "record_start_date": "2018-06-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.76242,
+          -35.1092
+        ]
+      },
+      "properties": {
+        "observation_id": 320,
+        "station_id": "43314",
+        "station_name": "Kaeo Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.19695,
+          -45.92905
+        ]
+      },
+      "properties": {
+        "observation_id": 321,
+        "station_id": "43315",
+        "station_name": "Dunedin Raws",
+        "record_start_date": "2018-06-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.39228,
+          -45.64842
+        ]
+      },
+      "properties": {
+        "observation_id": 322,
+        "station_id": "43509",
+        "station_name": "Millers Flat Raws",
+        "record_start_date": "2018-07-23",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.96474,
+          -37.60704
+        ]
+      },
+      "properties": {
+        "observation_id": 323,
+        "station_id": "43517",
+        "station_name": "Te Akau Raws",
+        "record_start_date": "2018-07-24",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.12989,
+          -44.60543
+        ]
+      },
+      "properties": {
+        "observation_id": 324,
+        "station_id": "43745",
+        "station_name": "Waimate Costal Raws",
+        "record_start_date": "2018-12-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.07289,
+          -40.90759
+        ]
+      },
+      "properties": {
+        "observation_id": 325,
+        "station_id": "43801",
+        "station_name": "Tinui Raws",
+        "record_start_date": "2019-01-23",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.4915,
+          -41.24759
+        ]
+      },
+      "properties": {
+        "observation_id": 326,
+        "station_id": "43931",
+        "station_name": "Te Muna Raws",
+        "record_start_date": "2019-06-03",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.00673,
+          -46.19883
+        ]
+      },
+      "properties": {
+        "observation_id": 327,
+        "station_id": "43932",
+        "station_name": "Toko Mouth Raws",
+        "record_start_date": "2019-06-03",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.7527,
+          -43.82312
+        ]
+      },
+      "properties": {
+        "observation_id": 328,
+        "station_id": "44115",
+        "station_name": "Te Oka Raws",
+        "record_start_date": "2019-10-21",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.609,
+          -43.61709
+        ]
+      },
+      "properties": {
+        "observation_id": 329,
+        "station_id": "44116",
+        "station_name": "Early Valley Raws",
+        "record_start_date": "2019-10-14",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.724,
+          -43.22732
+        ]
+      },
+      "properties": {
+        "observation_id": 330,
+        "station_id": "44144",
+        "station_name": "Salt Water Creek Raws",
+        "record_start_date": "2019-10-15",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.15986,
+          -41.38682
+        ]
+      },
+      "properties": {
+        "observation_id": 331,
+        "station_id": "44239",
+        "station_name": "Aniseed Valley Raws",
+        "record_start_date": "2019-11-07",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.43021,
+          -35.05244
+        ]
+      },
+      "properties": {
+        "observation_id": 332,
+        "station_id": "44313",
+        "station_name": "Parapara Raws",
+        "record_start_date": "2020-02-28",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.397,
+          -35.2643
+        ]
+      },
+      "properties": {
+        "observation_id": 333,
+        "station_id": "44314",
+        "station_name": "Broadwood Raws",
+        "record_start_date": "2020-04-11",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.43224,
+          -36.86333
+        ]
+      },
+      "properties": {
+        "observation_id": 334,
+        "station_id": "44380",
+        "station_name": "Manaia Raws",
+        "record_start_date": "2020-07-17",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.23852,
+          -40.56641
+        ]
+      },
+      "properties": {
+        "observation_id": 335,
+        "station_id": "44437",
+        "station_name": "Waitarere Raws",
+        "record_start_date": "2020-08-04",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          177.788,
+          -37.7532
+        ]
+      },
+      "properties": {
+        "observation_id": 336,
+        "station_id": "44596",
+        "station_name": "Maungaroa Raws",
+        "record_start_date": "2020-12-17",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.3228,
+          -36.05486
+        ]
+      },
+      "properties": {
+        "observation_id": 337,
+        "station_id": "44658",
+        "station_name": "Northland Brynderwyn Raws",
+        "record_start_date": "2021-03-10",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.7460201,
+          -38.66473969
+        ]
+      },
+      "properties": {
+        "observation_id": 338,
+        "station_id": "2752",
+        "station_name": "Hingarae Road, Tihoi",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.2617204,
+          -37.69939989
+        ]
+      },
+      "properties": {
+        "observation_id": 339,
+        "station_id": "4736",
+        "station_name": "Henderson Road, Horsham Downs",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.6110026,
+          -37.55468808
+        ]
+      },
+      "properties": {
+        "observation_id": 340,
+        "station_id": "6176",
+        "station_name": "No 1 Road, Springdale",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.3173628,
+          -38.08448661
+        ]
+      },
+      "properties": {
+        "observation_id": 341,
+        "station_id": "13147",
+        "station_name": "Farm Road, Tokanui",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          176.3550574,
+          -38.53327156
+        ]
+      },
+      "properties": {
+        "observation_id": 342,
+        "station_id": "14175",
+        "station_name": "Allen Road, Broadlands",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.2551127,
+          -38.23256835
+        ]
+      },
+      "properties": {
+        "observation_id": 343,
+        "station_id": "49110",
+        "station_name": "Mangawhero Road, Otorohanga",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.8462585,
+          -38.25038408
+        ]
+      },
+      "properties": {
+        "observation_id": 344,
+        "station_id": "52926",
+        "station_name": "Old Taupo Road, Tokoroa",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "40"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.5259699,
+          -37.21065881
+        ]
+      },
+      "properties": {
+        "observation_id": 345,
+        "station_id": "74971",
+        "station_name": "State Highway 25, Pipiroa",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.8686697,
+          -37.83709457
+        ]
+      },
+      "properties": {
+        "observation_id": 346,
+        "station_id": "111324",
+        "station_name": "Waharoa Road East, Waharoa",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          175.766579,
+          -37.76536399
+        ]
+      },
+      "properties": {
+        "observation_id": 347,
+        "station_id": "1122123",
+        "station_name": "Old Te Aroha Road, Te Poi",
+        "record_start_date": "2020-01-01",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.5927,
+          -43.6762
+        ]
+      },
+      "properties": {
+        "observation_id": 348,
+        "station_id": "316507102",
+        "station_name": "Methven, Lysimeter at Mackenzies",
+        "record_start_date": "2010-05-26",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.42946,
+          -43.35497
+        ]
+      },
+      "properties": {
+        "observation_id": 349,
+        "station_id": "323402102",
+        "station_name": "West Eyreton, Larundel Farm Lysimeter",
+        "record_start_date": "2012-07-19",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.931,
+          -44.4982
+        ]
+      },
+      "properties": {
+        "observation_id": 350,
+        "station_id": "494901101",
+        "station_name": "Omarama Lysimeter",
+        "record_start_date": "2016-08-23",
+        "record_end_date": null,
+        "geo_hash": "",
+        "data_depth": "20"
+      }
+    }
+  ]
+}
