@@ -101,12 +101,9 @@ export default function DeckGLMap({
     transitionDuration: 0,
     transitionEasing: googleMapsEasing,
   });
-
-  const isUserInteracting = useRef(false);
-  const lastInteractionTime = useRef(Date.now());
   
  const isViewStateChanged = (prev: ExtendedViewState, current: ExtendedViewState): boolean => {
-    const tolerance = 0.0005;
+    const tolerance = 0.0001;
     return (
       Math.abs(prev.longitude - current.longitude) > tolerance ||
       Math.abs(prev.latitude - current.latitude) > tolerance ||
@@ -118,8 +115,6 @@ export default function DeckGLMap({
   const handleViewStateChange = useCallback(
     throttle((event: any) => {
       const newState = event.viewState;
-      isUserInteracting.current = true;
-      lastInteractionTime.current = Date.now();
       
       if (isViewStateChanged(prevViewState.current, newState)) {
         const updatedState: ExtendedViewState = {
@@ -132,12 +127,6 @@ export default function DeckGLMap({
         prevViewState.current = newState;
         setHoverInfo(null);
       }
-
-      setTimeout(() => {
-        if (Date.now() - lastInteractionTime.current >= 400) {
-          isUserInteracting.current = false;
-        }
-      }, 500);
     }, 32),
     []
   );
