@@ -46,7 +46,7 @@ export default class IconClusterLayer<
     ExtraProps & {
       onClickRef?: (info: PickingInfo<DataT>) => void;
       onHoverRef?: (info: PickingInfo<DataT>) => void;
-      onViewStateChange?: (event: {viewState: any}) => void;
+      onViewStateChangeRef?: (event: {viewState: any}) => void;
     }
 > {
   state!: {
@@ -130,23 +130,32 @@ export default class IconClusterLayer<
   }
 
   onClick(info: PickingInfo, pickingEvent: any): boolean {
-    const {onClickRef, onViewStateChange} = this.props;
+    const {onClickRef, onViewStateChangeRef} = this.props;
     const clusterInfo = this.getPickingInfo({info, mode: "click"});
     if (clusterInfo.cluster) {
       const newViewState = {
         longitude: clusterInfo.cluster.center[0],
         latitude: clusterInfo.cluster.center[1],
         zoom: Math.min(clusterInfo.cluster.expansionZoom, 16),
-        transitionDuration: 1500,
-        transitionInterpolator: new FlyToInterpolator(),
       };
-      onViewStateChange?.({
+      onViewStateChangeRef?.({
         viewState: newViewState,
       });
     } else {
       onClickRef?.(info);
     }
     return true;
+  }
+
+  onHover(info: PickingInfo, pickingEvent: any): boolean {
+    const {onHoverRef} = this.props;
+    const clusterInfo = this.getPickingInfo({info, mode: "click"});
+    if (clusterInfo.cluster) {
+      return false;
+    } else {
+      onHoverRef?.(info);
+      return true;
+    }
   }
 
   renderLayers() {
@@ -164,7 +173,6 @@ export default class IconClusterLayer<
           getIconName(d.properties.cluster ? d.properties.point_count : 1),
         getSize: (d) =>
           getIconSize(d.properties.cluster ? d.properties.point_count : 1),
-        onClick: this.onClick,
       },
       this.getSubLayerProps({
         id: "icon",

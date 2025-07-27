@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { Box, Button, Divider, IconButton, Paper, SxProps, Theme, Typography } from '@mui/material';
 import DeckGL from '@deck.gl/react';
 import { IconLayer, IconLayerProps } from '@deck.gl/layers';
 import { Map, ViewState } from 'react-map-gl/maplibre';
 import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/data_service';
 import { containerStyles, infoRowStyles, stationCardStyles, toolbarStyles, tooltipStyles } from '../style/map.styles';
-import { MapView, PickingInfo } from '@deck.gl/core';
+import { FlyToInterpolator, MapView, PickingInfo } from '@deck.gl/core';
 import { ZoomWidget } from '@deck.gl/widgets';
 import '@deck.gl/widgets/stylesheet.css';
 import IconClusterLayer from '../ext/icon_cluster_layer';
@@ -22,7 +22,9 @@ import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import { getPillButtonStyles } from '../style/pill_button.styles';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import DataComparatorDrawer from './data_comparator';
+import { easeCubicInOut, easeQuadInOut, easeLinear } from 'd3-ease';
 import SpatialDataComparatorDrawer from './3d_data_comparator';
+import { throttle } from 'lodash';
 
 
 const MAP_VIEW = new MapView({
@@ -36,6 +38,9 @@ const ZOOM = new ZoomWidget({
   zoomOutLabel: 'Zoom Out'
 });
 
+
+
+// map style
 export type CartoMapStyle = | 'positron' | 'positron-nolabels' | 'dark-matter' | 'dark-matter-nolabels'
 
 const CARTO_STYLES: Record<CartoMapStyle, string> = {
@@ -43,6 +48,17 @@ const CARTO_STYLES: Record<CartoMapStyle, string> = {
   'positron-nolabels': 'https://basemaps.cartocdn.com/gl/positron-nolabels-gl-style/style.json',
   'dark-matter': 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
   'dark-matter-nolabels': 'https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json',
+};
+
+// viewstate change with animation
+interface ExtendedViewState extends ViewState {
+  transitionDuration?: number;
+  transitionEasing?: (t: number) => number;
+  transitionInterpolator?: any;
+}
+
+const googleMapsEasing = (t: number): number => {
+  return t * t * (3 - 2 * t);
 };
 
 export interface DeckGLMapProps {
@@ -61,65 +77,111 @@ export default function DeckGLMap({
   style = {}
 }: DeckGLMapProps) {
   
-  const [viewState, setViewState] = useState<ViewState>(initialViewState);
+  // set current camera view
+  const [viewState, setViewState] = useState<ExtendedViewState>({
+    ...initialViewState,
+    transitionDuration: 0,
+    transitionEasing: googleMapsEasing,
+  });
+  // set using clusting layer or not
   const [useClusting, setUseClusting] = useState<boolean>(true);
+  // set showing hover info or not
   const [hoverInfo, setHoverInfo] = useState<{
     object: ObservationStationFeature;
     x: number;
     y: number;
   } | null>(null);
+  // set which location is selected
   const [selectedPoint, setSelectedPoint] = useState<ObservationStationFeature | null>(null);
+  // set the comparator box is open or not
   const [comparatorOpen, setComparatorOpen] = useState<boolean>(false);
+
+  const prevViewState = useRef<ExtendedViewState>({
+    ...initialViewState,
+    transitionDuration: 0,
+    transitionEasing: googleMapsEasing,
+  });
+
+  const isUserInteracting = useRef(false);
+  const lastInteractionTime = useRef(Date.now());
   
-  const [rerender, setRerender] = useState(0);
+ const isViewStateChanged = (prev: ExtendedViewState, current: ExtendedViewState): boolean => {
+    const tolerance = 0.0005;
+    return (
+      Math.abs(prev.longitude - current.longitude) > tolerance ||
+      Math.abs(prev.latitude - current.latitude) > tolerance ||
+      Math.abs(prev.zoom - current.zoom) > tolerance
+    );
+  };
 
-  const forceRerender = useCallback(() => {
-    setRerender(prev => prev + 1);
-  }, []);
+  // set view status change
+  const handleViewStateChange = useCallback(
+    throttle((event: any) => {
+      const newState = event.viewState;
+      isUserInteracting.current = true;
+      lastInteractionTime.current = Date.now();
+      
+      if (isViewStateChanged(prevViewState.current, newState)) {
+        const updatedState: ExtendedViewState = {
+          ...newState,
+          transitionDuration: 0,
+          transitionEasing: googleMapsEasing,
+        };
+        
+        setViewState(updatedState);
+        prevViewState.current = newState;
+        setHoverInfo(null);
+      }
 
-  const handleViewStateChange = useCallback((event: any) => {
-    if (event.viewState) {
-      setViewState(event.viewState);
-      setHoverInfo(null);
-    }
-  }, []);
+      setTimeout(() => {
+        if (Date.now() - lastInteractionTime.current >= 400) {
+          isUserInteracting.current = false;
+        }
+      }, 500);
+    }, 32),
+    []
+  );
 
+  const flytoView = useCallback((longitude: number, latitude: number, zoom = 10) => {
+    setViewState(prevState => ({
+        ...prevState,
+        longitude: longitude,
+        latitude: latitude,
+        zoom: zoom,
+        transitionDuration: 1000,
+        transitionEasing: easeQuadInOut,
+        transitionInterpolator: new FlyToInterpolator(),
+      }));
+  }, [])
+
+  // handle the action when a point was clicked
   const handlePointClick = useCallback((info: PickingInfo<ObservationStationFeature>) => {
     if (info.object) {
       setSelectedPoint(info.object);
-      setViewState(prevState => ({
-        ...prevState,
-        longitude: info.object!.geometry.coordinates[0],
-        latitude: info.object!.geometry.coordinates[1],
-        zoom: 10,
-        transitionDuration: 1500,
-      }));
+      flytoView(info.object!.geometry.coordinates[0], info.object!.geometry.coordinates[1], 10)
     } else {
       setSelectedPoint(null)
     }
   }, []);
 
+  // handle if the clusting view button is clicked
   const handleClustingClick = useCallback(() => {
     setHoverInfo(null);
     setUseClusting(prev => !prev);
-    forceRerender();
-  }, [forceRerender]);
+  }, [useClusting]); // only when the button is clicked, the page will rerender
 
+  // handle if a item on the search results is selected
   const handleSearchItemSelected = useCallback((info: ObservationStationFeature) => {
     setSelectedPoint(info);
-    setViewState(prevState => ({
-      ...prevState,
-      longitude: info.geometry.coordinates[0],
-      latitude: info.geometry.coordinates[1],
-      zoom: 10,
-      transitionDuration: 1500,
-    }));
+    flytoView(info.geometry.coordinates[0], info.geometry.coordinates[1], 10)
   }, []);
 
+  // if focus on search box deselect existing location
   const handleSearchFocus = useCallback(() => {
     setSelectedPoint(null);
   }, [])
 
+  // set hover info
   const handlePointHover = useCallback((info: PickingInfo<ObservationStationFeature>) => {
     if (info.object && info.pixel) {
       setHoverInfo({
@@ -132,10 +194,12 @@ export default function DeckGLMap({
     }
   }, []); 
 
+  // close comparetor card
   const handleCloseCard = useCallback(() => {
     setSelectedPoint(null);
   }, []);
 
+  // render the hover info
   const renderTooltip = useCallback(() => {
     if (!hoverInfo) return null;
     const { object, x, y } = hoverInfo;
@@ -155,7 +219,7 @@ export default function DeckGLMap({
       setComparatorOpen(true);
       console.log('Opening comparator for station:', selectedPoint.properties?.station_name);
     }
-  }, [selectedPoint]);
+  }, []);
 
   const handleCloseComparator = useCallback(() => {
     setComparatorOpen(false);
@@ -222,7 +286,7 @@ export default function DeckGLMap({
         </Box>
       </Paper>
     );
-  }, [selectedPoint, handleCloseCard, handleOpenComparator]);
+  }, [selectedPoint]);
 
   
   const layerProps: IconLayerProps<ObservationStationFeature> = React.useMemo(() => ({
@@ -232,7 +296,7 @@ export default function DeckGLMap({
     getPosition: (d: ObservationStationFeature) => d.geometry.coordinates,
     iconAtlas: '/map/location-icon-atlas.png',
     iconMapping: '/map/location-icon-mapping.json'
-  }), [geojson.features, rerender]);
+  }), [geojson.features]);
 
   const iconLayer = React.useMemo(() => new IconLayer({
     ...layerProps,
@@ -246,7 +310,7 @@ export default function DeckGLMap({
     updateTriggers: {
       getPosition: geojson.features,
     }
-  }), [layerProps, handlePointClick, handlePointHover, geojson.features, rerender]);
+  }), [layerProps, geojson.features]);
 
   const clusterLayer = React.useMemo(() => new IconClusterLayer<ObservationStationFeature>({
     ...layerProps, 
@@ -254,16 +318,16 @@ export default function DeckGLMap({
     sizeScale: 30,
     onClickRef: handlePointClick,
     onHoverRef: handlePointHover,
-    onViewStateChange: handleViewStateChange,
+    onViewStateChangeRef: handleViewStateChange,
     updateTriggers: {
       getPosition: geojson.features,
     }
-  }), [layerProps, handlePointClick, handlePointHover, geojson.features, rerender]);
+  }), [layerProps, geojson.features]);
 
   const layers = React.useMemo(() => {
     const selectedLayer = useClusting ? clusterLayer : iconLayer;
     return [selectedLayer.clone({ visible: true })];
-  }, [useClusting, clusterLayer, iconLayer, rerender]);
+  }, [useClusting, clusterLayer, iconLayer]);
 
   return (
     <Box sx={containerStyles(height, style)}>
@@ -296,6 +360,14 @@ export default function DeckGLMap({
           controller={{
             dragRotate: false,
             doubleClickZoom: false,
+            scrollZoom: {
+              speed: 0.005,
+              smooth: true,
+            },
+            dragPan: true,
+            inertia: true,
+            touchZoom: true,
+            touchRotate: false,
           }}
           layers={layers}
           layerFilter={({layer}) => layer.props.visible !== false}

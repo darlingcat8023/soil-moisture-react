@@ -7,6 +7,7 @@ export interface ObservationStationProperties {
   record_start_date: Date;
   record_end_date?: Date;
   geo_hash?: string;
+  elevation: string;
   data_depth: string;
 }
 
