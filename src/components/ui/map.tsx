@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { Box, Button, Divider, IconButton, Paper, SxProps, Theme, Typography } from '@mui/material';
 import DeckGL from '@deck.gl/react';
 import { IconLayer, IconLayerProps } from '@deck.gl/layers';
 import { Map, ViewState } from 'react-map-gl/maplibre';
 import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/data_service';
 import { containerStyles, infoRowStyles, stationCardStyles, toolbarStyles, tooltipStyles } from '../style/map.styles';
-import { FlyToInterpolator, MapView, PickingInfo } from '@deck.gl/core';
+import { FlyToInterpolator, MapView, MapViewState, PickingInfo } from '@deck.gl/core';
 import { ZoomWidget } from '@deck.gl/widgets';
 import '@deck.gl/widgets/stylesheet.css';
 import IconClusterLayer from '../ext/icon_cluster_layer';
@@ -22,9 +22,6 @@ import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import { getPillButtonStyles } from '../style/pill_button.styles';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import DataComparatorDrawer from './data_comparator';
-import { easeCubicInOut, easeQuadInOut, easeLinear } from 'd3-ease';
-import SpatialDataComparatorDrawer from './3d_data_comparator';
-import { throttle } from 'lodash';
 
 
 const MAP_VIEW = new MapView({
@@ -38,8 +35,6 @@ const ZOOM = new ZoomWidget({
   zoomOutLabel: 'Zoom Out'
 });
 
-
-
 // map style
 export type CartoMapStyle = | 'positron' | 'positron-nolabels' | 'dark-matter' | 'dark-matter-nolabels'
 
@@ -51,7 +46,7 @@ const CARTO_STYLES: Record<CartoMapStyle, string> = {
 };
 
 // viewstate change with animation
-interface ExtendedViewState extends ViewState {
+interface ExtendedViewState extends MapViewState {
   transitionDuration?: number;
   transitionEasing?: (t: number) => number;
   transitionInterpolator?: any;
@@ -76,60 +71,41 @@ export default function DeckGLMap({
   mapStyle = 'positron',
   style = {}
 }: DeckGLMapProps) {
-  
+
+  const featureData = useMemo(() => geojson.features, [geojson]);
+
   // set current camera view
   const [viewState, setViewState] = useState<ExtendedViewState>({
     ...initialViewState,
-    transitionDuration: 0,
-    transitionEasing: googleMapsEasing,
   });
+
   // set using clusting layer or not
   const [useClusting, setUseClusting] = useState<boolean>(true);
+  
   // set showing hover info or not
   const [hoverInfo, setHoverInfo] = useState<{
     object: ObservationStationFeature;
     x: number;
     y: number;
   } | null>(null);
+  
   // set which location is selected
   const [selectedPoint, setSelectedPoint] = useState<ObservationStationFeature | null>(null);
+  
   // set the comparator box is open or not
   const [comparatorOpen, setComparatorOpen] = useState<boolean>(false);
 
-  const prevViewState = useRef<ExtendedViewState>({
-    ...initialViewState,
-    transitionDuration: 0,
-    transitionEasing: googleMapsEasing,
-  });
-  
- const isViewStateChanged = (prev: ExtendedViewState, current: ExtendedViewState): boolean => {
-    const tolerance = 0.0001;
-    return (
-      Math.abs(prev.longitude - current.longitude) > tolerance ||
-      Math.abs(prev.latitude - current.latitude) > tolerance ||
-      Math.abs(prev.zoom - current.zoom) > tolerance
-    );
-  };
-
   // set view status change
-  const handleViewStateChange = useCallback(
-    throttle((event: any) => {
-      const newState = event.viewState;
-      
-      if (isViewStateChanged(prevViewState.current, newState)) {
-        const updatedState: ExtendedViewState = {
-          ...newState,
-          transitionDuration: 0,
-          transitionEasing: googleMapsEasing,
-        };
-        
-        setViewState(updatedState);
-        prevViewState.current = newState;
-        setHoverInfo(null);
-      }
-    }, 32),
-    []
-  );
+  const handleViewStateChange = useCallback((event: any) => {
+  
+    setViewState({
+      ...event.viewState,  
+      transitionDuration: 0,
+      transitionEasing: googleMapsEasing,
+    });
+    setHoverInfo(null);
+
+  },[]);
 
   const flytoView = useCallback((longitude: number, latitude: number, zoom = 10) => {
     setViewState(prevState => ({
@@ -138,8 +114,10 @@ export default function DeckGLMap({
         latitude: latitude,
         zoom: zoom,
         transitionDuration: 1000,
-        transitionEasing: easeQuadInOut,
-        transitionInterpolator: new FlyToInterpolator(),
+        transitionEasing: googleMapsEasing,
+        transitionInterpolator: new FlyToInterpolator({
+          speed: 2
+        }),
       }));
   }, [])
 
@@ -165,11 +143,6 @@ export default function DeckGLMap({
     flytoView(info.geometry.coordinates[0], info.geometry.coordinates[1], 10)
   }, []);
 
-  // if focus on search box deselect existing location
-  const handleSearchFocus = useCallback(() => {
-    setSelectedPoint(null);
-  }, [])
-
   // set hover info
   const handlePointHover = useCallback((info: PickingInfo<ObservationStationFeature>) => {
     if (info.object && info.pixel) {
@@ -182,11 +155,6 @@ export default function DeckGLMap({
       setHoverInfo(null);
     }
   }, []); 
-
-  // close comparetor card
-  const handleCloseCard = useCallback(() => {
-    setSelectedPoint(null);
-  }, []);
 
   // render the hover info
   const renderTooltip = useCallback(() => {
@@ -203,16 +171,6 @@ export default function DeckGLMap({
     );
   }, [hoverInfo]);
 
-  const handleOpenComparator = useCallback(() => {
-    if (selectedPoint) {
-      setComparatorOpen(true);
-      console.log('Opening comparator for station:', selectedPoint.properties?.station_name);
-    }
-  }, []);
-
-  const handleCloseComparator = useCallback(() => {
-    setComparatorOpen(false);
-  }, []);
 
   const renderStationInfoCard = useCallback(() => {
     if (!selectedPoint) return null;
@@ -228,7 +186,9 @@ export default function DeckGLMap({
           </Typography>
           <IconButton 
             size="small" 
-            onClick={handleCloseCard}
+            onClick={() => {
+              setSelectedPoint(null);
+            }}
             sx={{ ml: 1, mt: -0.5 }}
           >
             <CloseOutlinedIcon fontSize="small" />
@@ -265,7 +225,11 @@ export default function DeckGLMap({
             <Button 
               sx={getPillButtonStyles('primary', 'small')}
               startIcon={<CompareArrowsIcon />}
-              onClick={handleOpenComparator}
+              onClick={() => {
+                if (selectedPoint) {
+                  setComparatorOpen(true);
+                }
+              }}
             >
               Open Comparator
             </Button>
@@ -276,16 +240,15 @@ export default function DeckGLMap({
       </Paper>
     );
   }, [selectedPoint]);
-
   
   const layerProps: IconLayerProps<ObservationStationFeature> = React.useMemo(() => ({
     id: 'icon',
-    data: geojson.features,
+    data: featureData,
     pickable: true,
     getPosition: (d: ObservationStationFeature) => d.geometry.coordinates,
     iconAtlas: '/map/location-icon-atlas.png',
     iconMapping: '/map/location-icon-mapping.json'
-  }), [geojson.features]);
+  }), [featureData]);
 
   const iconLayer = React.useMemo(() => new IconLayer({
     ...layerProps,
@@ -297,9 +260,9 @@ export default function DeckGLMap({
     onClick: handlePointClick,
     onHover: handlePointHover,
     updateTriggers: {
-      getPosition: geojson.features,
+      getPosition: featureData,
     }
-  }), [layerProps, geojson.features]);
+  }), [layerProps, featureData]);
 
   const clusterLayer = React.useMemo(() => new IconClusterLayer<ObservationStationFeature>({
     ...layerProps, 
@@ -307,11 +270,11 @@ export default function DeckGLMap({
     sizeScale: 30,
     onClickRef: handlePointClick,
     onHoverRef: handlePointHover,
-    onViewStateChangeRef: handleViewStateChange,
+    onViewChange: flytoView,
     updateTriggers: {
-      getPosition: geojson.features,
+      getPosition: featureData,
     }
-  }), [layerProps, geojson.features]);
+  }), [layerProps, featureData, flytoView]);
 
   const layers = React.useMemo(() => {
     const selectedLayer = useClusting ? clusterLayer : iconLayer;
@@ -325,7 +288,9 @@ export default function DeckGLMap({
         <SearchBox 
           geojson={geojson}
           onSelect={handleSearchItemSelected}
-          onFocus={handleSearchFocus}
+          onFocus={() => {
+            setSelectedPoint(null);
+          }}
         />
 
         <MapButton            
@@ -344,13 +309,14 @@ export default function DeckGLMap({
       <DeckGL
           views={MAP_VIEW}
           widgets={[ZOOM]}
+          initialViewState={initialViewState}
           viewState={viewState}
           onViewStateChange={handleViewStateChange}
           controller={{
             dragRotate: false,
             doubleClickZoom: false,
             scrollZoom: {
-              speed: 0.005,
+              speed: 0.01,
               smooth: true,
             },
             dragPan: true,
@@ -377,7 +343,9 @@ export default function DeckGLMap({
 
         <DataComparatorDrawer
           open={comparatorOpen}
-          onClose={handleCloseComparator}
+          onClose={() => {
+            setComparatorOpen(false);
+          }}
           selectedStation={selectedPoint}
         />
     </Box>

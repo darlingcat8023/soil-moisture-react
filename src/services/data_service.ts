@@ -25,8 +25,21 @@ export interface ObservationStationsGeoJSON {
   features: ObservationStationFeature[];
 }
 
+export interface DataCompareRequest {
+  station_id: string;
+  start_date: string;
+  end_date: string;
+}
+
 class DataServive {
   public async getObservationStations(): Promise<ObservationStationsGeoJSON> {
+    return await api_client.get<ObservationStationsGeoJSON>(
+      "/api/data/observation/list",
+      {}
+    );
+  }
+
+  public async getObservationData(): Promise<ObservationStationsGeoJSON> {
     return await api_client.get<ObservationStationsGeoJSON>(
       "/api/data/observation/list",
       {}

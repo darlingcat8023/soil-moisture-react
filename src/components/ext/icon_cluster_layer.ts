@@ -1,7 +1,6 @@
 import {CompositeLayer} from "@deck.gl/core";
 import {IconLayer, IconLayerProps} from "@deck.gl/layers";
 import Supercluster from "supercluster";
-import {FlyToInterpolator} from "@deck.gl/core";
 
 import type {
   PointFeature,
@@ -46,7 +45,11 @@ export default class IconClusterLayer<
     ExtraProps & {
       onClickRef?: (info: PickingInfo<DataT>) => void;
       onHoverRef?: (info: PickingInfo<DataT>) => void;
-      onViewStateChangeRef?: (event: {viewState: any}) => void;
+      onViewChange?: (
+        longitude: number,
+        latitude: number,
+        zoom: number
+      ) => void;
     }
 > {
   state!: {
@@ -130,17 +133,14 @@ export default class IconClusterLayer<
   }
 
   onClick(info: PickingInfo, pickingEvent: any): boolean {
-    const {onClickRef, onViewStateChangeRef} = this.props;
+    const {onClickRef, onViewChange} = this.props;
     const clusterInfo = this.getPickingInfo({info, mode: "click"});
     if (clusterInfo.cluster) {
-      const newViewState = {
-        longitude: clusterInfo.cluster.center[0],
-        latitude: clusterInfo.cluster.center[1],
-        zoom: Math.min(clusterInfo.cluster.expansionZoom, 16),
-      };
-      onViewStateChangeRef?.({
-        viewState: newViewState,
-      });
+      onViewChange?.(
+        clusterInfo.cluster.center[0],
+        clusterInfo.cluster.center[1],
+        Math.min(clusterInfo.cluster.expansionZoom, 16)
+      );
     } else {
       onClickRef?.(info);
     }

@@ -1,7 +1,7 @@
 import {SxProps, Theme} from "@mui/material";
 
 export const drawerPaperStyles: SxProps<Theme> = {
-  height: "80vh",
+  height: "85vh",
   borderTopLeftRadius: 16,
   borderTopRightRadius: 16,
   overflow: "hidden",
@@ -37,10 +37,6 @@ export const filterControlsStyles: SxProps<Theme> = {
 
 export const dateFieldStyles: SxProps<Theme> = {
   minWidth: 150,
-};
-
-export const buttonStyles: SxProps<Theme> = {
-  minWidth: 80,
 };
 
 export const chartContainerStyles: SxProps<Theme> = {
