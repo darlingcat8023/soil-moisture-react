@@ -17,7 +17,6 @@ import {
 } from '@mui/material';
 import {
   HelpOutline,
-  FilterList,
   Search,
 } from '@mui/icons-material';
 import BaseFilterButton from '../base_filter_button';
@@ -49,6 +48,7 @@ import {
   getNoOptionsStyles,
   getDeselectAllButtonStyles
 } from '@/components/style/filter/item_picker.styles';
+import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 
 export interface ItemOption {
   value: string;
@@ -231,7 +231,7 @@ const GoogleCloudItemPicker: React.FC<GoogleCloudItemPickerProps> = ({
     <Box>
       <BaseFilterButton
         displayText={buttonDisplayText}
-        startIcon={<FilterList sx={{ fontSize: 16 }} />}
+        startIcon={<FilterListOutlinedIcon sx={{ fontSize: 16 }} />}
         hasBeenUsed={hasBeenUsed}
         hasChanges={hasChanges()}
         onClick={handleClick}
