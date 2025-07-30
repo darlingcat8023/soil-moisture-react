@@ -22,6 +22,7 @@ import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import { getPillButtonStyles } from '../style/pill_button.styles';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import DataComparatorDrawer from './data_comparator';
+import { getActionButtonStyles } from '../style/action_button.styles';
 
 
 const MAP_VIEW = new MapView({
@@ -197,8 +198,6 @@ export default function DeckGLMap({
           </IconButton>
         </Box>
         
-        <Divider sx={{ my: 1 }} />
-        
         <Box>
           
           <Typography variant="body2" color="text.secondary" gutterBottom sx={infoRowStyles}>
@@ -220,12 +219,10 @@ export default function DeckGLMap({
             <LayersOutlinedIcon fontSize="small" />
             <strong>Data Depth:</strong> {properties.data_depth}
           </Typography>
-
-          <Divider sx={{ my: 1 }} />
           
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
             <Button 
-              sx={getPillButtonStyles('primary', 'small', theme)}
+              sx={getActionButtonStyles('apply', theme)}
               startIcon={<CompareArrowsIcon />}
               onClick={() => {
                 if (selectedPoint) {

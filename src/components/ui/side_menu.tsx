@@ -70,8 +70,6 @@ const SideMenu = memo(function SideMenu() {
         </Tooltip>
       </Box>
 
-      <Divider />
-
       <List sx={sideMenuStyles.menuList}>
         {menuItems.map((item) => {
           const isSelected = pathname === item.href;

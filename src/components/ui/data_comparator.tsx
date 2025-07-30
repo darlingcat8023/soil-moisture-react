@@ -110,7 +110,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
               <Button
                 variant="text"
                 onClick={handleLoad}
-                sx={getActionButtonStyles('apply')}
+                sx={getActionButtonStyles('apply', theme)}
               >
                 Apply
               </Button>
@@ -124,7 +124,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
                     end_date: ''
                   }));
                 }}
-                sx={getActionButtonStyles('clear')}
+                sx={getActionButtonStyles('clear', theme)}
               >
                 Reset
               </Button>
