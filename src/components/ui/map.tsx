@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useMemo } from 'react';
-import { Box, Button, Divider, IconButton, Paper, SxProps, Theme, Typography } from '@mui/material';
+import { Box, Button, Divider, IconButton, Paper, SxProps, Theme, Typography, useTheme } from '@mui/material';
 import DeckGL from '@deck.gl/react';
 import { IconLayer, IconLayerProps } from '@deck.gl/layers';
 import { Map, ViewState } from 'react-map-gl/maplibre';
@@ -11,7 +11,7 @@ import { FlyToInterpolator, MapView, MapViewState, PickingInfo } from '@deck.gl/
 import { ZoomWidget } from '@deck.gl/widgets';
 import '@deck.gl/widgets/stylesheet.css';
 import IconClusterLayer from '../ext/icon_cluster_layer';
-import SearchBox from '../style/search_box';
+import SearchBox from './search_box';
 import MapButton from './map_button';
 import ExpandOutlinedIcon from '@mui/icons-material/ExpandOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
@@ -71,6 +71,8 @@ export default function DeckGLMap({
   mapStyle = 'positron',
   style = {}
 }: DeckGLMapProps) {
+
+  const theme = useTheme()
 
   const featureData = useMemo(() => geojson.features, [geojson]);
 
@@ -223,7 +225,7 @@ export default function DeckGLMap({
           
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
             <Button 
-              sx={getPillButtonStyles('primary', 'small')}
+              sx={getPillButtonStyles('primary', 'small', theme)}
               startIcon={<CompareArrowsIcon />}
               onClick={() => {
                 if (selectedPoint) {

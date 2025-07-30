@@ -18,14 +18,11 @@ export const headerStyles = (theme: Theme): SxProps<Theme> => ({
   alignItems: "center",
   justifyContent: "space-between",
   p: 2,
-  borderBottom: `1px solid ${theme.palette.divider}`,
   backgroundColor: theme.palette.background.paper,
 });
 
 export const filterSectionStyles = (theme: Theme): SxProps<Theme> => ({
   p: 2,
-  backgroundColor: theme.palette.grey[50],
-  borderBottom: `1px solid ${theme.palette.divider}`,
 });
 
 export const filterControlsStyles: SxProps<Theme> = {

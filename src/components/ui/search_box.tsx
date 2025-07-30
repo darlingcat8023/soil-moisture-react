@@ -13,18 +13,19 @@ import {
   Typography,
   Box,
   Popper,
-  ClickAwayListener
+  ClickAwayListener,
+  useTheme
 } from "@mui/material";
 import { useCallback, useState, useMemo, useRef } from "react";
 import { 
-  searchBoxStyles, 
-  iconStyles, 
-  clearButtonStyles,
-  searchResultsStyles,
-  highlightStyles,
+  getSearchBoxStyles,
+  getIconStyles,
+  getClearButtonStyles,
+  getSearchResultsStyles,
+  getHighlightStyles,
   containerStyles,
   popperStyles
-} from "./search_box.styles";
+} from "../style/search_box.styles";
 import { ObservationStationFeature, ObservationStationsGeoJSON } from "@/services/data_service";
 
 interface SearchBoxProps {
@@ -42,9 +43,19 @@ export default function SearchBox({
   placeholder = "Search observation station",
   maxResults = 10
 }: SearchBoxProps) {
+
+  const theme = useTheme();
+
   const [searchValue, setSearchValue] = useState<string>('');
   const [showResults, setShowResults] = useState<boolean>(false);
   const textFieldRef = useRef<HTMLDivElement>(null);
+
+  // Get themed styles
+  const searchBoxStyles = getSearchBoxStyles(theme);
+  const iconStyles = getIconStyles(theme);
+  const clearButtonStyles = getClearButtonStyles(theme);
+  const searchResultsStyles = getSearchResultsStyles(theme);
+  const highlightStyles = getHighlightStyles(theme);
 
   const handleSearchChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;

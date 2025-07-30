@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Button, ButtonProps, SxProps, Theme } from '@mui/material';
+import { Button, ButtonProps, SxProps, Theme, useTheme } from '@mui/material';
 import { KeyboardArrowDown } from '@mui/icons-material';
 import { getFilterButtonStyles } from '../style/base_filter_button.styles';
 
@@ -23,7 +23,8 @@ const BaseFilterButton: React.FC<BaseFilterButtonProps> = ({
   sx,
   ...props
 }) => {
-  const buttonStyles = getFilterButtonStyles(hasBeenUsed, hasChanges);
+  const theme = useTheme();
+  const buttonStyles = getFilterButtonStyles(hasBeenUsed, hasChanges, theme);
 
   return (
     <Button

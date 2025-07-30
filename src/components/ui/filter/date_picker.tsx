@@ -9,6 +9,7 @@ import {
   Divider,
   Popover,
   Tooltip,
+  useTheme,
 } from '@mui/material';
 import {
   HelpOutline,
@@ -65,6 +66,9 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
   helpText = "",
   disabled = false
 }) => {
+
+  const theme = useTheme();
+
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [selectedPreset, setSelectedPreset] = useState(value?.preset || '');
   const [fromDate, setFromDate] = useState(value?.startDate || '');
@@ -239,13 +243,13 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
           horizontal: 'left',
         }}
         PaperProps={{
-          sx: getPopoverStyles()
+          sx: getPopoverStyles(theme)
         }}
       >
         {/* Header */}
         <Box sx={getPopoverHeaderStyles()}>
           <Box sx={getHeaderContainerStyles()}>
-            <Typography variant="h6" sx={getTitleStyles()}>
+            <Typography variant="h6" sx={getTitleStyles(theme)}>
               {title}
             </Typography>
             <Tooltip 
@@ -253,7 +257,7 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
               placement="top"
               arrow
             >
-              <IconButton size="small" sx={getHelpButtonStyles()}>
+              <IconButton size="small" sx={getHelpButtonStyles(theme)}>
                 <HelpOutline sx={getHelpIconStyles()} />
               </IconButton>
             </Tooltip>
@@ -278,7 +282,7 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
                     slotProps={{
                       textField: {
                         size: 'small',
-                        sx: getDateInputStyles(),
+                        sx: getDateInputStyles(theme),
                       }
                     }}
                   />
@@ -294,7 +298,7 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
                     slotProps={{
                       textField: {
                         size: 'small',
-                        sx: getDateInputStyles(),
+                        sx: getDateInputStyles(theme),
                       }
                     }}
                   />
@@ -312,7 +316,7 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
                     variant={selectedPreset === option.value ? "filled" : "outlined"}
                     onClick={() => handlePresetClick(option.value)}
                     icon={selectedPreset === option.value ? <Check sx={getChipIconStyles()} /> : undefined}
-                    sx={getChipStyles(selectedPreset === option.value)}
+                    sx={getChipStyles(selectedPreset === option.value, theme)}
                   />
                 ))}
               </Stack>
@@ -320,14 +324,12 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
           </Box>
         </Box>
 
-        <Divider sx={getDividerStyles()} />
-
         {/* Footer buttons */}
         <Box sx={getFooterStyles()}>
           <Button
             variant="text"
             onClick={handleClear}
-            sx={getActionButtonStyles('clear')}
+            sx={getActionButtonStyles('clear', theme)}
           >
             Clear
           </Button>
@@ -336,7 +338,7 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
             <Button
               variant="text"
               onClick={handleCancel}
-              sx={getActionButtonStyles('cancel')}
+              sx={getActionButtonStyles('cancel', theme)}
             >
               Cancel
             </Button>
@@ -344,7 +346,7 @@ const GoogleCloudDateFilter: React.FC<GoogleCloudDateFilterProps> = ({
               variant="text"
               onClick={handleApply}
               disabled={!fromDate || !toDate || !hasChanges()}
-              sx={getActionButtonStyles('apply')}
+              sx={getActionButtonStyles('apply', theme)}
             >
               Apply
             </Button>

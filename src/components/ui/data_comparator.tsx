@@ -88,7 +88,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
         {/* Header */}
         <Box sx={headerStyles(theme)}>
           <Typography variant="h6" component="h2">
-            Data Comparator
+            Data Comparator Filter
           </Typography>
           <IconButton onClick={onClose} size="small">
             <CloseIcon />
