@@ -4,7 +4,7 @@ import { ViewState } from 'react-map-gl/maplibre';
 import { PaddingOptions } from 'react-map-gl/mapbox';
 import DeckGLMap from '@/components/ui/map';
 import { useEffect, useState } from 'react';
-import { ObservationStationsGeoJSON } from '@/services/data_service';
+import { ObservationStationsGeoJSON } from '@/services/response/data_response';
 
 export default function HomePage() {
   
@@ -32,11 +32,11 @@ export default function HomePage() {
   return (
     <Box
       sx={{
-        width: '100%',    // 视口宽度
-        height: '100%',   // 视口高度
-        margin: 0,         // 移除默认边距
-        padding: 0,        // 移除默认内边距
-        overflow: 'hidden' // 防止滚动条
+        width: '100%',
+        height: '100%',
+        margin: 0,
+        padding: 0,
+        overflow: 'hidden'
       }}
     >
       <DeckGLMap

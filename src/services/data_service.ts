@@ -1,37 +1,8 @@
 import {api_client} from "@/lib/http_client";
+import {DataSets, ObservationStationsGeoJSON} from "./response/data_response";
+import {DataCompareRequest} from "./request/data_request";
 
-export interface ObservationStationProperties {
-  observation_id: number;
-  station_id: string;
-  station_name: string;
-  record_start_date: Date;
-  record_end_date?: Date;
-  geo_hash?: string;
-  elevation: string;
-  data_depth: string;
-}
-
-export interface ObservationStationFeature {
-  type: "Feature";
-  geometry: {
-    type: "Point";
-    coordinates: [number, number];
-  };
-  properties: ObservationStationProperties;
-}
-
-export interface ObservationStationsGeoJSON {
-  type: "FeatureCollection";
-  features: ObservationStationFeature[];
-}
-
-export interface DataCompareRequest {
-  station_id: string;
-  start_date: string;
-  end_date: string;
-}
-
-class DataServive {
+class DataService {
   public async getObservationStations(): Promise<ObservationStationsGeoJSON> {
     return await api_client.get<ObservationStationsGeoJSON>(
       "/api/data/observation/list",
@@ -39,10 +10,13 @@ class DataServive {
     );
   }
 
-  public async getObservationData(): Promise<ObservationStationsGeoJSON> {
-    return await api_client.get<ObservationStationsGeoJSON>(
-      "/api/data/observation/list",
-      {}
-    );
+  public async getObservationData(
+    request: DataCompareRequest
+  ): Promise<DataSets> {
+    return await api_client.get<DataSets>("/api/data/observation/data", {
+      params: request,
+    });
   }
 }
+
+export const dataService = new DataService();

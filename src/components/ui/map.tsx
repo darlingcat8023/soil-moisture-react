@@ -5,7 +5,6 @@ import { Box, Button, Divider, IconButton, Paper, SxProps, Theme, Typography, us
 import DeckGL from '@deck.gl/react';
 import { IconLayer, IconLayerProps } from '@deck.gl/layers';
 import { Map, ViewState } from 'react-map-gl/maplibre';
-import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/data_service';
 import { containerStyles, infoRowStyles, stationCardStyles, toolbarStyles, tooltipStyles } from '../style/map.styles';
 import { FlyToInterpolator, MapView, MapViewState, PickingInfo } from '@deck.gl/core';
 import { ZoomWidget } from '@deck.gl/widgets';
@@ -19,10 +18,10 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import LayersOutlinedIcon from '@mui/icons-material/LayersOutlined';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
-import { getPillButtonStyles } from '../style/pill_button.styles';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import DataComparatorDrawer from './data_comparator';
 import { getActionButtonStyles } from '../style/action_button.styles';
+import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/response/data_response';
 
 
 const MAP_VIEW = new MapView({

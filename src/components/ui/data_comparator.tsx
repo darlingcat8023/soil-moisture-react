@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import ReactECharts from 'echarts-for-react';
-import { DataCompareRequest, ObservationStationFeature } from '@/services/data_service';
+import { DataSets, ObservationStationFeature } from '@/services/response/data_response';
 import {
   drawerPaperStyles,
   drawerContainerStyles,
@@ -22,6 +22,8 @@ import {
 import GoogleCloudDateFilter, { DateFilterValue } from './filter/date_picker';
 import { getActionButtonStyles, getButtonGroupStyles } from '../style/action_button.styles';
 import GoogleCloudItemPicker, { ItemPickerValue } from './filter/item_picker';
+import { DataCompareRequest } from '@/services/request/data_request';
+import { dataService } from '@/services/data_service';
 
 
 interface DataComparatorDrawerProps {
@@ -46,6 +48,8 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
 
   const [dateRange, setDateRange] = useState<DateFilterValue | null>(null);
   const [sources, setSources] = useState<ItemPickerValue | null>(null);
+  const [data, setData] = useState<DataSets | null>(null);
+  const [loading, setLoading] = useState<Boolean>(false);
 
   useEffect(() => {
     setRequestParam(prev => ({
@@ -76,8 +80,15 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
     
   };
 
-  const handleLoad = () => {
-    console.log('Load data for period:', requestParam.start_date, 'to', requestParam.end_date, ', station id: ', requestParam.station_id);
+  const handleApply = async () => {
+    try {
+      setLoading(true);
+      const response = await dataService.getObservationData(requestParam);
+      setData(response);
+      console.log(response);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -146,7 +157,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
             <Box sx={getButtonGroupStyles()}>
               <Button
                 variant="text"
-                onClick={handleLoad}
+                onClick={handleApply}
                 sx={getActionButtonStyles('apply', theme)}
               >
                 Apply

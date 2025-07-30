@@ -26,7 +26,7 @@ import {
   containerStyles,
   popperStyles
 } from "../style/search_box.styles";
-import { ObservationStationFeature, ObservationStationsGeoJSON } from "@/services/data_service";
+import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/response/data_response';
 
 interface SearchBoxProps {
   geojson: ObservationStationsGeoJSON;
