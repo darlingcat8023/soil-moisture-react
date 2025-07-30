@@ -19,13 +19,8 @@ import {
   filterControlsStyles,
   chartContainerStyles,
 } from '../style/data_comparator.styles';
-import { getPillButtonStyles } from '../style/pill_button.styles';
-import dayjs from 'dayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import SyncOutlinedIcon from '@mui/icons-material/SyncOutlined';
-import RotateLeftOutlinedIcon from '@mui/icons-material/RotateLeftOutlined';
+import GoogleCloudDateFilter, { DateFilterValue } from './filter/date_picker';
+import { getActionButtonStyles, getButtonGroupStyles } from '../style/action_button.styles';
 
 
 interface DataComparatorDrawerProps {
@@ -48,12 +43,31 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
     end_date: ''
   })
 
+  const [dateRange, setDateRange] = useState<DateFilterValue | null>(null);
+
   useEffect(() => {
     setRequestParam(prev => ({
       ...prev,
       station_id: selectedStation?.properties?.station_id || ''
     }));
   }, [selectedStation]);
+
+  const handleDateRangeChange = (value: DateFilterValue | null) => {
+    setDateRange(value);
+    if (value) {
+      setRequestParam(prev => ({
+        ...prev,
+        start_date: value.startDate,
+        end_date: value.endDate
+      }));
+    } else {
+      setRequestParam(prev => ({
+        ...prev,
+        start_date: '',
+        end_date: ''
+      }));
+    }
+  };
 
   const handleLoad = () => {
     console.log('Load data for period:', requestParam.start_date, 'to', requestParam.end_date, ', station id: ', requestParam.station_id);
@@ -84,51 +98,38 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
         <Paper elevation={0} sx={filterSectionStyles(theme)}>
           <Box sx={filterControlsStyles}>
             
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker 
-                label="Start Date"
-                value={requestParam.start_date ? dayjs(requestParam.start_date) : null}
-                onChange={(newValue) => {
-                    setRequestParam(prev => ({
-                      ...prev,
-                      start_date: newValue?.format('YYYY-MM-DD') || '',
-                    }))
+            <GoogleCloudDateFilter
+              title="Date Range"
+              value={dateRange}
+              onChange={handleDateRangeChange}
+              disabled={!selectedStation}
+              helpText='The maximun range is 1 year'
+            />
+
+            <Box sx={getButtonGroupStyles()}>
+              <Button
+                variant="text"
+                onClick={handleLoad}
+                sx={getActionButtonStyles('apply')}
+              >
+                Apply
+              </Button>
+              <Button
+                variant="text"
+                onClick={() => {
+                  setDateRange(null)
+                  setRequestParam(prev => ({
+                    ...prev,
+                    start_date: '',
+                    end_date: ''
+                  }));
                 }}
-              />
-              <DatePicker 
-                label="End Date" 
-                maxDate={dayjs()}
-                value={requestParam.end_date ? dayjs(requestParam.end_date) : null}
-                onChange={(newValue) => {
-                    setRequestParam(prev => ({
-                      ...prev,
-                      end_date: newValue?.format('YYYY-MM-DD') || '',
-                    }))
-                }}
-              />
-            </LocalizationProvider>
+                sx={getActionButtonStyles('clear')}
+              >
+                Reset
+              </Button>
+            </Box>
             
-            <Button
-              onClick={handleLoad}
-              startIcon={<SyncOutlinedIcon />}
-              sx={getPillButtonStyles('primary', 'small')}
-            >
-              Fetch
-            </Button>
-            
-            <Button
-              onClick={() => {
-                setRequestParam(prev => ({
-                  ...prev,
-                  start_date: '',
-                  end_date: ''
-                }));
-              }}
-              startIcon={<RotateLeftOutlinedIcon />}
-              sx={getPillButtonStyles('outlined', 'small')}
-            >
-              Reset
-            </Button>
           </Box>
         </Paper>
 
