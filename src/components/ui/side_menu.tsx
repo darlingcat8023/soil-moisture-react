@@ -21,7 +21,7 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 
-import { sideMenuStyles, COLLAPSED_WIDTH, EXPANDED_WIDTH } from './side_menu.styles';
+import { sideMenuStyles, COLLAPSED_WIDTH, EXPANDED_WIDTH } from '../style/side_menu.styles';
 
 interface MenuItem {
   href: string;
