@@ -36,7 +36,6 @@ import {
   getPresetStackStyles,
   getChipStyles,
   getChipIconStyles,
-  getDividerStyles,
   getFooterStyles,
 } from '@/components/style/filter/date_picker.styles';
 import { getActionButtonStyles, getButtonGroupStyles } from '@/components/style/action_button.styles';

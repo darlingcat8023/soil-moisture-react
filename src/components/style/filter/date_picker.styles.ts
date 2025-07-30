@@ -180,13 +180,6 @@ export const getChipIconStyles = (): SxProps<Theme> => ({
 });
 
 /**
- * Divider styles with theme support
- */
-export const getDividerStyles = (theme?: Theme): SxProps<Theme> => ({
-  borderColor: theme?.palette.divider || "#e8eaed",
-});
-
-/**
  * Footer button area styles
  */
 export const getFooterStyles = (): SxProps<Theme> => ({

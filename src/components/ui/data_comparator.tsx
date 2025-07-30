@@ -21,6 +21,7 @@ import {
 } from '../style/data_comparator.styles';
 import GoogleCloudDateFilter, { DateFilterValue } from './filter/date_picker';
 import { getActionButtonStyles, getButtonGroupStyles } from '../style/action_button.styles';
+import GoogleCloudItemPicker, { ItemPickerValue } from './filter/item_picker';
 
 
 interface DataComparatorDrawerProps {
@@ -44,6 +45,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
   })
 
   const [dateRange, setDateRange] = useState<DateFilterValue | null>(null);
+  const [sources, setSources] = useState<ItemPickerValue | null>(null);
 
   useEffect(() => {
     setRequestParam(prev => ({
@@ -67,6 +69,11 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
         end_date: ''
       }));
     }
+  };
+
+  const handleDataSourcesChange = (value: ItemPickerValue | null) => {
+    setSources(value);
+    
   };
 
   const handleLoad = () => {
@@ -106,6 +113,36 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
               helpText='The maximun range is 1 year'
             />
 
+            <GoogleCloudItemPicker
+              value={sources}
+              onChange={handleDataSourcesChange}
+              options={[
+                {
+                  value: 'obervation',
+                  label: 'Observation Station',
+                  description: ''
+                },
+                {
+                  value: 'smap',
+                  label: 'SMAP',
+                  description: ''
+                },
+                {
+                  value: 'era5',
+                  label: 'ERA5-Land',
+                  description: ''
+                },
+                {
+                  value: 'esa',
+                  label: 'ESA CCI SM',
+                  description: ''
+                },
+              ]}
+              title="Data Sources"
+              helpText="Select data sources you are interested in"
+              searchPlaceholder="Search data sources..."
+            />
+
             <Box sx={getButtonGroupStyles()}>
               <Button
                 variant="text"
@@ -118,6 +155,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
                 variant="text"
                 onClick={() => {
                   setDateRange(null)
+                  setSources(null)
                   setRequestParam(prev => ({
                     ...prev,
                     start_date: '',
