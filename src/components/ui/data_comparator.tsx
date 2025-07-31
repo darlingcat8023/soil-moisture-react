@@ -24,6 +24,8 @@ import { getActionButtonStyles, getButtonGroupStyles } from '../style/action_but
 import GoogleCloudItemPicker, { ItemPickerValue } from './filter/item_picker';
 import { DataCompareRequest } from '@/services/request/data_request';
 import { dataService } from '@/services/data_service';
+import { DotsAnimation } from './dots';
+import { ChartGuide } from './charts_guide';
 
 
 interface DataComparatorDrawerProps {
@@ -49,7 +51,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
   const [dateRange, setDateRange] = useState<DateFilterValue | null>(null);
   const [sources, setSources] = useState<ItemPickerValue | null>(null);
   const [data, setData] = useState<DataSets | null>(null);
-  const [loading, setLoading] = useState<Boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setRequestParam(prev => ({
@@ -103,18 +105,13 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
       }}
     >
       <Box sx={drawerContainerStyles}>
-        {/* Header */}
-        <Box sx={headerStyles(theme)}>
-          <Typography variant="h6" component="h2">
-            Data Comparator Filter
-          </Typography>
-          <IconButton onClick={onClose} size="small">
-            <CloseIcon />
-          </IconButton>
-        </Box>
 
         <Paper elevation={0} sx={filterSectionStyles(theme)}>
           <Box sx={filterControlsStyles}>
+
+            <IconButton onClick={onClose} size="small">
+              <CloseIcon />
+            </IconButton>
             
             <GoogleCloudDateFilter
               title="Date Range"
@@ -131,22 +128,22 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
                 {
                   value: 'obervation',
                   label: 'Observation Station',
-                  description: ''
+                  description: 'baseline data from NIWA'
                 },
                 {
                   value: 'smap',
                   label: 'SMAP',
-                  description: ''
+                  description: 'satellite data from NASA'
                 },
                 {
                   value: 'era5',
                   label: 'ERA5-Land',
-                  description: ''
+                  description: 'reanalysis data from ECMWF'
                 },
                 {
                   value: 'esa',
                   label: 'ESA CCI SM',
-                  description: ''
+                  description: 'mixed data from ESA'
                 },
               ]}
               title="Data Sources"
@@ -159,6 +156,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
                 variant="text"
                 onClick={handleApply}
                 sx={getActionButtonStyles('apply', theme)}
+                disabled={loading}
               >
                 Apply
               </Button>
@@ -180,11 +178,22 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
             </Box>
             
           </Box>
+
         </Paper>
 
         {/* Chart Section */}
         <Box sx={chartContainerStyles}>
-
+            {loading ? (
+              <DotsAnimation size="medium" />
+            ) : data ? (
+              <h2>loaded</h2>
+            ) : (
+              <ChartGuide
+                hasDateRange={!!dateRange}
+                hasDataSources={!!sources}
+                selectedStation={selectedStation}
+              />
+            )}
         </Box>
       </Box>
     </Drawer>
