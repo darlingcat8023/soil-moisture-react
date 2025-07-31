@@ -24,7 +24,7 @@ export interface ObservationStationsGeoJSON {
 }
 
 export interface DataSeries {
-  date: Date;
+  date: string;
   value: number;
   is_fitting: number;
 }

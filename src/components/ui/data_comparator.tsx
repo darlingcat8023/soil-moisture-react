@@ -5,7 +5,6 @@ import {
   Drawer,
   IconButton,
   Paper,
-  Typography,
   useTheme
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
@@ -14,7 +13,6 @@ import { DataSets, ObservationStationFeature } from '@/services/response/data_re
 import {
   drawerPaperStyles,
   drawerContainerStyles,
-  headerStyles,
   filterSectionStyles,
   filterControlsStyles,
   chartContainerStyles,
@@ -26,6 +24,7 @@ import { DataCompareRequest } from '@/services/request/data_request';
 import { dataService } from '@/services/data_service';
 import { DotsAnimation } from './dots';
 import { ChartGuide } from './charts_guide';
+import { DataCharts } from './data_charts';
 
 
 interface DataComparatorDrawerProps {
@@ -185,8 +184,11 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
         <Box sx={chartContainerStyles}>
             {loading ? (
               <DotsAnimation size="medium" />
-            ) : data ? (
-              <h2>loaded</h2>
+            ) : data && dateRange ? (
+              <DataCharts
+                data={data}
+                dateRange={dateRange}
+              />
             ) : (
               <ChartGuide
                 hasDateRange={!!dateRange}

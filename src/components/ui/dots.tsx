@@ -1,12 +1,6 @@
 import { Box, keyframes } from '@mui/material';
 import React from 'react';
 
-const widthAnimation = keyframes`
-  to {
-    width: 50px;
-  }
-`;
-
 // 定义尺寸配置
 const sizeConfigs = {
   small: {
