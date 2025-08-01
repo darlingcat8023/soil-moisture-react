@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useMemo } from 'react';
-import { Box, Button, IconButton, Paper, SxProps, Theme, Typography, useTheme } from '@mui/material';
+import { Box, Button, IconButton, Paper, Stack, SxProps, Theme, Typography, useTheme } from '@mui/material';
 import DeckGL from '@deck.gl/react';
 import { IconLayer, IconLayerProps } from '@deck.gl/layers';
 import { Map, ViewState } from 'react-map-gl/maplibre';
@@ -19,9 +19,10 @@ import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import LayersOutlinedIcon from '@mui/icons-material/LayersOutlined';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
-import DataComparatorDrawer from './data_comparator';
 import { getActionButtonStyles } from '../style/action_button.styles';
 import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/response/data_response';
+import DatasetsComparatorDrawer from './datasets_comparator';
+import StationComparatorDrawer from './stations_conparator';
 
 
 const MAP_VIEW = new MapView({
@@ -95,7 +96,11 @@ export default function DeckGLMap({
   const [selectedPoint, setSelectedPoint] = useState<ObservationStationFeature | null>(null);
   
   // set the comparator box is open or not
-  const [comparatorOpen, setComparatorOpen] = useState<boolean>(false);
+  const [dataComparatorOpen, setDataComparatorOpen] = useState<boolean>(false);
+  // set the comparator box is open or not
+  const [stationComparatorOpen, setStationComparatorOpen] = useState<boolean>(false);
+  // set the comparator box is open or not
+  const [timeComparatorOpen, setTimeComparatorOpen] = useState<boolean>(false);
 
   // set view status change
   const handleViewStateChange = useCallback((event: any) => {
@@ -219,18 +224,58 @@ export default function DeckGLMap({
             <strong>Data Depth:</strong> {properties.data_depth}
           </Typography>
           
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
-            <Button 
-              sx={getActionButtonStyles('apply', theme)}
-              startIcon={<CompareArrowsIcon />}
-              onClick={() => {
-                if (selectedPoint) {
-                  setComparatorOpen(true);
-                }
-              }}
-            >
-              Open Comparator
-            </Button>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-start', mt: 2 }}>
+            <Stack spacing={1} direction="column">
+              
+              <Button 
+                sx={{
+                  ...getActionButtonStyles('apply', theme),
+                  justifyContent: 'flex-start',
+                  textAlign: 'left'
+                }}
+                startIcon={<CompareArrowsIcon />}
+                onClick={() => {
+                  if (selectedPoint) {
+                    setDataComparatorOpen(true);
+                  }
+                }}
+              >
+                Compare Between Datasets
+              </Button>
+
+              <Button 
+                sx={{
+                  ...getActionButtonStyles('apply', theme),
+                  justifyContent: 'flex-start',
+                  textAlign: 'left'
+                }}
+                startIcon={<CompareArrowsIcon />}
+                onClick={() => {
+                  if (selectedPoint) {
+                    setStationComparatorOpen(true);
+                  }
+                }}
+              >
+                Compare Between Stations
+              </Button>
+
+              <Button 
+                sx={{
+                  ...getActionButtonStyles('apply', theme),
+                  justifyContent: 'flex-start',
+                  textAlign: 'left'
+                }}
+                startIcon={<CompareArrowsIcon />}
+                onClick={() => {
+                  if (selectedPoint) {
+                    setTimeComparatorOpen(true);
+                  }
+                }}
+              >
+                Compare Between Dates
+              </Button>
+
+            </Stack>
           </Box>
 
   
@@ -339,10 +384,17 @@ export default function DeckGLMap({
           {renderTooltip()}
         </DeckGL>
 
-        <DataComparatorDrawer
-          open={comparatorOpen}
+        <DatasetsComparatorDrawer
+          open={dataComparatorOpen}
           onClose={() => {
-            setComparatorOpen(false);
+            setDataComparatorOpen(false);
+          }}
+          selectedStation={selectedPoint}
+        />
+        <StationComparatorDrawer
+          open={dataComparatorOpen}
+          onClose={() => {
+            setStationComparatorOpen(false);
           }}
           selectedStation={selectedPoint}
         />

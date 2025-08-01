@@ -1,70 +1,68 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Box, Typography, Alert, Chip } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from '@mui/material';
-import { DataSets } from "@/services/response/data_response";
+import { DataSets, ObservationStationFeature } from "@/services/response/data_response";
 import { DateFilterValue } from "./filter/date_picker";
+import 'echarts-gl';
+import { getChartStyles } from '../style/data_chart.sytles';
 
 interface DataChartProps {
+  selectedStation: ObservationStationFeature;
   data: DataSets;
   dateRange: DateFilterValue;
+  use3D: boolean;
 }
 
 export const DataCharts: React.FC<DataChartProps> = ({
+  selectedStation,
   data,
-  dateRange
+  dateRange,
+  use3D,
 }) => {
   const theme = useTheme();
+  const styles = useMemo(() => getChartStyles(theme), [theme]);
 
-  // 处理图表数据
   const chartData = useMemo(() => {
     if (!data?.data_sources || data.data_sources.length === 0) {
       return null;
     }
-
-    // 收集所有日期并排序
     const allDates = new Set<string>();
     data.data_sources.forEach(source => {
       source.data_series.forEach(series => {
-        // 如果已经是日期字符串，直接使用
-        const dateKey = series.date;
-        allDates.add(dateKey);
+        allDates.add(series.date);
       });
     });
     
     const sortedDates = Array.from(allDates).sort();
 
-    // 为每个数据源创建系列
     const series = data.data_sources.map((source, index) => {
-      // 创建日期到值的映射
       const valueMap = new Map<string, number>();
       source.data_series.forEach(series => {
-        const dateKey = series.date;
-        valueMap.set(dateKey, series.value);
+        valueMap.set(series.date, series.value);
       });
 
-      // 为所有日期创建数据点
       const seriesData = sortedDates.map(date => {
         return valueMap.get(date) ?? null;
       });
 
       return {
-        name: source.name,
+        name: `${source.name} (${source.data_depth}m)`,
         type: 'line',
-        smooth: true,
         lineStyle: {
-          width: 3,
+          width: styles.line2D.width,
         },
-        symbolSize: 6,
+        symbolSize: 0,
         emphasis: {
           focus: 'series',
           lineStyle: {
-            width: 4
+            width: styles.line2D.emphasis.width
           },
-          symbolSize: 8
+          symbolSize: 3,
         },
         data: seriesData,
-        connectNulls: false, // 不连接空值点
+        connectNulls: false,
+        depth: Number(source.data_depth),
       };
     });
 
@@ -72,28 +70,18 @@ export const DataCharts: React.FC<DataChartProps> = ({
       dates: sortedDates,
       series: series
     };
-  }, [data]);
+  }, [data, styles]);
 
-  // ECharts 配置
-  const option = useMemo(() => {
+  const get2DSpecificConfig = () => {
     if (!chartData) return {};
 
     return {
-      title: {
-        text: 'Environmental Data Comparison',
-        left: 'center',
-        textStyle: {
-          color: theme.palette.text.primary,
-          fontSize: 18,
-          fontWeight: 'bold'
-        }
-      },
       tooltip: {
         trigger: 'axis',
         axisPointer: {
           type: 'cross',
           label: {
-            backgroundColor: theme.palette.grey[600]
+            backgroundColor: styles.tooltipBackground
           }
         },
         formatter: function(params: any[]) {
@@ -119,83 +107,173 @@ export const DataCharts: React.FC<DataChartProps> = ({
           return tooltip;
         }
       },
-      legend: {
-        type: 'scroll',
-        top: 10,           // 改为顶部
-        left: 'center',    // 居中对齐
-        textStyle: {
-          color: theme.palette.text.primary
-        }
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '10%',     // 减少底部空间
-        top: '20%',        // 增加顶部空间给图例
-        containLabel: true
-      },
+      grid: styles.grid,
       xAxis: {
         type: 'category',
         boundaryGap: false,
         data: chartData.dates,
-        min: dateRange.startDate,  // 设置起点
-        max: dateRange.endDate,    // 设置终点
+        min: dateRange.startDate,
+        max: dateRange.endDate, 
         axisLabel: {
-          color: theme.palette.text.secondary,
+          color: styles.axisLabel.color,
           formatter: function(value: string) {
             return new Date(value).toLocaleDateString('en-NZ', {
               month: 'short',
               day: 'numeric'
             });
           }
-        },
-        axisLine: {
-          lineStyle: {
-            color: theme.palette.divider
-          }
         }
       },
       yAxis: {
         type: 'value',
+        min: 0,
         axisLabel: {
-          color: theme.palette.text.secondary,
+          color: styles.axisLabel.color,
           formatter: '{value}'
-        },
-        axisLine: {
-          lineStyle: {
-            color: theme.palette.divider
-          }
         },
         splitLine: {
           lineStyle: {
-            color: theme.palette.divider,
-            type: 'dashed'
+            color: styles.splitLine.color,
+            type: styles.splitLine.type
           }
         }
       },
-      series: chartData.series,
-      backgroundColor: 'transparent'
+      series: chartData.series
     };
-  }, [chartData, theme]);
-
-  // 生成数据源信息Chips
-  const renderDataSourceInfo = () => {
-    if (!data?.data_sources) return null;
-
-    return (
-      <Box sx={{ mb: 2, display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-        {data.data_sources.map((source, index) => (
-          <Chip
-            key={index}
-            label={`${source.name} (${source.data_depth})`}
-            size="small"
-            variant="outlined"
-            color="primary"
-          />
-        ))}
-      </Box>
-    );
   };
+
+  const generate3DData = (seriesData: any[], depth: number, dates: string[]) => {
+    return seriesData.map((value, index) => {
+      if (value === null) return null;
+      return [
+        index, // x
+        depth, // y
+        value  // z
+      ];
+    }).filter(item => item !== null);
+  };
+
+  const get3DSpecificConfig = () => {
+    if (!chartData) return {};
+    
+    const depths = [...new Set(data.data_sources.map(s => Number(s.data_depth)))].sort((a, b) => a - b);
+    const minDepth = Math.min(...depths);
+    const maxDepth = Math.max(...depths);
+
+    return {
+      tooltip: {
+        formatter: function(params: any) {
+          if (!params.data) return '';
+          const [timeIndex, depth, value] = params.data;
+          const date = chartData.dates[timeIndex];
+          const numValue = typeof value === 'number' ? value : Number(value);
+          return `
+            <div><strong>Date:</strong> ${new Date(date).toLocaleDateString('en-NZ')}</div>
+            <div><strong>Value:</strong> ${isNaN(numValue) ? 'N/A' : numValue.toFixed(3)}</div>
+            <div><strong>Depth:</strong> ${depth}m</div>
+            <div><strong>Series:</strong> ${params.seriesName}</div>
+          `;
+        }
+      },
+      grid3D: styles.grid3D,
+      xAxis3D: {
+        type: 'value',
+        name: 'Time Series',
+        min: 0,
+        max: chartData.dates.length - 1,
+        interval: Math.max(1, Math.floor(chartData.dates.length / 8)),
+        axisLabel: {
+          color: styles.axisLabel.color,
+          formatter: function(value: number) {
+            const index = Math.floor(value);
+            if (index >= 0 && index < chartData.dates.length) {
+              return new Date(chartData.dates[index]).toLocaleDateString('en-NZ', { 
+                month: 'short', 
+                day: 'numeric' 
+              });
+            }
+            return '';
+          }
+        },
+        nameTextStyle: {
+          color: styles.axisName.color
+        }
+      },
+      yAxis3D: {
+        type: 'value',
+        name: 'Depth (mm)',
+        min: minDepth - 5,
+        max: maxDepth + 5,
+        interval: Math.max(5, Math.ceil((maxDepth - minDepth) / 5)),
+        axisLabel: {
+          color: styles.axisLabel.color,
+          formatter: '{value}m'
+        },
+        nameTextStyle: {
+          color: styles.axisName.color
+        }
+      },
+      zAxis3D: {
+        type: 'value',
+        name: 'Soil H2O (mm)',
+        min: 0,
+        axisLabel: {
+          color: styles.axisLabel.color,
+          formatter: '{value}'
+        },
+        nameTextStyle: {
+          color: styles.axisName.color
+        }
+      },
+      series: chartData.series.map((series, index) => ({
+        name: series.name,
+        type: 'line3D',
+        data: generate3DData(series.data, series.depth, chartData.dates),
+        lineStyle: {
+          width: styles.line3D.width,
+          opacity: styles.line3D.opacity
+        },
+        emphasis: {
+          lineStyle: {
+            width: styles.line3D.emphasis.width,
+            opacity: styles.line3D.emphasis.opacity
+          },
+          itemStyle: {
+            opacity: styles.line3D.emphasis.opacity
+          }
+        }
+      }))
+    };
+  };
+
+  const option = useMemo(() => {
+    if (!chartData) return {};
+
+    const specificConfig = use3D ? get3DSpecificConfig() : get2DSpecificConfig();
+
+    return {
+      title: {
+        text: `{title|Data at ${selectedStation.properties.station_name}}\n{coords|${selectedStation.geometry.coordinates[0]}, ${selectedStation.geometry.coordinates[1]}}`,
+        left: 'center',
+        top: 10,
+        textStyle: {
+          rich: {
+            title: styles.title,
+            coords: styles.coords,
+          }
+        }
+      },
+      legend: {
+        type: 'scroll',
+        bottom: 10,
+        left: 'center',
+        textStyle: {
+          color: styles.legend.color
+        }
+      },
+      ...specificConfig,
+    };
+  }, [chartData, styles, use3D]);
 
   if (!chartData) {
     return (
@@ -209,11 +287,8 @@ export const DataCharts: React.FC<DataChartProps> = ({
 
   return (
     <Box sx={{ p: 2 }}>
-      
-      {renderDataSourceInfo()}
-      
       <Box sx={{ 
-        height: 500, 
+        height: 600, 
         width: '100%',
         '& .echarts-for-react': {
           height: '100% !important',
@@ -224,9 +299,11 @@ export const DataCharts: React.FC<DataChartProps> = ({
           option={option}
           style={{ height: '100%', width: '100%' }}
           opts={{ renderer: 'canvas' }}
+          notMerge={true}
+          lazyUpdate={false}
+          key={use3D ? '3d' : '2d'}
         />
       </Box>
-      
     </Box>
   );
 };

@@ -5,6 +5,8 @@ import {
   Drawer,
   IconButton,
   Paper,
+  Stack,
+  Typography,
   useTheme
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
@@ -25,15 +27,16 @@ import { dataService } from '@/services/data_service';
 import { DotsAnimation } from './dots';
 import { ChartGuide } from './charts_guide';
 import { DataCharts } from './data_charts';
+import { Switcher } from './switcher';
 
 
-interface DataComparatorDrawerProps {
+interface DatasetsComparatorDrawerProps {
   open: boolean;
   onClose: () => void;
   selectedStation: ObservationStationFeature | null;
 }
 
-const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
+const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
   open,
   onClose,
   selectedStation
@@ -51,6 +54,7 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
   const [sources, setSources] = useState<ItemPickerValue | null>(null);
   const [data, setData] = useState<DataSets | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [use3D, setUse3D] = useState<boolean>(false)
 
   useEffect(() => {
     setRequestParam(prev => ({
@@ -150,6 +154,14 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
               searchPlaceholder="Search data sources..."
             />
 
+            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+              <Switcher
+                checked={use3D} 
+                onChange={(e: any) => setUse3D(e.target.checked)}
+              />
+              <Typography>3D</Typography>
+            </Stack>
+
             <Box sx={getButtonGroupStyles()}>
               <Button
                 variant="text"
@@ -184,10 +196,12 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
         <Box sx={chartContainerStyles}>
             {loading ? (
               <DotsAnimation size="medium" />
-            ) : data && dateRange ? (
+            ) : data && dateRange && selectedStation ? (
               <DataCharts
+                selectedStation={selectedStation}
                 data={data}
                 dateRange={dateRange}
+                use3D={use3D}
               />
             ) : (
               <ChartGuide
@@ -202,4 +216,4 @@ const DataComparatorDrawer: React.FC<DataComparatorDrawerProps> = ({
   );
 };
 
-export default DataComparatorDrawer;
+export default DatasetsComparatorDrawer;
