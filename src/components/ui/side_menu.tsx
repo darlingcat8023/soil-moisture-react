@@ -12,7 +12,6 @@ import {
   IconButton,
   Tooltip,
   Typography,
-  Divider,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import KeyboardTabOutlinedIcon from '@mui/icons-material/KeyboardTabOutlined';

@@ -22,7 +22,7 @@ import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { getActionButtonStyles } from '../style/action_button.styles';
 import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/response/data_response';
 import DatasetsComparatorDrawer from './datasets_comparator';
-import StationComparatorDrawer from './stations_conparator';
+import StationComparatorDrawer from './stations_comparator';
 
 
 const MAP_VIEW = new MapView({
@@ -97,8 +97,6 @@ export default function DeckGLMap({
   
   // set the comparator box is open or not
   const [dataComparatorOpen, setDataComparatorOpen] = useState<boolean>(false);
-  // set the comparator box is open or not
-  const [stationComparatorOpen, setStationComparatorOpen] = useState<boolean>(false);
   // set the comparator box is open or not
   const [timeComparatorOpen, setTimeComparatorOpen] = useState<boolean>(false);
 
@@ -252,22 +250,6 @@ export default function DeckGLMap({
                 startIcon={<CompareArrowsIcon />}
                 onClick={() => {
                   if (selectedPoint) {
-                    setStationComparatorOpen(true);
-                  }
-                }}
-              >
-                Compare Between Stations
-              </Button>
-
-              <Button 
-                sx={{
-                  ...getActionButtonStyles('apply', theme),
-                  justifyContent: 'flex-start',
-                  textAlign: 'left'
-                }}
-                startIcon={<CompareArrowsIcon />}
-                onClick={() => {
-                  if (selectedPoint) {
                     setTimeComparatorOpen(true);
                   }
                 }}
@@ -383,21 +365,18 @@ export default function DeckGLMap({
 
           {renderTooltip()}
         </DeckGL>
-
-        <DatasetsComparatorDrawer
-          open={dataComparatorOpen}
-          onClose={() => {
-            setDataComparatorOpen(false);
-          }}
-          selectedStation={selectedPoint}
-        />
-        <StationComparatorDrawer
-          open={dataComparatorOpen}
-          onClose={() => {
-            setStationComparatorOpen(false);
-          }}
-          selectedStation={selectedPoint}
-        />
+        
+        {selectedPoint && 
+          <DatasetsComparatorDrawer
+            open={dataComparatorOpen}
+            onClose={() => {
+              setDataComparatorOpen(false);
+            }}
+            selectedStation={selectedPoint}
+            stationList={geojson.features}
+          />
+        }
+        
     </Box>
   );
 }

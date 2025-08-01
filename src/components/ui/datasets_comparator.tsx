@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   Box,
   Button,
@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import ReactECharts from 'echarts-for-react';
+import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import { DataSets, ObservationStationFeature } from '@/services/response/data_response';
 import {
   drawerPaperStyles,
@@ -33,35 +33,54 @@ import { Switcher } from './switcher';
 interface DatasetsComparatorDrawerProps {
   open: boolean;
   onClose: () => void;
-  selectedStation: ObservationStationFeature | null;
+  selectedStation: ObservationStationFeature;
+  stationList: ObservationStationFeature[]
 }
 
 const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
   open,
   onClose,
-  selectedStation
+  selectedStation,
+  stationList,
 }) => {
   
   const theme = useTheme();
-  
-  const [requestParam, setRequestParam] = useState<DataCompareRequest>({
-    station_id: selectedStation?.properties.station_id || '',
-    start_date: '',
-    end_date: ''
-  })
 
   const [dateRange, setDateRange] = useState<DateFilterValue | null>(null);
   const [sources, setSources] = useState<ItemPickerValue | null>(null);
+  const [stations, setStations] = useState<ItemPickerValue | null>(null)
+
+  const [requestParam, setRequestParam] = useState<DataCompareRequest>({
+    station_id: [],
+    start_date: '',
+    end_date: '',
+    data_source: [],
+  })
+  
   const [data, setData] = useState<DataSets | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [use3D, setUse3D] = useState<boolean>(false)
 
   useEffect(() => {
+    setStations({
+      selectedItems: [selectedStation.properties.station_id]
+    })
     setRequestParam(prev => ({
       ...prev,
-      station_id: selectedStation?.properties?.station_id || ''
+      station_id: [selectedStation.properties.station_id]
     }));
   }, [selectedStation]);
+
+  const stationOptions = useMemo(() => {
+    if (!stationList) return [];
+
+    return stationList.map(station => ({
+        value: station.properties.station_id,
+        label: station.properties.station_name,
+        description: `${station.geometry.coordinates[0]}, ${station.geometry.coordinates[1]}`
+    }));
+  }, [stationList]);
+
 
   const handleDateRangeChange = (value: DateFilterValue | null) => {
     setDateRange(value);
@@ -82,8 +101,23 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
 
   const handleDataSourcesChange = (value: ItemPickerValue | null) => {
     setSources(value);
-    
+    if (value) {
+      setRequestParam(prev => ({
+        ...prev,
+        data_source: value.selectedItems,
+      }))
+    }
   };
+
+  const handleStationChange = (value: ItemPickerValue | null) => {
+    setStations(value ? value : {selectedItems: [selectedStation.properties.station_id]});
+    if (value) {
+        setRequestParam(prev => ({
+        ...prev,
+        station_id: value.selectedItems
+      }));
+    }
+  }
 
   const handleApply = async () => {
     try {
@@ -115,6 +149,16 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
             <IconButton onClick={onClose} size="small">
               <CloseIcon />
             </IconButton>
+
+            <GoogleCloudItemPicker
+              value={stations}
+              onChange={handleStationChange}
+              startIcon={<RoomOutlinedIcon sx={{size: 16}}/>}
+              options={stationOptions}
+              title="Stations"
+              helpText="Add another staions to compare"
+              searchPlaceholder="Search data sources..."
+            />
             
             <GoogleCloudDateFilter
               title="Date Range"
@@ -178,8 +222,10 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
                   setSources(null)
                   setRequestParam(prev => ({
                     ...prev,
+                    station_id: [selectedStation.properties.station_id],
                     start_date: '',
-                    end_date: ''
+                    end_date: '',
+                    data_source: []
                   }));
                 }}
                 sx={getActionButtonStyles('clear', theme)}

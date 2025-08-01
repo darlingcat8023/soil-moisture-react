@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
 import {
   Box,
   Button,
@@ -80,6 +80,7 @@ interface GoogleCloudItemPickerProps {
   showSelectAll?: boolean;
   /** Maximum height for options list */
   maxHeight?: number;
+  startIcon?: ReactNode;
 }
 
 const GoogleCloudItemPicker: React.FC<GoogleCloudItemPickerProps> = ({
@@ -92,6 +93,7 @@ const GoogleCloudItemPicker: React.FC<GoogleCloudItemPickerProps> = ({
   searchPlaceholder = "Type to filter",
   showSelectAll = true,
   maxHeight = 300,
+  startIcon = <FilterListOutlinedIcon sx={{ fontSize: 16 }} />,
 }) => {
   const theme = useTheme();
 
@@ -231,7 +233,7 @@ const GoogleCloudItemPicker: React.FC<GoogleCloudItemPickerProps> = ({
     <Box>
       <BaseFilterButton
         displayText={buttonDisplayText}
-        startIcon={<FilterListOutlinedIcon sx={{ fontSize: 16 }} />}
+        startIcon={startIcon}
         hasBeenUsed={hasBeenUsed}
         hasChanges={hasChanges()}
         onClick={handleClick}

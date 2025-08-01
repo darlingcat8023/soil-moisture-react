@@ -1,5 +1,6 @@
 import config from "@/config";
 import axios, {AxiosInstance, AxiosRequestConfig} from "axios";
+import qs from "qs";
 
 class APIClient {
   private client_instance: AxiosInstance;
@@ -12,6 +13,11 @@ class APIClient {
     const client = axios.create({
       baseURL: base,
       timeout: 10000,
+      paramsSerializer: (params) => {
+        return qs.stringify(params, {
+          arrayFormat: "repeat",
+        });
+      },
     });
     return client;
   }
