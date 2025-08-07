@@ -1,21 +1,19 @@
-import React, { useMemo, useState } from 'react';
-import { Box, Typography, Alert, Chip } from '@mui/material';
+import React, { useMemo } from 'react';
+import { Box, Typography } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from '@mui/material';
-import { DataSets, ObservationStationFeature } from "@/services/response/data_response";
+import { DataSourceSets } from "@/services/response/data_response";
 import { DateFilterValue } from "./filter/date_picker";
 import 'echarts-gl';
 import { getChartStyles } from '../style/data_chart.sytles';
 
 interface DataChartProps {
-  selectedStation: ObservationStationFeature;
-  data: DataSets;
+  data: DataSourceSets;
   dateRange: DateFilterValue;
   use3D: boolean;
 }
 
 export const DataCharts: React.FC<DataChartProps> = ({
-  selectedStation,
   data,
   dateRange,
   use3D,
@@ -24,30 +22,48 @@ export const DataCharts: React.FC<DataChartProps> = ({
   const styles = useMemo(() => getChartStyles(theme), [theme]);
 
   const chartData = useMemo(() => {
-    if (!data?.data_sources || data.data_sources.length === 0) {
+    if (!data?.stations || Object.keys(data.stations).length === 0) {
       return null;
     }
+
     const allDates = new Set<string>();
-    data.data_sources.forEach(source => {
-      source.data_series.forEach(series => {
-        allDates.add(series.date);
+    const allSeries: any[] = [];
+
+    // 遍历所有站点和数据源
+    Object.entries(data.stations).forEach(([stationId, stationData]) => {
+      Object.entries(stationData.station_data_source).forEach(([sourceKey, dataSource]) => {
+        // 收集所有日期
+        dataSource.data_series.forEach(series => {
+          allDates.add(series.date);
+        });
+
+        // 创建值映射
+        const valueMap = new Map<string, number>();
+        dataSource.data_series.forEach(series => {
+          valueMap.set(series.date, Number(series.value));
+        });
+
+        allSeries.push({
+          stationId,
+          stationName: stationData.station_name,
+          sourceKey,
+          dataSource,
+          valueMap
+        });
       });
     });
     
     const sortedDates = Array.from(allDates).sort();
 
-    const series = data.data_sources.map((source, index) => {
-      const valueMap = new Map<string, number>();
-      source.data_series.forEach(series => {
-        valueMap.set(series.date, series.value);
-      });
-
+    const series = allSeries.map((item, index) => {
+      const { stationId, stationName, sourceKey, dataSource, valueMap } = item;
+      
       const seriesData = sortedDates.map(date => {
         return valueMap.get(date) ?? null;
       });
 
       return {
-        name: `${source.name} (${source.data_depth}m)`,
+        name: `${dataSource.display_name}`,
         type: 'line',
         lineStyle: {
           width: styles.line2D.width,
@@ -62,13 +78,18 @@ export const DataCharts: React.FC<DataChartProps> = ({
         },
         data: seriesData,
         connectNulls: false,
-        depth: Number(source.data_depth),
+        depth: dataSource.data_depth ? Number(dataSource.data_depth) : 0,
+        stationId: stationId,
+        stationName: stationName,
+        sourceKey: sourceKey,
+        unit: dataSource.data_series[0]?.unit || '', 
       };
     });
 
     return {
       dates: sortedDates,
-      series: series
+      series: series,
+      stationCount: Object.keys(data.stations).length
     };
   }, [data, styles]);
 
@@ -93,11 +114,13 @@ export const DataCharts: React.FC<DataChartProps> = ({
             if (param && param.value !== null && param.value !== undefined) {
               const value = typeof param.value === 'number' ? param.value : parseFloat(param.value);
               if (!isNaN(value)) {
+                const series = chartData.series.find(s => s.name === param.seriesName);
+                const unit = series?.unit || '';
                 tooltip += `
                   <div style="display: flex; align-items: center; margin: 4px 0;">
                     <span style="display: inline-block; width: 10px; height: 10px; background-color: ${param.color}; border-radius: 50%; margin-right: 8px;"></span>
                     <span style="margin-right: 8px;">${param.seriesName}:</span>
-                    <span style="font-weight: bold;">${value.toFixed(3)}</span>
+                    <span style="font-weight: bold;">${value.toFixed(3)} ${unit}</span>
                   </div>
                 `;
               }
@@ -129,7 +152,12 @@ export const DataCharts: React.FC<DataChartProps> = ({
         min: 0,
         axisLabel: {
           color: styles.axisLabel.color,
-          formatter: '{value}'
+          formatter: function(value: number) {
+            // 尝试从系列中获取单位
+            const firstSeries = chartData.series[0];
+            const unit = firstSeries?.unit || '';
+            return `${value} ${unit}`;
+          }
         },
         splitLine: {
           lineStyle: {
@@ -156,7 +184,7 @@ export const DataCharts: React.FC<DataChartProps> = ({
   const get3DSpecificConfig = () => {
     if (!chartData) return {};
     
-    const depths = [...new Set(data.data_sources.map(s => Number(s.data_depth)))].sort((a, b) => a - b);
+    const depths = [...new Set(chartData.series.map(s => s.depth))].sort((a, b) => a - b);
     const minDepth = Math.min(...depths);
     const maxDepth = Math.max(...depths);
 
@@ -167,10 +195,13 @@ export const DataCharts: React.FC<DataChartProps> = ({
           const [timeIndex, depth, value] = params.data;
           const date = chartData.dates[timeIndex];
           const numValue = typeof value === 'number' ? value : Number(value);
+          const series = chartData.series.find(s => s.name === params.seriesName);
+          const unit = series?.unit || '';
+          
           return `
             <div><strong>Date:</strong> ${new Date(date).toLocaleDateString('en-NZ')}</div>
-            <div><strong>Value:</strong> ${isNaN(numValue) ? 'N/A' : numValue.toFixed(3)}</div>
-            <div><strong>Depth:</strong> ${depth}m</div>
+            <div><strong>Value:</strong> ${isNaN(numValue) ? 'N/A' : numValue.toFixed(3)} ${unit}</div>
+            <div><strong>Depth:</strong> ${depth}</div>
             <div><strong>Series:</strong> ${params.seriesName}</div>
           `;
         }
@@ -201,13 +232,13 @@ export const DataCharts: React.FC<DataChartProps> = ({
       },
       yAxis3D: {
         type: 'value',
-        name: 'Depth (mm)',
+        name: 'Depth',
         min: minDepth - 5,
         max: maxDepth + 5,
         interval: Math.max(5, Math.ceil((maxDepth - minDepth) / 5)),
         axisLabel: {
           color: styles.axisLabel.color,
-          formatter: '{value}m'
+          formatter: '{value}'
         },
         nameTextStyle: {
           color: styles.axisName.color
@@ -215,11 +246,15 @@ export const DataCharts: React.FC<DataChartProps> = ({
       },
       zAxis3D: {
         type: 'value',
-        name: 'Soil H2O (mm)',
+        name: 'Value',
         min: 0,
         axisLabel: {
           color: styles.axisLabel.color,
-          formatter: '{value}'
+          formatter: function(value: number) {
+            const firstSeries = chartData.series[0];
+            const unit = firstSeries?.unit || '';
+            return `${value} ${unit}`;
+          }
         },
         nameTextStyle: {
           color: styles.axisName.color
@@ -252,17 +287,6 @@ export const DataCharts: React.FC<DataChartProps> = ({
     const specificConfig = use3D ? get3DSpecificConfig() : get2DSpecificConfig();
 
     return {
-      title: {
-        text: `{title|Data at ${selectedStation.properties.station_name}}\n{coords|${selectedStation.geometry.coordinates[0]}, ${selectedStation.geometry.coordinates[1]}}`,
-        left: 'center',
-        top: 10,
-        textStyle: {
-          rich: {
-            title: styles.title,
-            coords: styles.coords,
-          }
-        }
-      },
       legend: {
         type: 'scroll',
         bottom: 10,
@@ -276,17 +300,25 @@ export const DataCharts: React.FC<DataChartProps> = ({
   }, [chartData, styles, use3D]);
 
   if (!chartData) {
+    const availableStations = data?.stations ? Object.keys(data.stations) : [];
+    
     return (
       <Box sx={{ p: 3, textAlign: 'center' }}>
         <Typography variant="h6" color="text.secondary">
-          No data available for the selected criteria
+          No data available
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+          Available Station IDs: {availableStations.join(', ')}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+          Total Stations: {availableStations.length}
         </Typography>
       </Box>
     );
   }
 
   return (
-    <Box sx={{ p: 2 }}>
+    <Box sx={{ p: 1 }}>
       <Box sx={{ 
         height: 600, 
         width: '100%',
@@ -301,7 +333,7 @@ export const DataCharts: React.FC<DataChartProps> = ({
           opts={{ renderer: 'canvas' }}
           notMerge={true}
           lazyUpdate={false}
-          key={use3D ? '3d' : '2d'}
+          key={`all-stations-${use3D ? '3d' : '2d'}`}
         />
       </Box>
     </Box>

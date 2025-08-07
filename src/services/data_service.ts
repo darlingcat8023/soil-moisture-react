@@ -1,19 +1,22 @@
 import {api_client} from "@/lib/http_client";
-import {DataSets, ObservationStationsGeoJSON} from "./response/data_response";
+import {
+  DataSourceSets,
+  ObservationStationsGeoJSON,
+} from "./response/data_response";
 import {DataCompareRequest} from "./request/data_request";
 
 class DataService {
   public async getObservationStations(): Promise<ObservationStationsGeoJSON> {
     return await api_client.get<ObservationStationsGeoJSON>(
-      "/api/data/observation/list",
+      "/api/observation/list",
       {}
     );
   }
 
   public async getObservationData(
     request: DataCompareRequest
-  ): Promise<DataSets> {
-    return await api_client.get<DataSets>("/api/data/observation/data", {
+  ): Promise<DataSourceSets> {
+    return await api_client.get<DataSourceSets>("/api/data/compare/bysource", {
       params: request,
     });
   }

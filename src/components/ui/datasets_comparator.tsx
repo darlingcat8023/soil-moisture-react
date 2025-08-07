@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
-import { DataSets, ObservationStationFeature } from '@/services/response/data_response';
+import { DataSourceSets, ObservationStationFeature } from '@/services/response/data_response';
 import {
   drawerPaperStyles,
   drawerContainerStyles,
@@ -57,7 +57,7 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
     data_source: [],
   })
   
-  const [data, setData] = useState<DataSets | null>(null);
+  const [data, setData] = useState<DataSourceSets | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [use3D, setUse3D] = useState<boolean>(false)
 
@@ -156,7 +156,7 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
               startIcon={<RoomOutlinedIcon sx={{size: 16}}/>}
               options={stationOptions}
               title="Stations"
-              helpText="Add another staions to compare"
+              helpText="Add more staions to compare"
               searchPlaceholder="Search data sources..."
             />
             
@@ -173,28 +173,33 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
               onChange={handleDataSourcesChange}
               options={[
                 {
-                  value: 'obervation',
+                  value: 'observation',
                   label: 'Observation Station',
-                  description: 'baseline data from NIWA'
+                  description: 'Observation data from NIWA'
                 },
                 {
-                  value: 'smap',
-                  label: 'SMAP',
-                  description: 'satellite data from NASA'
+                  value: 'era5_7',
+                  label: 'ERA5-Land(0-7cm)',
+                  description: 'ECMWF surface model Layer 1: (0-7cm)'
                 },
                 {
-                  value: 'era5',
-                  label: 'ERA5-Land',
-                  description: 'reanalysis data from ECMWF'
+                  value: 'era5_28',
+                  label: 'ERA5-Land(7-28cm)',
+                  description: 'ECMWF surface model Layer 2: (7-28cm)'
                 },
                 {
-                  value: 'esa',
-                  label: 'ESA CCI SM',
-                  description: 'mixed data from ESA'
+                  value: 'era5_100',
+                  label: 'ERA5-Land(28-100cm)',
+                  description: 'ECMWF surface model Layer 3: (28-100cm)'
+                }, 
+                {
+                  value: 'era5_289',
+                  label: 'ERA5-Land(100-289cm)',
+                  description: 'ECMWF surface model Layer 4: (100-289cm)'
                 },
               ]}
               title="Data Sources"
-              helpText="Select data sources you are interested in"
+              helpText="Response latency scales linearly with data source count"
               searchPlaceholder="Search data sources..."
             />
 
@@ -242,9 +247,8 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
         <Box sx={chartContainerStyles}>
             {loading ? (
               <DotsAnimation size="medium" />
-            ) : data && dateRange && selectedStation ? (
+            ) : data && dateRange ? (
               <DataCharts
-                selectedStation={selectedStation}
                 data={data}
                 dateRange={dateRange}
                 use3D={use3D}
