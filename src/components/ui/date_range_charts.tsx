@@ -24,7 +24,6 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
     const allDataSources = new Set<string>();
     let maxDayCount = 0;
 
-    // 第一遍遍历：找到最大天数
     Object.entries(data.ranges).forEach(([rangeKey, rangeData]) => {
       const rangeDates = new Set<string>();
       const rangeSeriesMap = new Map<string, any>();
@@ -55,11 +54,10 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
         dateRange: rangeData.date_range,
         originalDates: sortedDates,
         seriesMap: rangeSeriesMap,
-        startDate: sortedDates[0] // 保存原始开始日期
+        startDate: sortedDates[0] 
       });
     });
 
-    // 为每个范围生成标准化的日期轴（从各自开始日期延伸maxDayCount天）
     const generateStandardDateRange = (startDate: string, dayCount: number): string[] => {
       const start = new Date(startDate);
       const dates: string[] = [];
@@ -73,9 +71,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
       return dates;
     };
 
-    // 第二遍遍历：为每个范围生成标准化的日期轴和数据
     allRanges.forEach(range => {
-      // 生成从开始日期延伸maxDayCount天的标准日期轴
       range.standardDates = generateStandardDateRange(range.startDate, maxDayCount);
     });
 
@@ -83,11 +79,10 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
     const xAxes: any[] = [];
 
     allRanges.forEach((range, rangeIndex) => {
-      // 创建X轴 - 每个X轴使用标准化的日期范围
       xAxes.push({
         type: 'category',
         boundaryGap: false,
-        data: range.standardDates, // 使用标准化的日期范围
+        data: range.standardDates,
         gridIndex: 0,
         position: rangeIndex === 0 ? 'bottom' : 'top',
         offset: rangeIndex * 40,
@@ -102,18 +97,15 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
         }
       });
 
-      // 为当前范围的每个数据源创建系列
       Array.from(allDataSources).forEach((sourceKey, sourceIndex) => {
         const seriesInfo = range.seriesMap.get(sourceKey);
         
         if (seriesInfo && seriesInfo.valueMap && seriesInfo.dataSource) {
-          // 将原始数据映射到标准化的日期轴
           const seriesData = range.standardDates.map((date: string) => {
-            // 只有在原始数据范围内的日期才有值
             if (range.originalDates.includes(date)) {
               return seriesInfo.valueMap.get(date) ?? null;
             }
-            return null; // 超出原始范围的日期用null填充
+            return null;
           });
 
           const unit = seriesInfo.dataSource.data_series?.[0]?.unit || '';
@@ -135,7 +127,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
               symbolSize: 4,
             },
             data: seriesData,
-            connectNulls: false, // 不连接null值
+            connectNulls: false, 
             unit: unit,
             rangeKey: range.rangeKey,
             sourceKey: sourceKey
@@ -170,7 +162,6 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
           
           let tooltip = `<div style="font-weight: bold; margin-bottom: 8px;">${params[0].axisValue}</div>`;
           
-          // 只显示有数据的系列
           const validParams = params.filter(param => 
             param && param.value !== null && param.value !== undefined
           );
