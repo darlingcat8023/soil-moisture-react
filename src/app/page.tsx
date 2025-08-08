@@ -5,6 +5,7 @@ import { PaddingOptions } from 'react-map-gl/mapbox';
 import DeckGLMap from '@/components/ui/map';
 import { useEffect, useState } from 'react';
 import { ObservationStationsGeoJSON } from '@/services/response/data_response';
+import { dataService } from '@/services/data_service';
 
 export default function HomePage() {
   
@@ -22,11 +23,14 @@ export default function HomePage() {
   const [geoData, setGeoData] = useState<ObservationStationsGeoJSON>({} as ObservationStationsGeoJSON);
 
   useEffect(() => {
-    fetch('/map/testdata.json')
-      .then(response => response.json())
-      .then((data: ObservationStationsGeoJSON) => {
-        setGeoData(data);
-      })
+    const fetchData = async () => {
+      try {
+        const response = await dataService.getObservationStations();
+        setGeoData(response);
+        console.log(response);
+      } finally {}
+    };
+    fetchData();
   }, []);
 
   return (

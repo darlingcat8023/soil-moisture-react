@@ -22,7 +22,7 @@ import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { getActionButtonStyles } from '../style/action_button.styles';
 import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/response/data_response';
 import DatasetsComparatorDrawer from './datasets_comparator';
-import StationComparatorDrawer from './stations_comparator';
+import DateRangeComparatorDrawer from './date_comparator';
 
 
 const MAP_VIEW = new MapView({
@@ -98,7 +98,7 @@ export default function DeckGLMap({
   // set the comparator box is open or not
   const [dataComparatorOpen, setDataComparatorOpen] = useState<boolean>(false);
   // set the comparator box is open or not
-  const [timeComparatorOpen, setTimeComparatorOpen] = useState<boolean>(false);
+  const [dateComparatorOpen, setDateComparatorOpen] = useState<boolean>(false);
 
   // set view status change
   const handleViewStateChange = useCallback((event: any) => {
@@ -219,7 +219,7 @@ export default function DeckGLMap({
           
           <Typography variant="body2" color="text.secondary" gutterBottom sx={infoRowStyles}>
             <LayersOutlinedIcon fontSize="small" />
-            <strong>Data Depth:</strong> {properties.data_depth}
+            <strong>Data Depth:</strong> {properties.data_depth} cm
           </Typography>
           
           <Box sx={{ display: 'flex', justifyContent: 'flex-start', mt: 2 }}>
@@ -250,7 +250,7 @@ export default function DeckGLMap({
                 startIcon={<CompareArrowsIcon />}
                 onClick={() => {
                   if (selectedPoint) {
-                    setTimeComparatorOpen(true);
+                    setDateComparatorOpen(true);
                   }
                 }}
               >
@@ -374,6 +374,16 @@ export default function DeckGLMap({
             }}
             selectedStation={selectedPoint}
             stationList={geojson.features}
+          />
+        }
+
+        {selectedPoint && 
+          <DateRangeComparatorDrawer
+            open={dateComparatorOpen}
+            onClose={() => {
+              setDateComparatorOpen(false);
+            }}
+            selectedStation={selectedPoint}
           />
         }
         

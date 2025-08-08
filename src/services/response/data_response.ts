@@ -46,3 +46,20 @@ export interface DataSourceSets {
   stations: Record<string, DataStation>;
   notice: string[];
 }
+
+export interface DateRange {
+  start_date: string;
+  end_date: string;
+}
+
+export interface RangeData {
+  date_range: DateRange;
+  data_sources: Record<string, DataSource>;
+}
+
+export interface DateRangeSets {
+  station_id: string;
+  station_name: string;
+  ranges: Record<string, RangeData>;
+  notice: string[];
+}

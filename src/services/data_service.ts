@@ -1,9 +1,10 @@
 import {api_client} from "@/lib/http_client";
 import {
   DataSourceSets,
+  DateRangeSets,
   ObservationStationsGeoJSON,
 } from "./response/data_response";
-import {DataCompareRequest} from "./request/data_request";
+import {DataCompareRequest, DateRangeRequest} from "./request/data_request";
 
 class DataService {
   public async getObservationStations(): Promise<ObservationStationsGeoJSON> {
@@ -13,12 +14,22 @@ class DataService {
     );
   }
 
-  public async getObservationData(
+  public async getDataBySets(
     request: DataCompareRequest
   ): Promise<DataSourceSets> {
     return await api_client.get<DataSourceSets>("/api/data/compare/bysource", {
       params: request,
     });
+  }
+
+  public async getDataByRange(
+    request: DateRangeRequest
+  ): Promise<DateRangeSets> {
+    return await api_client.postJson<DateRangeSets>(
+      "/api/data/compare/byrange",
+      request,
+      {}
+    );
   }
 }
 

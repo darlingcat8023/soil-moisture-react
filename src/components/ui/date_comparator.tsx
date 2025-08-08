@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
-import { DataSourceSets, ObservationStationFeature } from '@/services/response/data_response';
+import { DateRangeSets, ObservationStationFeature } from '@/services/response/data_response';
 import {
   drawerPaperStyles,
   drawerContainerStyles,
@@ -22,79 +22,80 @@ import {
 import GoogleCloudDateFilter, { DateFilterValue } from './filter/date_picker';
 import { getActionButtonStyles, getButtonGroupStyles } from '../style/action_button.styles';
 import GoogleCloudItemPicker, { ItemPickerValue } from './filter/item_picker';
-import { DataCompareRequest } from '@/services/request/data_request';
+import { DateRange, DateRangeRequest } from '@/services/request/data_request';
 import { dataService } from '@/services/data_service';
 import { DotsAnimation } from './dots';
-import { ChartGuide } from './charts_guide';
-import { DataCharts } from './datasets_charts';
-import { Switcher } from './switcher';
+import { DateRangeCharts } from './date_range_charts';
 
 
-interface DatasetsComparatorDrawerProps {
+interface DateRangeComparatorDrawerProps {
   open: boolean;
   onClose: () => void;
   selectedStation: ObservationStationFeature;
-  stationList: ObservationStationFeature[]
 }
 
-const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
+const DateRangeComparatorDrawer: React.FC<DateRangeComparatorDrawerProps> = ({
   open,
   onClose,
   selectedStation,
-  stationList,
 }) => {
   
   const theme = useTheme();
 
-  const [dateRange, setDateRange] = useState<DateFilterValue | null>(null);
+  const [dateRange1, setDateRange1] = useState<DateFilterValue | null>(null);
+	const [dateRange2, setDateRange2] = useState<DateFilterValue | null>(null);
   const [sources, setSources] = useState<ItemPickerValue | null>(null);
-  const [stations, setStations] = useState<ItemPickerValue | null>(null)
 
-  const [requestParam, setRequestParam] = useState<DataCompareRequest>({
-    station_id: [],
-    start_date: '',
-    end_date: '',
+  const [requestParam, setRequestParam] = useState<DateRangeRequest>({
+    station_id: '',
+    first_range: {} as DateRange,
+    second_range: {} as DateRange,
     data_source: [],
   })
   
-  const [data, setData] = useState<DataSourceSets | null>(null);
+  const [data, setData] = useState<DateRangeSets | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [use3D, setUse3D] = useState<boolean>(false)
 
   useEffect(() => {
-    setStations({
-      selectedItems: [selectedStation.properties.station_id]
-    })
     setRequestParam(prev => ({
       ...prev,
-      station_id: [selectedStation.properties.station_id]
+      station_id: selectedStation.properties.station_id
     }));
   }, [selectedStation]);
 
-  const stationOptions = useMemo(() => {
-    if (!stationList) return [];
 
-    return stationList.map(station => ({
-        value: station.properties.station_id,
-        label: station.properties.station_name,
-        description: `${station.geometry.coordinates[0]}, ${station.geometry.coordinates[1]}`
-    }));
-  }, [stationList]);
-
-
-  const handleDateRangeChange = (value: DateFilterValue | null) => {
-    setDateRange(value);
+  const handleDateRangeChange1 = (value: DateFilterValue | null) => {
+    setDateRange1(value);
     if (value) {
       setRequestParam(prev => ({
         ...prev,
-        start_date: value.startDate,
-        end_date: value.endDate
+        first_range: {
+					start_date: value.startDate,
+					end_date: value.endDate,
+				}
       }));
     } else {
       setRequestParam(prev => ({
         ...prev,
-        start_date: '',
-        end_date: ''
+        first_range: {} as DateRange,
+      }));
+    }
+  };
+
+	const handleDateRangeChange2 = (value: DateFilterValue | null) => {
+    setDateRange2(value);
+    if (value) {
+      setRequestParam(prev => ({
+        ...prev,
+        second_range: {
+					start_date: value.startDate,
+					end_date: value.endDate,
+				}
+      }));
+    } else {
+      setRequestParam(prev => ({
+        ...prev,
+        second_range: {} as DateRange,
       }));
     }
   };
@@ -109,20 +110,10 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
     }
   };
 
-  const handleStationChange = (value: ItemPickerValue | null) => {
-    setStations(value ? value : {selectedItems: [selectedStation.properties.station_id]});
-    if (value) {
-        setRequestParam(prev => ({
-        ...prev,
-        station_id: value.selectedItems
-      }));
-    }
-  }
-
   const handleApply = async () => {
     try {
       setLoading(true);
-      const response = await dataService.getDataBySets(requestParam);
+      const response = await dataService.getDataByRange(requestParam);
       setData(response);
       console.log(response);
     } finally {
@@ -151,19 +142,33 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
             </IconButton>
 
             <GoogleCloudItemPicker
-              value={stations}
-              onChange={handleStationChange}
+              value={{
+								selectedItems: [selectedStation.properties.station_id]
+							}}
+              onChange={() => {}}
               startIcon={<RoomOutlinedIcon sx={{size: 16}}/>}
-              options={stationOptions}
-              title="Stations"
-              helpText="Add more staions to compare"
-              searchPlaceholder="Search data sources..."
+              options={[
+								{
+									value: selectedStation.properties.station_id,
+									label: selectedStation.properties.station_name,
+								}
+							]}
+              title="Stations" 
+							disabled={true}
             />
             
             <GoogleCloudDateFilter
-              title="Date Range"
-              value={dateRange}
-              onChange={handleDateRangeChange}
+              title="Date Range 1"
+              value={dateRange1}
+              onChange={handleDateRangeChange1}
+              disabled={!selectedStation}
+              helpText='The maximun range is 1 year'
+            />
+
+						<GoogleCloudDateFilter
+              title="Date Range 2"
+              value={dateRange2}
+              onChange={handleDateRangeChange2}
               disabled={!selectedStation}
               helpText='The maximun range is 1 year'
             />
@@ -203,14 +208,6 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
               searchPlaceholder="Search data sources..."
             />
 
-            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-              <Switcher
-                checked={use3D} 
-                onChange={(e: any) => setUse3D(e.target.checked)}
-              />
-              <Typography>3D</Typography>
-            </Stack>
-
             <Box sx={getButtonGroupStyles()}>
               <Button
                 variant="text"
@@ -223,13 +220,14 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
               <Button
                 variant="text"
                 onClick={() => {
-                  setDateRange(null)
-                  setSources(null)
+                  setDateRange1(null);
+									setDateRange2(null);
+                  setSources(null);
                   setRequestParam(prev => ({
                     ...prev,
-                    station_id: [selectedStation.properties.station_id],
-                    start_date: '',
-                    end_date: '',
+                    station_id: selectedStation.properties.station_id,
+                    first_range: {} as DateRange,
+                    second_range: {} as DateRange,
                     data_source: []
                   }));
                 }}
@@ -245,25 +243,20 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
 
         {/* Chart Section */}
         <Box sx={chartContainerStyles}>
-            {loading ? (
-              <DotsAnimation size="medium" />
-            ) : data && dateRange ? (
-              <DataCharts
-                data={data}
-                dateRange={dateRange}
-                use3D={use3D}
-              />
-            ) : (
-              <ChartGuide
-                hasDateRange={!!dateRange}
-                hasDataSources={!!sources}
-                selectedStation={selectedStation}
-              />
-            )}
+          {loading ? (
+						<DotsAnimation size="medium" />
+					) : data ? (
+						<DateRangeCharts
+							data={data}
+						/>
+					) : (
+						<>
+						</>
+					)}
         </Box>
       </Box>
     </Drawer>
   );
 };
 
-export default DatasetsComparatorDrawer;
+export default DateRangeComparatorDrawer;
