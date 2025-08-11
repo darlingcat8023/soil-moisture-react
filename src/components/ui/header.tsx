@@ -15,7 +15,7 @@ const Header = memo(function Header() {
         <Box sx={headerStyles.container}>
           <Box
             component="img"
-            src="/niwa-logo-horizontal.svg"
+            src="/Earth_Sciences_Main.png"
             alt="Logo"
             sx={headerStyles.logo}
           />

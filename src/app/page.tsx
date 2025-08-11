@@ -46,7 +46,7 @@ export default function HomePage() {
       <DeckGLMap
         geojson={geoData}
         initialViewState={NEW_ZEALAND_CENTER_VIEW_STATE}
-        mapStyle='positron'
+        mapStyle='dark-matter'
       />
     </Box>
   );

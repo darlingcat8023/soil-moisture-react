@@ -1,6 +1,6 @@
-import {createTheme} from "@mui/material/styles";
+import {createTheme, Theme} from "@mui/material/styles";
 
-export const theme = createTheme({
+export const lightTheme: Theme = createTheme({
   palette: {
     mode: "light",
     primary: {
@@ -12,6 +12,10 @@ export const theme = createTheme({
     background: {
       default: "#f5f5f5",
       paper: "#ffffff",
+    },
+    text: {
+      primary: "#333333",
+      secondary: "#666666",
     },
   },
   typography: {
@@ -30,8 +34,61 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+          backgroundColor: "#ffffff",
+          color: "#333333",
         },
       },
     },
   },
 });
+
+export const darkTheme: Theme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#58a6ff",
+    },
+    secondary: {
+      main: "#f85149",
+    },
+    background: {
+      default: "#0d1117",
+      paper: "#161b22",
+    },
+    text: {
+      primary: "#f0f6fc",
+      secondary: "#8b949e",
+    },
+    action: {
+      hover: "#21262d",
+    },
+  },
+  typography: {
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+    ].join(","),
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          boxShadow: "0 2px 4px rgba(0,0,0,0.3)",
+          backgroundColor: "#1e1e1e",
+          color: "#ffffff",
+        },
+      },
+    },
+  },
+});
+
+export const getTheme = (isDark: boolean): Theme => {
+  return isDark ? darkTheme : lightTheme;
+};
+
+export const theme = darkTheme;

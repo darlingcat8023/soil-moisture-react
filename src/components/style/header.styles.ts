@@ -1,27 +1,25 @@
 export const headerStyles = {
   appBar: {
-    position: 'static' as const,
+    position: "static" as const,
     boxShadow: 1,
   },
 
-  toolbar: {
-    
-  },
+  toolbar: {},
 
   container: {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     flexGrow: 1,
   },
 
   logo: {
-    height: 64,
-    width: 64,
+    height: 50,
     mr: 2,
   },
 
   title: {
-    variant: 'h6' as const,
-    component: 'div' as const,
+    variant: "h6" as const,
+    component: "div" as const,
+    color: "white",
   },
 };

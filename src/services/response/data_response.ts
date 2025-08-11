@@ -6,6 +6,8 @@ export interface ObservationStationProperties {
   record_end_date?: Date;
   elevation: string;
   data_depth: string;
+  field_capacity: number;
+  wilting_point: number;
 }
 
 export interface ObservationStationFeature {

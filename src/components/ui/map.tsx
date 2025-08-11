@@ -19,6 +19,7 @@ import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import LayersOutlinedIcon from '@mui/icons-material/LayersOutlined';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
+import WaterOutlinedIcon from '@mui/icons-material/WaterOutlined';
 import { getActionButtonStyles } from '../style/action_button.styles';
 import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/response/data_response';
 import DatasetsComparatorDrawer from './datasets_comparator';
@@ -61,7 +62,7 @@ export interface DeckGLMapProps {
   geojson: ObservationStationsGeoJSON;
   initialViewState: ViewState;
   height?: string;
-  mapStyle?: CartoMapStyle;
+  mapStyle: CartoMapStyle;
   style?: SxProps<Theme>;
 }
 
@@ -69,7 +70,7 @@ export default function DeckGLMap({
   geojson,
   initialViewState,
   height = '100%',
-  mapStyle = 'positron',
+  mapStyle,
   style = {}
 }: DeckGLMapProps) {
 
@@ -221,6 +222,20 @@ export default function DeckGLMap({
             <LayersOutlinedIcon fontSize="small" />
             <strong>Data Depth:</strong> {properties.data_depth} cm
           </Typography>
+          
+          {properties.field_capacity &&
+          <Typography variant="body2" color="text.secondary" gutterBottom sx={infoRowStyles}>
+            <WaterOutlinedIcon fontSize="small" />
+            <strong>Field Capacity:</strong> {properties.field_capacity}
+          </Typography>
+          }
+
+          {properties.wilting_point &&
+          <Typography variant="body2" color="text.secondary" gutterBottom sx={infoRowStyles}>
+            <WaterOutlinedIcon fontSize="small" />
+            <strong>Wilting Point:</strong> {properties.wilting_point}
+          </Typography>
+          }
           
           <Box sx={{ display: 'flex', justifyContent: 'flex-start', mt: 2 }}>
             <Stack spacing={1} direction="column">
