@@ -226,14 +226,14 @@ export default function DeckGLMap({
           {properties.field_capacity &&
           <Typography variant="body2" color="text.secondary" gutterBottom sx={infoRowStyles}>
             <WaterOutlinedIcon fontSize="small" />
-            <strong>Field Capacity:</strong> {properties.field_capacity}
+            <strong>Field Capacity:</strong> {Number(properties.field_capacity)}
           </Typography>
           }
 
           {properties.wilting_point &&
           <Typography variant="body2" color="text.secondary" gutterBottom sx={infoRowStyles}>
             <WaterOutlinedIcon fontSize="small" />
-            <strong>Wilting Point:</strong> {properties.wilting_point}
+            <strong>Wilting Point:</strong> {Number(properties.wilting_point)}
           </Typography>
           }
           

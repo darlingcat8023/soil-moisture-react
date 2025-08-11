@@ -34,8 +34,7 @@ export const lightTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-          backgroundColor: "#ffffff",
-          color: "#333333",
+          color: "white",
         },
       },
     },
@@ -79,8 +78,7 @@ export const darkTheme: Theme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: "0 2px 4px rgba(0,0,0,0.3)",
-          backgroundColor: "#1e1e1e",
-          color: "#ffffff",
+          color: "white",
         },
       },
     },
@@ -91,4 +89,4 @@ export const getTheme = (isDark: boolean): Theme => {
   return isDark ? darkTheme : lightTheme;
 };
 
-export const theme = darkTheme;
+export const theme = lightTheme;

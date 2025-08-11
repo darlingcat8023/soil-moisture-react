@@ -1,5 +1,5 @@
 'use client'
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import { ViewState } from 'react-map-gl/maplibre';
 import { PaddingOptions } from 'react-map-gl/mapbox';
 import DeckGLMap from '@/components/ui/map';
@@ -19,6 +19,8 @@ export default function HomePage() {
       top: 0
     } as PaddingOptions
   };
+
+  const theme = useTheme();
 
   const [geoData, setGeoData] = useState<ObservationStationsGeoJSON>({} as ObservationStationsGeoJSON);
 
@@ -46,7 +48,7 @@ export default function HomePage() {
       <DeckGLMap
         geojson={geoData}
         initialViewState={NEW_ZEALAND_CENTER_VIEW_STATE}
-        mapStyle='dark-matter'
+        mapStyle= {theme.palette.mode === 'light' ? "positron" : "dark-matter"}
       />
     </Box>
   );

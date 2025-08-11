@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from '@mui/material';
@@ -19,7 +19,10 @@ export const DataCharts: React.FC<DataChartProps> = ({
   use3D,
 }) => {
   const theme = useTheme();
+  
   const styles = useMemo(() => getChartStyles(theme), [theme]);
+
+  const [useBaseLine, setUseBaseLine] = useState<Boolean>(true) 
 
   const chartData = useMemo(() => {
     if (!data?.stations || Object.keys(data.stations).length === 0) {
@@ -29,26 +32,25 @@ export const DataCharts: React.FC<DataChartProps> = ({
     const allDates = new Set<string>();
     const allSeries: any[] = [];
 
-    // 遍历所有站点和数据源
     Object.entries(data.stations).forEach(([stationId, stationData]) => {
       Object.entries(stationData.station_data_source).forEach(([sourceKey, dataSource]) => {
-        // 收集所有日期
         dataSource.data_series.forEach(series => {
           allDates.add(series.date);
         });
 
-        // 创建值映射
         const valueMap = new Map<string, number>();
         dataSource.data_series.forEach(series => {
           valueMap.set(series.date, Number(series.value));
         });
 
         allSeries.push({
-          stationId,
+          stationId: stationId,
           stationName: stationData.station_name,
-          sourceKey,
-          dataSource,
-          valueMap
+          field_capacity: stationData.field_capacity,
+          wilting_point: stationData.wilting_point,
+          sourceKey: sourceKey,
+          dataSource: dataSource,
+          valueMap: valueMap
         });
       });
     });
@@ -56,7 +58,7 @@ export const DataCharts: React.FC<DataChartProps> = ({
     const sortedDates = Array.from(allDates).sort();
 
     const series = allSeries.map((item, index) => {
-      const { stationId, stationName, sourceKey, dataSource, valueMap } = item;
+      const { stationId, stationName, sourceKey, dataSource, valueMap, field_capacity, wilting_point} = item;
       
       const seriesData = sortedDates.map(date => {
         return valueMap.get(date) ?? null;
@@ -76,12 +78,32 @@ export const DataCharts: React.FC<DataChartProps> = ({
           },
           symbolSize: 3,
         },
+        markLine: {
+          data: [
+            ...(field_capacity && useBaseLine ? [{
+              yAxis: field_capacity,
+              label: {
+                position: 'start',
+                formatter: `Field Capacity(${Number(field_capacity)})`
+              }
+            }] : []),
+            ...(wilting_point && useBaseLine ? [{
+              yAxis: wilting_point,
+              label: {
+                position: 'start',
+                formatter: `Wilting Point(${Number(wilting_point)})`
+              }
+            }] : [])
+          ],    
+        },
         data: seriesData,
         connectNulls: false,
         depth: dataSource.data_depth ? Number(dataSource.data_depth) : 0,
         stationId: stationId,
         stationName: stationName,
         sourceKey: sourceKey,
+        field_capacity: field_capacity,
+        wilting_point: wilting_point,
         unit: dataSource.data_series[0]?.unit || '', 
       };
     });

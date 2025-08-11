@@ -41,6 +41,8 @@ export interface DataSource {
 export interface DataStation {
   station_id: string;
   station_name: string;
+  field_capacity: number;
+  wilting_point: number;
   station_data_source: Record<string, DataSource>;
 }
 
@@ -62,6 +64,8 @@ export interface RangeData {
 export interface DateRangeSets {
   station_id: string;
   station_name: string;
+  field_capacity: number;
+  wilting_point: number;
   ranges: Record<string, RangeData>;
   notice: string[];
 }

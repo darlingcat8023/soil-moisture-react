@@ -20,6 +20,5 @@ export const headerStyles = {
   title: {
     variant: "h6" as const,
     component: "div" as const,
-    color: "white",
   },
 };
