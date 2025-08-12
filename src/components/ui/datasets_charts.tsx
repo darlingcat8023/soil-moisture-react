@@ -6,6 +6,7 @@ import { DataSourceSets } from "@/services/response/data_response";
 import { DateFilterValue } from "./filter/date_picker";
 import 'echarts-gl';
 import { getChartStyles } from '../style/data_chart.sytles';
+import Papa from 'papaparse';
 
 interface DataChartProps {
   data: DataSourceSets;
@@ -23,6 +24,53 @@ export const DataCharts: React.FC<DataChartProps> = ({
   const styles = useMemo(() => getChartStyles(theme), [theme]);
 
   const [useBaseLine, setUseBaseLine] = useState<Boolean>(true) 
+
+  const handleCSVExport = () => {
+    if (!chartData) {
+      return;
+    }
+
+    try {
+      const csvData: any[][] = [];
+      
+      const headers = ['Date'];
+      chartData.series.forEach((s: any) => {
+        const stationPrefix = s.stationName || s.stationId;
+        const sourceKey = s.sourceKey;
+        const depth = s.depth ? `_${s.depth}cm` : '';
+        const unit = s.unit ? ` (${s.unit})` : '';
+        
+        const columnHeader = `${stationPrefix}_${sourceKey}${depth}${unit}`;
+        headers.push(columnHeader);
+      });
+      csvData.push(headers);
+      
+      chartData.dates.forEach((date: string, index: number) => {
+        const row = [new Date(date).toLocaleDateString('en-NZ')];
+        
+        chartData.series.forEach((s: any) => {
+          const value = s.data[index];
+          row.push(value !== null && value !== undefined ? Number(value).toFixed(3) : '');
+        });
+        
+        csvData.push(row);
+      });
+
+      const csv = Papa.unparse(csvData);
+      const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'soil-moisture-data-by_source.csv';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+    } catch (error) {
+      console.error('CSV export failed:', error);
+    }
+  }
 
   const chartData = useMemo(() => {
     if (!data?.stations || Object.keys(data.stations).length === 0) {
@@ -80,14 +128,14 @@ export const DataCharts: React.FC<DataChartProps> = ({
         },
         markLine: {
           data: [
-            ...(field_capacity && useBaseLine ? [{
+            ...(sourceKey === 'observation' && field_capacity && useBaseLine ? [{
               yAxis: field_capacity,
               label: {
                 position: 'start',
                 formatter: `Field Capacity(${Number(field_capacity)})`
               }
             }] : []),
-            ...(wilting_point && useBaseLine ? [{
+            ...(sourceKey === 'observation' && wilting_point && useBaseLine ? [{
               yAxis: wilting_point,
               label: {
                 position: 'start',
@@ -175,7 +223,6 @@ export const DataCharts: React.FC<DataChartProps> = ({
         axisLabel: {
           color: styles.axisLabel.color,
           formatter: function(value: number) {
-            // 尝试从系列中获取单位
             const firstSeries = chartData.series[0];
             const unit = firstSeries?.unit || '';
             return `${value} ${unit}`;
@@ -188,7 +235,35 @@ export const DataCharts: React.FC<DataChartProps> = ({
           }
         }
       },
-      series: chartData.series
+      series: chartData.series,
+      toolbox: {
+        left: "right",
+        orient: 'horizontal',
+        show: true,
+        feature: {
+          dataZoom: {
+            show: true,
+            title: {
+              zoom: 'Area Zoom',
+              back: 'Zoom Restore'
+            },
+            yAxisIndex: 'none'
+          },
+          myExportCSV: {
+            show: true,
+            title: 'Export As CSV', 
+            icon: 'path://M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20V9H13V4H6V20H18M8,12V14H16V12H8M8,16V18H13V16H8Z',
+            onclick: handleCSVExport
+          },
+          saveAsImage: {
+            show: true,
+            title: 'Save As Image', 
+            type: 'png',
+            name: 'figure',
+            pixelRatio: 2,
+          },
+        }
+      }
     };
   };
 
@@ -280,6 +355,28 @@ export const DataCharts: React.FC<DataChartProps> = ({
         },
         nameTextStyle: {
           color: styles.axisName.color
+        }
+      },
+      toolbox: {
+        left: "right",
+        orient: 'horizontal',
+        show: true,
+        feature: {
+          restore: {
+            title: 'Restore Default'
+          },
+          myExportCSV: {
+            show: true,
+            title: 'Export As CSV', 
+            icon: 'path://M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20V9H13V4H6V20H18M8,12V14H16V12H8M8,16V18H13V16H8Z',
+            onclick: handleCSVExport
+          },
+          saveAsImage: {
+            title: 'Save As Image', 
+            type: 'png',
+            name: 'figure',
+            pixelRatio: 2,
+          },
         }
       },
       series: chartData.series.map((series, index) => ({
