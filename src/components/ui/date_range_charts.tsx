@@ -1,9 +1,10 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from '@mui/material';
 import { DateRangeSets } from "@/services/response/data_response";
 import { getChartStyles } from '../style/data_chart.sytles';
+import Papa from 'papaparse';
 
 interface DateRangeChartProps {
   data: DateRangeSets;
@@ -14,6 +15,71 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
 }) => {
   const theme = useTheme();
   const styles = useMemo(() => getChartStyles(theme), [theme]);
+
+  const [useBaseLine, setUseBaseLine] = useState<Boolean>(true) 
+
+  const handleCSVExport = () => {
+    if (!chartData) {
+      return;
+    }
+
+    try {
+      const csvData: any[][] = [];
+      
+      const headers = ['Date'];
+
+      chartData.dataSources.forEach((sourceKey: string) => {
+        
+        let unit = '';
+        for (const range of chartData.ranges) {
+          const seriesInfo = range.seriesMap.get(sourceKey);
+          if (seriesInfo && seriesInfo.dataSource) {
+            unit = seriesInfo.dataSource.data_series?.[0]?.unit || '';
+            break;
+          }
+        }
+        const columnHeader = `${sourceKey}${unit ? ` (${unit})` : ''}`;
+        headers.push(columnHeader);
+      });
+      
+      csvData.push(headers);
+      
+      
+      chartData.ranges.forEach((range: any) => {
+        
+        range.originalDates.forEach((date: string) => {
+          const row = [new Date(date).toLocaleDateString('en-NZ')];
+          
+          
+          chartData.dataSources.forEach((sourceKey: string) => {
+            const seriesInfo = range.seriesMap.get(sourceKey);
+            if (seriesInfo && seriesInfo.dataSource) {
+              const value = seriesInfo.valueMap.get(date);
+              row.push(value !== null && value !== undefined ? Number(value).toFixed(3) : '');
+            } else {
+              row.push('');
+            }
+          });
+          
+          csvData.push(row);
+        });
+      });
+
+      const csv = Papa.unparse(csvData);
+      const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'soil-moisture-data-by-range.csv';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+    } catch (error) {
+      console.error('CSV export failed:', error);
+    }
+  }
 
   const chartData = useMemo(() => {
     if (!data?.ranges || Object.keys(data.ranges).length === 0) {
@@ -30,7 +96,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
 
       Object.entries(rangeData.data_sources).forEach(([sourceKey, dataSource]) => {
         allDataSources.add(sourceKey);
-        
+
         dataSource.data_series.forEach(series => {
           rangeDates.add(series.date);
         });
@@ -111,7 +177,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
           const unit = seriesInfo.dataSource.data_series?.[0]?.unit || '';
 
           series.push({
-            name: `${range.rangeKey} - ${seriesInfo.dataSource.display_name}`,
+            name: seriesInfo.dataSource.display_name,
             type: 'line',
             xAxisIndex: rangeIndex,
             yAxisIndex: 0,
@@ -125,6 +191,24 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
                 width: styles.line2D.emphasis.width
               },
               symbolSize: 4,
+            },
+            markLine: {
+              data: [
+                ...(sourceIndex === 0 && sourceKey === 'observation' && data.field_capacity && useBaseLine ? [{
+                  yAxis: data.field_capacity,
+                  label: {
+                    position: 'start',
+                    formatter: `Field Capacity(${Number(data.field_capacity)})`
+                  }
+                }] : []),
+                ...(sourceIndex === 0 && sourceKey === 'observation' && data.wilting_point && useBaseLine ? [{
+                  yAxis: data.wilting_point,
+                  label: {
+                    position: 'start',
+                    formatter: `Wilting Point(${Number(data.wilting_point)})`
+                  }
+                }] : [])
+              ],    
             },
             data: seriesData,
             connectNulls: false, 
@@ -227,7 +311,35 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
           color: styles.axisName.color
         }
       },
-      series: chartData.series
+      series: chartData.series,
+      toolbox: {
+        left: "right",
+        orient: 'horizontal',
+        show: true,
+        feature: {
+          dataZoom: {
+            show: true,
+            title: {
+              zoom: 'Area Zoom',
+              back: 'Zoom Restore'
+            },
+            yAxisIndex: 'none'
+          },
+          myExportCSV: {
+            show: true,
+            title: 'Export As CSV', 
+            icon: 'path://M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20V9H13V4H6V20H18M8,12V14H16V12H8M8,16V18H13V16H8Z',
+            onclick: handleCSVExport
+          },
+          saveAsImage: {
+            show: true,
+            title: 'Save As Image', 
+            type: 'png',
+            name: 'figure',
+            pixelRatio: 2,
+          },
+        }
+      }
     };
   }, [chartData, data, styles]);
 
