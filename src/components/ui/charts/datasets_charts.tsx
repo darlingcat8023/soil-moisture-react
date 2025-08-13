@@ -3,10 +3,10 @@ import { Box, Typography } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from '@mui/material';
 import { DataSourceSets } from "@/services/response/data_response";
-import { DateFilterValue } from "./filter/date_picker";
 import 'echarts-gl';
-import { getChartStyles } from '../style/data_chart.sytles';
 import Papa from 'papaparse';
+import { DateFilterValue } from '../filter/date_picker';
+import { getChartStyles } from '@/components/style/data_chart.sytles';
 
 interface DataChartProps {
   data: DataSourceSets;

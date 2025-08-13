@@ -26,8 +26,8 @@ import { DataCompareRequest } from '@/services/request/data_request';
 import { dataService } from '@/services/data_service';
 import { DotsAnimation } from './dots';
 import { ChartGuide } from './charts_guide';
-import { DataCharts } from './datasets_charts';
 import { Switcher } from './switcher';
+import { DataCharts } from './charts/datasets_charts';
 
 
 interface DatasetsComparatorDrawerProps {

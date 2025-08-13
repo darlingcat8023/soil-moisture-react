@@ -69,3 +69,20 @@ export interface DateRangeSets {
   ranges: Record<string, RangeData>;
   notice: string[];
 }
+
+export interface StatisticalDataSeries {
+  series: number;
+  record_date: string;
+  value: number;
+  unit: string;
+  is_fitting: number;
+}
+
+export interface StationStatisticalInfo {
+  station_id: string;
+  station_name: string;
+  field_capacity: number;
+  wilting_point: number;
+  station_data: Record<string, StatisticalDataSeries[]>;
+  notice: string[];
+}

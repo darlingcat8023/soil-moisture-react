@@ -16,3 +16,8 @@ export interface DateRangeRequest {
   second_range: DateRange;
   data_source: string[];
 }
+
+export interface ObservationStatisticalRequest {
+  station_id: string;
+  years: string[];
+}

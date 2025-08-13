@@ -24,6 +24,7 @@ import { getActionButtonStyles } from '../style/action_button.styles';
 import { ObservationStationFeature, ObservationStationsGeoJSON } from '@/services/response/data_response';
 import DatasetsComparatorDrawer from './datasets_comparator';
 import DateRangeComparatorDrawer from './date_comparator';
+import StatisticalComparatorDrawer from './statistical_comparator';
 
 
 const MAP_VIEW = new MapView({
@@ -100,6 +101,7 @@ export default function DeckGLMap({
   const [dataComparatorOpen, setDataComparatorOpen] = useState<boolean>(false);
   // set the comparator box is open or not
   const [dateComparatorOpen, setDateComparatorOpen] = useState<boolean>(false);
+  const [statisticalComparatorOpen, setStatisticalComparatorOpen] = useState<boolean>(false);
 
   // set view status change
   const handleViewStateChange = useCallback((event: any) => {
@@ -272,6 +274,22 @@ export default function DeckGLMap({
                 Compare Between Dates
               </Button>
 
+              <Button 
+                sx={{
+                  ...getActionButtonStyles('apply', theme),
+                  justifyContent: 'flex-start',
+                  textAlign: 'left'
+                }}
+                startIcon={<CompareArrowsIcon />}
+                onClick={() => {
+                  if (selectedPoint) {
+                    setStatisticalComparatorOpen(true);
+                  }
+                }}
+              >
+                Compare Between Years
+              </Button>
+
             </Stack>
           </Box>
 
@@ -397,6 +415,16 @@ export default function DeckGLMap({
             open={dateComparatorOpen}
             onClose={() => {
               setDateComparatorOpen(false);
+            }}
+            selectedStation={selectedPoint}
+          />
+        }
+
+        {selectedPoint &&
+          <StatisticalComparatorDrawer
+            open={statisticalComparatorOpen}
+            onClose={() => {
+              setStatisticalComparatorOpen(false);
             }}
             selectedStation={selectedPoint}
           />

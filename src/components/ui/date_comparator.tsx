@@ -25,7 +25,7 @@ import GoogleCloudItemPicker, { ItemPickerValue } from './filter/item_picker';
 import { DateRange, DateRangeRequest } from '@/services/request/data_request';
 import { dataService } from '@/services/data_service';
 import { DotsAnimation } from './dots';
-import { DateRangeCharts } from './date_range_charts';
+import { DateRangeCharts } from './charts/date_range_charts';
 
 
 interface DateRangeComparatorDrawerProps {
@@ -107,6 +107,11 @@ const DateRangeComparatorDrawer: React.FC<DateRangeComparatorDrawerProps> = ({
         ...prev,
         data_source: value.selectedItems,
       }))
+    } else {
+      setRequestParam(prev => ({
+        ...prev,
+        data_source: []
+      }));
     }
   };
 
@@ -115,7 +120,6 @@ const DateRangeComparatorDrawer: React.FC<DateRangeComparatorDrawerProps> = ({
       setLoading(true);
       const response = await dataService.getDataByRange(requestParam);
       setData(response);
-      console.log(response);
     } finally {
       setLoading(false);
     }

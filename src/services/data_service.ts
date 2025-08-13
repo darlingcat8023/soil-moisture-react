@@ -3,8 +3,13 @@ import {
   DataSourceSets,
   DateRangeSets,
   ObservationStationsGeoJSON,
+  StationStatisticalInfo,
 } from "./response/data_response";
-import {DataCompareRequest, DateRangeRequest} from "./request/data_request";
+import {
+  DataCompareRequest,
+  DateRangeRequest,
+  ObservationStatisticalRequest,
+} from "./request/data_request";
 
 class DataService {
   public async getObservationStations(): Promise<ObservationStationsGeoJSON> {
@@ -29,6 +34,17 @@ class DataService {
       "/api/data/compare/byrange",
       request,
       {}
+    );
+  }
+
+  public async getStatisticalData(
+    request: ObservationStatisticalRequest
+  ): Promise<StationStatisticalInfo> {
+    return await api_client.get<StationStatisticalInfo>(
+      "/api/observation/statistic",
+      {
+        params: request,
+      }
     );
   }
 }

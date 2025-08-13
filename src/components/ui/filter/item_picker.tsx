@@ -227,7 +227,7 @@ const GoogleCloudItemPicker: React.FC<GoogleCloudItemPickerProps> = ({
 
   const buttonDisplayText = hasBeenUsed 
     ? `${title}: ${getDisplayText()}` 
-    : `${title}: Select sources`;
+    : `${title}`;
 
   return (
     <Box>

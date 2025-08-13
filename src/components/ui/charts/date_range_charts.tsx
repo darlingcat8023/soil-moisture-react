@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from '@mui/material';
 import { DateRangeSets } from "@/services/response/data_response";
-import { getChartStyles } from '../style/data_chart.sytles';
+import { getChartStyles } from '../../style/data_chart.sytles';
 import Papa from 'papaparse';
 
 interface DateRangeChartProps {
