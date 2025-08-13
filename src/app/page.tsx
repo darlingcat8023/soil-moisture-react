@@ -29,7 +29,6 @@ export default function HomePage() {
       try {
         const response = await dataService.getObservationStations();
         setGeoData(response);
-        console.log(response);
       } finally {}
     };
     fetchData();

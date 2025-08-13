@@ -33,18 +33,20 @@ export const getChartStyles = (theme: Theme) => ({
   tooltipBackground: theme.palette.grey[600],
 
   line2D: {
-    width: 1,
+    width: 2,
+    opacity: 2,
     emphasis: {
-      width: 2,
+      width: 4,
+      opacity: 4,
     },
   },
 
   line3D: {
     width: 2,
-    opacity: 1,
+    opacity: 2,
     emphasis: {
-      width: 3,
-      opacity: 1,
+      width: 4,
+      opacity: 2,
     },
   },
 

@@ -16,7 +16,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
   const theme = useTheme();
   const styles = useMemo(() => getChartStyles(theme), [theme]);
 
-  const [useBaseLine, setUseBaseLine] = useState<Boolean>(true) 
+  const [useBaseLine, setUseBaseLine] = useState<Boolean>(true);
 
   const handleCSVExport = () => {
     if (!chartData) {
