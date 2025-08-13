@@ -445,7 +445,7 @@ export const DataCharts: React.FC<DataChartProps> = ({
   return (
     <Box sx={{ p: 1 }}>
       <Box sx={{ 
-        height: 600, 
+        height: 700, 
         width: '100%',
         '& .echarts-for-react': {
           height: '100% !important',

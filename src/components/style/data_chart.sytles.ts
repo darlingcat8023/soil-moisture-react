@@ -81,10 +81,10 @@ export const getChartStyles = (theme: Theme) => ({
   },
 
   grid: {
-    left: "3%",
-    right: "3%",
+    left: "5%",
+    right: "5%",
     bottom: "10%",
-    top: "20%",
+    top: "10%",
     containLabel: true,
   },
 });

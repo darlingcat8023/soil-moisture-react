@@ -3,7 +3,7 @@ import { StationStatisticalInfo } from "@/services/response/data_response";
 import { Box, useTheme } from "@mui/material";
 import ReactECharts from 'echarts-for-react';
 import Papa from 'papaparse';
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 interface StatisticalChartProps {
   data: StationStatisticalInfo;
@@ -61,6 +61,7 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
         },
         data: seriesData,
         connectNulls: false,
+        legendHoverLink: true,
       };
     });
 
@@ -144,7 +145,6 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
 
   const option = useMemo(() => {
     if (!chartData) return {};
-    console.log(chartData.offsets)
 
     return {
       tooltip: {
@@ -191,13 +191,7 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
         itemWidth: 15,
         itemHeight: 10
       },
-      grid: {
-        top: '15%',
-        bottom: '15%',
-        left: '10%',
-        right: '10%',
-        containLabel: true
-      },
+      grid: styles.grid,
       xAxis: {
         type: 'category',
         boundaryGap: false,
@@ -210,7 +204,7 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
         },
         name: 'Date offset to Jan 01',
         nameLocation: 'middle',
-        nameGap: 50,
+        nameGap: 40,
         nameTextStyle: {
           color: styles.axisName.color
         }
@@ -273,7 +267,7 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
   return (
     <Box sx={{ p: 1 }}>
       <Box sx={{ 
-        height: 600,
+        height: 700,
         width: '100%',
         '& .echarts-for-react': {
           height: '100% !important',

@@ -41,8 +41,3 @@ export const chartContainerStyles: SxProps<Theme> = {
   p: 2,
   overflow: "hidden",
 };
-
-export const chartStyles = {
-  width: "100%",
-  height: "100%",
-};

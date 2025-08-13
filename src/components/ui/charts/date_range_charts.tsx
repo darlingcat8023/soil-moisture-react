@@ -292,13 +292,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
         itemWidth: 15,
         itemHeight: 10,
       },
-      grid: {
-        top: '15%',
-        bottom: '15%',
-        left: '10%',
-        right: '10%',
-        containLabel: true
-      },
+      grid: styles.grid,
       xAxis: chartData.xAxes,
       yAxis: {
         type: 'value',
@@ -370,7 +364,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
   return (
     <Box sx={{ p: 1 }}>
       <Box sx={{ 
-        height: 600,
+        height: 700,
         width: '100%',
         '& .echarts-for-react': {
           height: '100% !important',
