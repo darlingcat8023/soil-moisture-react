@@ -215,7 +215,7 @@ export const DataCharts: React.FC<DataChartProps> = ({
               day: 'numeric'
             });
           }
-        }
+        },
       },
       yAxis: {
         type: 'value',
@@ -233,6 +233,12 @@ export const DataCharts: React.FC<DataChartProps> = ({
             color: styles.splitLine.color,
             type: styles.splitLine.type
           }
+        },
+        name: 'Soil Moisture (mm)',
+        nameLocation: 'middle',
+        nameGap: 80,
+        nameTextStyle: {
+          color: styles.axisName.color
         }
       },
       series: chartData.series,
@@ -306,7 +312,12 @@ export const DataCharts: React.FC<DataChartProps> = ({
       grid3D: styles.grid3D,
       xAxis3D: {
         type: 'value',
-        name: 'Time Series',
+        name: "Date Range",
+        nameLocation: 'middle',
+        nameGap: 50,
+        nameTextStyle: {
+          color: styles.axisName.color
+        },
         min: 0,
         max: chartData.dates.length - 1,
         interval: Math.max(1, Math.floor(chartData.dates.length / 8)),
@@ -322,14 +333,11 @@ export const DataCharts: React.FC<DataChartProps> = ({
             }
             return '';
           }
-        },
-        nameTextStyle: {
-          color: styles.axisName.color
         }
       },
       yAxis3D: {
         type: 'value',
-        name: 'Depth',
+        name: 'Data Depth (cm)',
         min: minDepth - 5,
         max: maxDepth + 5,
         interval: Math.max(5, Math.ceil((maxDepth - minDepth) / 5)),
@@ -343,14 +351,12 @@ export const DataCharts: React.FC<DataChartProps> = ({
       },
       zAxis3D: {
         type: 'value',
-        name: 'Value',
+        name: 'Soil Moisture (mm)',
         min: 0,
         axisLabel: {
           color: styles.axisLabel.color,
           formatter: function(value: number) {
-            const firstSeries = chartData.series[0];
-            const unit = firstSeries?.unit || '';
-            return `${value} ${unit}`;
+            return `${value}`;
           }
         },
         nameTextStyle: {

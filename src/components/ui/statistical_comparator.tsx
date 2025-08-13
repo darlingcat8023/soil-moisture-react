@@ -3,13 +3,14 @@ import { Box, Button, Drawer, IconButton, Paper, useTheme } from "@mui/material"
 import { chartContainerStyles, drawerContainerStyles, drawerPaperStyles, filterControlsStyles, filterSectionStyles } from "../style/data_comparator.styles";
 import CloseIcon from '@mui/icons-material/Close';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
-import GoogleCloudItemPicker, { ItemOption, ItemPickerValue } from "./filter/item_picker";
+import GoogleCloudItemPicker, { ItemPickerValue } from "./filter/item_picker";
 import { useEffect, useMemo, useState } from "react";
 import { getActionButtonStyles, getButtonGroupStyles } from "../style/action_button.styles";
 import { ObservationStatisticalRequest } from "@/services/request/data_request";
 import { DotsAnimation } from "./dots";
 import { dataService } from "@/services/data_service";
 import { StatisticalCharts } from "./charts/statistical_charts";
+import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined';
 
 interface StatisticalComparatorDrawerProps {
   open: boolean;
@@ -131,6 +132,7 @@ const StatisticalComparatorDrawer: React.FC<StatisticalComparatorDrawerProps> = 
               title="Years"
               helpText="Response latency scales linearly with year count"
               searchPlaceholder="Search years..."
+              startIcon={<InsightsOutlinedIcon sx={{ fontSize: 16 }}/>}
             />
 
             <Box sx={getButtonGroupStyles()}>

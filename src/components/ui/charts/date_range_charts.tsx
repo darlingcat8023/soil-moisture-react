@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Box, Typography } from '@mui/material';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from '@mui/material';
@@ -307,8 +307,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
           color: styles.axisLabel.color,
           formatter: function(value: number) {
             const firstDataSeries = chartData.series.find(s => s.name !== 'Reference Line');
-            const unit = firstDataSeries?.unit || '';
-            return `${value} ${unit}`;
+            return `${value}`;
           }
         },
         splitLine: {
@@ -317,9 +316,9 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
             type: styles.splitLine.type
           }
         },
-        name: 'Value',
+        name: 'Soil Moisture (mm)',
         nameLocation: 'middle',
-        nameGap: 50,
+        nameGap: 80,
         nameTextStyle: {
           color: styles.axisName.color
         }
