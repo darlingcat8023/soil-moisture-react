@@ -16,8 +16,6 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
   const theme = useTheme();
   const styles = useMemo(() => getChartStyles(theme), [theme]);
 
-  const [useBaseLine, setUseBaseLine] = useState<Boolean>(true);
-
   const handleCSVExport = () => {
     if (!chartData) {
       return;
@@ -192,24 +190,6 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
               },
               symbolSize: 4,
             },
-            markLine: {
-              data: [
-                ...(sourceIndex === 0 && sourceKey === 'observation' && data.field_capacity && useBaseLine ? [{
-                  yAxis: data.field_capacity,
-                  label: {
-                    position: 'start',
-                    formatter: `Field Capacity(${Number(data.field_capacity)})`
-                  }
-                }] : []),
-                ...(sourceIndex === 0 && sourceKey === 'observation' && data.wilting_point && useBaseLine ? [{
-                  yAxis: data.wilting_point,
-                  label: {
-                    position: 'start',
-                    formatter: `Wilting Point(${Number(data.wilting_point)})`
-                  }
-                }] : [])
-              ],    
-            },
             data: seriesData,
             connectNulls: false, 
             unit: unit,
@@ -219,6 +199,36 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
         }
       });
     });
+
+    if ((data.field_capacity || data.wilting_point)) {
+      series.push({
+        name: 'Reference Line',
+        type: 'line',
+        data: [],
+        symbolSize: 0,
+        itemStyle: {
+          opacity: 0
+        },
+        markLine: {
+          data: [
+            ...(data.field_capacity ? [{
+              yAxis: data.field_capacity,
+              label: {
+                position: 'start',
+                formatter: `Field Capacity: ${Number(data.field_capacity)}`,
+              }
+            }] : []),
+            ...(data.wilting_point ? [{
+              yAxis: data.wilting_point,
+              label: {
+                position: 'start',
+                formatter: `Wilting Point: ${Number(data.wilting_point)}`,
+              }
+            }] : [])
+          ]
+        }
+      } as any);
+    }
 
     return {
       ranges: allRanges,
@@ -247,7 +257,10 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
           let tooltip = `<div style="font-weight: bold; margin-bottom: 8px;">${params[0].axisValue}</div>`;
           
           const validParams = params.filter(param => 
-            param && param.value !== null && param.value !== undefined
+            param && 
+            param.value !== null && 
+            param.value !== undefined &&
+            param.seriesName !== 'Reference Line'
           );
           
           validParams.forEach((param: any) => {
@@ -277,7 +290,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
           fontSize: 10
         },
         itemWidth: 15,
-        itemHeight: 10
+        itemHeight: 10,
       },
       grid: {
         top: '15%',
@@ -293,8 +306,8 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
         axisLabel: {
           color: styles.axisLabel.color,
           formatter: function(value: number) {
-            const firstSeries = chartData.series[0];
-            const unit = firstSeries?.unit || '';
+            const firstDataSeries = chartData.series.find(s => s.name !== 'Reference Line');
+            const unit = firstDataSeries?.unit || '';
             return `${value} ${unit}`;
           }
         },
