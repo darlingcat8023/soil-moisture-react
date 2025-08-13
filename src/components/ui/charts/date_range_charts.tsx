@@ -254,7 +254,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
         formatter: function(params: any[]) {
           if (!params || params.length === 0) return '';
           
-          let tooltip = `<div style="font-weight: bold; margin-bottom: 8px;">${params[0].axisValue}</div>`;
+          let tooltip = ``;
           
           const validParams = params.filter(param => 
             param && 
@@ -306,7 +306,6 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
         axisLabel: {
           color: styles.axisLabel.color,
           formatter: function(value: number) {
-            const firstDataSeries = chartData.series.find(s => s.name !== 'Reference Line');
             return `${value}`;
           }
         },

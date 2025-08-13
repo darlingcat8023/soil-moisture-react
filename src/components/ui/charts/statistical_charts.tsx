@@ -158,7 +158,7 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
         formatter: function(params: any[]) {
           if (!params || params.length === 0) return '';
           
-          let tooltip = `<div style="font-weight: bold; margin-bottom: 8px;">${params[0].axisValue}</div>`;
+          let tooltip = ``;
           
           const validParams = params.filter(param => 
             param && param.value !== null && param.value !== undefined

@@ -178,7 +178,7 @@ export const DataCharts: React.FC<DataChartProps> = ({
         formatter: function(params: any[]) {
           if (!params || params.length === 0) return '';
           
-          let tooltip = `<div style="font-weight: bold; margin-bottom: 8px;">${params[0].axisValue}</div>`;
+          let tooltip = ``;
           
           params.forEach((param: any) => {
             if (param && param.value !== null && param.value !== undefined) {
