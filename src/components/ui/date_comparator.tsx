@@ -57,9 +57,15 @@ const DateRangeComparatorDrawer: React.FC<DateRangeComparatorDrawerProps> = ({
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    setDateRange1(null);
+    setDateRange2(null);
+    setSources(null);
     setRequestParam(prev => ({
       ...prev,
-      station_id: selectedStation.properties.station_id
+      station_id: selectedStation.properties.station_id,
+      first_range: {} as DateRange,
+      second_range: {} as DateRange,
+      data_source: [],
     }));
   }, [selectedStation]);
 

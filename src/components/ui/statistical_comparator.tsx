@@ -33,9 +33,12 @@ const StatisticalComparatorDrawer: React.FC<StatisticalComparatorDrawerProps> = 
   })
 
   useEffect(() => {
+    setYears(null);
+    setData(null);
     setRequestParam(prev => ({
       ...prev,
-      station_id: selectedStation.properties.station_id
+      station_id: selectedStation.properties.station_id,
+      years: []
     }))
   }, [selectedStation])
 

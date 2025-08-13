@@ -2,7 +2,7 @@ import { getChartStyles } from "@/components/style/data_chart.sytles";
 import { StationStatisticalInfo } from "@/services/response/data_response";
 import { Box, useTheme } from "@mui/material";
 import ReactECharts from 'echarts-for-react';
-import { min } from "lodash";
+import Papa from 'papaparse';
 import { useMemo, useState } from "react";
 
 interface StatisticalChartProps {
@@ -15,7 +15,6 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
 
   const theme = useTheme();
   const styles = useMemo(() => getChartStyles(theme), [theme]);
-  const [useBaseLine, setUseBaseLine] = useState<Boolean>(true);
 
   const chartData = useMemo(() => {
     if (!data || Object.keys(data.station_data).length === 0) {
@@ -33,20 +32,20 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
       });
 
       allSeries.push({
-        display_name: year,
+        displayName: year,
         valueMap: valueMap
       });
     });
 
     const series = allSeries.map((item, index) => {
-      const { display_name, valueMap} = item;
+      const { displayName, valueMap} = item;
       
       const seriesData = offsets.map(offset => {
         return valueMap.get(offset) ?? null;
       });
 
       return {
-        name: `${display_name}`,
+        name: `${displayName}`,
         type: 'line',
         lineStyle: {
           width: styles.line2D.width,
@@ -60,37 +59,87 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
           },
           symbolSize: 3,
         },
-        markLine: {
-          data: [
-            ...(index === 0 && data.field_capacity && useBaseLine ? [{
-              yAxis: data.field_capacity,
-              label: {
-                position: 'start',
-                formatter: `Field Capacity(${Number(data.field_capacity)})`
-              }
-            }] : []),
-            ...(index === 0 && data.wilting_point && useBaseLine ? [{
-              yAxis: data.wilting_point,
-              label: {
-                position: 'start',
-                formatter: `Wilting Point(${Number(data.wilting_point)})`
-              }
-            }] : [])
-          ],    
-        },
         data: seriesData,
         connectNulls: false,
       };
     });
 
+    series.push({
+      name: 'Reference Lines',
+      type: 'line',
+      data: [],
+      symbolSize: 0,
+      itemStyle: {
+        opacity: 0
+      },
+      markLine: {
+        data: [
+          ...(data.field_capacity ? [{
+            yAxis: data.field_capacity,
+            label: {
+              position: 'start',
+              formatter: `Field Capacity(${Number(data.field_capacity)})`
+            }
+          }] : []),
+          ...(data.wilting_point ? [{
+            yAxis: data.wilting_point,
+            label: {
+              position: 'start',
+              formatter: `Wilting Point(${Number(data.wilting_point)})`
+            }
+          }] : []),
+        ]
+      }
+    } as any);
+
     return {
       offsets: offsets,
-      series: series
+      series: series,
     };
   }, [data, styles]);
 
   const handleCSVExport = () => {
+    if (!chartData) {
+      return;
+    }
+  
+    try {
+      const csvData: any[][] = [];
+      const headers = ['Date Offset'];
+  
+      chartData.series.forEach((serie: any) => {
+        if (serie.name !== 'Reference Lines') {
+          headers.push(serie.name);
+        }
+      });
+      csvData.push(headers);
 
+      for (let i = 0; i < chartData.offsets.length; i++) {
+        const row = [];
+        row.push(chartData.offsets[i]);
+        chartData.series.forEach((serie: any) => {
+          if (serie.name !== 'Reference Lines') {
+            const value = serie.data[i];
+            row.push(value !== null && value !== undefined ? value : '');
+          }
+        });
+        csvData.push(row);
+      }
+  
+      const csv = Papa.unparse(csvData);
+      const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'soil-moisture-statistical.csv';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+  
+    } catch (error) {
+      console.error('CSV export failed:', error);
+    }
   };
 
   const option = useMemo(() => {

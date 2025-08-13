@@ -65,9 +65,16 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
     setStations({
       selectedItems: [selectedStation.properties.station_id]
     })
+    setDateRange(null);
+    setSources(null);
+    setData(null);
+    setUse3D(false);
     setRequestParam(prev => ({
       ...prev,
-      station_id: [selectedStation.properties.station_id]
+      station_id: [selectedStation.properties.station_id],
+      start_date: '',
+      end_date: '',
+      data_source: [],
     }));
   }, [selectedStation]);
 
