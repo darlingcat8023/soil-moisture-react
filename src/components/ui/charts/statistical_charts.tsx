@@ -47,8 +47,6 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
       return {
         name: `${displayName}`,
         type: 'line',
-        large: true,
-        largeThreshold: 200,
         label: {
           show: true,
           position: 'right',
@@ -69,8 +67,7 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
           symbolSize: 3,
         },
         data: seriesData,
-        connectNulls: false,
-        legendHoverLink: true,
+        connectNulls: false
       };
     });
 
@@ -156,10 +153,7 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
     if (!chartData) return {};
 
     return {
-      animation: false,
-      progressive: 10,
-      progressiveThreshold: 100,
-          tooltip: {
+      tooltip: {
         trigger: 'axis',
         axisPointer: {
           type: 'cross',

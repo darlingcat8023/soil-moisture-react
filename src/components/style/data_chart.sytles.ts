@@ -92,7 +92,7 @@ export const getChartStyles = (theme: Theme) => ({
     left: "5%",
     right: "5%",
     bottom: "10%",
-    top: "5%",
+    top: "10%",
     containLabel: true,
   },
 });
