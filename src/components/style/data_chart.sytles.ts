@@ -16,7 +16,15 @@ export const getChartStyles = (theme: Theme) => ({
   },
 
   legend: {
-    color: theme.palette.text.primary,
+    type: "scroll",
+    bottom: 20,
+    left: "center",
+    textStyle: {
+      color: theme.palette.text.primary,
+      fontSize: 10,
+    },
+    itemWidth: 15,
+    itemHeight: 10,
   },
 
   axisLabel: {
@@ -51,8 +59,8 @@ export const getChartStyles = (theme: Theme) => ({
   },
 
   grid3D: {
-    boxWidth: 400,
-    boxHeight: 120,
+    boxWidth: 500,
+    boxHeight: 160,
     boxDepth: 80,
     viewControl: {
       projection: "perspective" as const,
@@ -84,7 +92,7 @@ export const getChartStyles = (theme: Theme) => ({
     left: "5%",
     right: "5%",
     bottom: "10%",
-    top: "10%",
+    top: "5%",
     containLabel: true,
   },
 });

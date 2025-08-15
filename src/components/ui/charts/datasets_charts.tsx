@@ -412,14 +412,7 @@ export const DataCharts: React.FC<DataChartProps> = ({
     const specificConfig = use3D ? get3DSpecificConfig() : get2DSpecificConfig();
 
     return {
-      legend: {
-        type: 'scroll',
-        bottom: 10,
-        left: 'center',
-        textStyle: {
-          color: styles.legend.color
-        }
-      },
+      legend: styles.legend,
       ...specificConfig,
     };
   }, [chartData, styles, use3D]);

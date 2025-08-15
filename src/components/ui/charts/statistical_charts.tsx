@@ -47,6 +47,13 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
       return {
         name: `${displayName}`,
         type: 'line',
+        label: {
+          show: true,
+          position: 'right',
+          formatter: function(params: any) {
+            return params.dataIndex === seriesData.length - 2 ? `${displayName}` : '';
+          },
+        },
         lineStyle: {
           width: styles.line2D.width,
         },
@@ -157,13 +164,13 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
         },
         formatter: function(params: any[]) {
           if (!params || params.length === 0) return '';
-          
+                    
           let tooltip = ``;
-          
+            
           const validParams = params.filter(param => 
-            param && param.value !== null && param.value !== undefined
+            param && param.value !== null && param.value !== undefined && param.seriesName !== 'Reference Lines'
           );
-          
+            
           validParams.forEach((param: any) => {
             const value = typeof param.value === 'number' ? param.value : parseFloat(param.value);
             if (!isNaN(value)) {
@@ -171,26 +178,17 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
                 <div style="display: flex; align-items: center; margin: 4px 0;">
                   <span style="display: inline-block; width: 10px; height: 10px; background-color: ${param.color}; border-radius: 50%; margin-right: 8px;"></span>
                   <span style="margin-right: 8px;">${param.seriesName}:</span>
-                  <span style="font-weight: bold;">${value.toFixed(3)}</span>
+                  <span style="font-weight: bold;">${value.toFixed(3)} mm</span>
                 </div>
               `;
             }
           });
-          
-          return tooltip;
+            
+            return tooltip;
+
         }
       },
-      legend: {
-        type: 'scroll',
-        bottom: 10,
-        left: 'center',
-        textStyle: {
-          color: styles.legend.color,
-          fontSize: 10
-        },
-        itemWidth: 15,
-        itemHeight: 10
-      },
+      legend: styles.legend,
       grid: styles.grid,
       xAxis: {
         type: 'category',
@@ -204,7 +202,7 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
         },
         name: 'Date offset to Jan 01',
         nameLocation: 'middle',
-        nameGap: 40,
+        nameGap: 30,
         nameTextStyle: {
           color: styles.axisName.color
         }

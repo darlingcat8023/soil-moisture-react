@@ -281,17 +281,7 @@ export const DateRangeCharts: React.FC<DateRangeChartProps> = ({
           return tooltip;
         }
       },
-      legend: {
-        type: 'scroll',
-        bottom: 10,
-        left: 'center',
-        textStyle: {
-          color: styles.legend.color,
-          fontSize: 10
-        },
-        itemWidth: 15,
-        itemHeight: 10,
-      },
+      legend: styles.legend,
       grid: styles.grid,
       xAxis: chartData.xAxes,
       yAxis: {
