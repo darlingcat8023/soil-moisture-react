@@ -47,6 +47,8 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
       return {
         name: `${displayName}`,
         type: 'line',
+        large: true,
+        largeThreshold: 200,
         label: {
           show: true,
           position: 'right',
@@ -154,7 +156,10 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
     if (!chartData) return {};
 
     return {
-      tooltip: {
+      animation: false,
+      progressive: 10,
+      progressiveThreshold: 100,
+          tooltip: {
         trigger: 'axis',
         axisPointer: {
           type: 'cross',
@@ -171,20 +176,21 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
             param && param.value !== null && param.value !== undefined && param.seriesName !== 'Reference Lines'
           );
             
+          tooltip += '<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; min-width: 400px;">';
+          
           validParams.forEach((param: any) => {
             const value = typeof param.value === 'number' ? param.value : parseFloat(param.value);
             if (!isNaN(value)) {
               tooltip += `
-                <div style="display: flex; align-items: center; margin: 4px 0;">
-                  <span style="display: inline-block; width: 10px; height: 10px; background-color: ${param.color}; border-radius: 50%; margin-right: 8px;"></span>
-                  <span style="margin-right: 8px;">${param.seriesName}:</span>
-                  <span style="font-weight: bold;">${value.toFixed(3)} mm</span>
+                <div style="display: flex; align-items: center; white-space: nowrap;">
+                  <span style="width: 8px; height: 8px; background-color: ${param.color}; border-radius: 50%; margin-right: 4px;"></span>
+                  <span style="font-size: 10px;">${param.seriesName}: ${value.toFixed(2)}</span>
                 </div>
               `;
             }
           });
             
-            return tooltip;
+          return tooltip;
 
         }
       },
@@ -275,7 +281,9 @@ export const StatisticalCharts: React.FC<StatisticalChartProps> = ({
         <ReactECharts
           option={option}
           style={{ height: '100%', width: '100%' }}
-          opts={{ renderer: 'canvas' }}
+          opts={{ 
+            renderer: 'canvas',
+          }}
           notMerge={true}
           lazyUpdate={false}
           key={`years-${data.station_id}`}
