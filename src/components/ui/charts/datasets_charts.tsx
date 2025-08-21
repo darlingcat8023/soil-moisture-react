@@ -11,13 +11,11 @@ import { getChartStyles } from '@/components/style/data_chart.sytles';
 interface DataChartProps {
   data: DataSourceSets;
   dateRange: DateFilterValue;
-  use3D: boolean;
 }
 
 export const DataCharts: React.FC<DataChartProps> = ({
   data,
   dateRange,
-  use3D,
 }) => {
   const theme = useTheme();
   
@@ -273,149 +271,16 @@ export const DataCharts: React.FC<DataChartProps> = ({
     };
   };
 
-  const generate3DData = (seriesData: any[], depth: number, dates: string[]) => {
-    return seriesData.map((value, index) => {
-      if (value === null) return null;
-      return [
-        index, // x
-        depth, // y
-        value  // z
-      ];
-    }).filter(item => item !== null);
-  };
-
-  const get3DSpecificConfig = () => {
-    if (!chartData) return {};
-    
-    const depths = [...new Set(chartData.series.map(s => s.depth))].sort((a, b) => a - b);
-    const minDepth = Math.min(...depths);
-    const maxDepth = Math.max(...depths);
-
-    return {
-      tooltip: {
-        formatter: function(params: any) {
-          if (!params.data) return '';
-          const [timeIndex, depth, value] = params.data;
-          const date = chartData.dates[timeIndex];
-          const numValue = typeof value === 'number' ? value : Number(value);
-          const series = chartData.series.find(s => s.name === params.seriesName);
-          const unit = series?.unit || '';
-          
-          return `
-            <div><strong>Date:</strong> ${new Date(date).toLocaleDateString('en-NZ')}</div>
-            <div><strong>Value:</strong> ${isNaN(numValue) ? 'N/A' : numValue.toFixed(3)} ${unit}</div>
-            <div><strong>Depth:</strong> ${depth}</div>
-            <div><strong>Series:</strong> ${params.seriesName}</div>
-          `;
-        }
-      },
-      grid3D: styles.grid3D,
-      xAxis3D: {
-        type: 'value',
-        name: "Date Range",
-        nameLocation: 'middle',
-        nameGap: 50,
-        nameTextStyle: {
-          color: styles.axisName.color
-        },
-        min: 0,
-        max: chartData.dates.length - 1,
-        interval: Math.max(1, Math.floor(chartData.dates.length / 8)),
-        axisLabel: {
-          color: styles.axisLabel.color,
-          formatter: function(value: number) {
-            const index = Math.floor(value);
-            if (index >= 0 && index < chartData.dates.length) {
-              return new Date(chartData.dates[index]).toLocaleDateString('en-NZ', { 
-                month: 'short', 
-                day: 'numeric' 
-              });
-            }
-            return '';
-          }
-        }
-      },
-      yAxis3D: {
-        type: 'value',
-        name: 'Data Depth (cm)',
-        min: minDepth - 5,
-        max: maxDepth + 5,
-        interval: Math.max(5, Math.ceil((maxDepth - minDepth) / 5)),
-        axisLabel: {
-          color: styles.axisLabel.color,
-          formatter: '{value}'
-        },
-        nameTextStyle: {
-          color: styles.axisName.color
-        }
-      },
-      zAxis3D: {
-        type: 'value',
-        name: 'Soil Moisture (mm)',
-        min: 0,
-        axisLabel: {
-          color: styles.axisLabel.color,
-          formatter: function(value: number) {
-            return `${value}`;
-          }
-        },
-        nameTextStyle: {
-          color: styles.axisName.color
-        }
-      },
-      toolbox: {
-        left: "right",
-        orient: 'horizontal',
-        show: true,
-        feature: {
-          restore: {
-            title: 'Restore Default'
-          },
-          myExportCSV: {
-            show: true,
-            title: 'Export As CSV', 
-            icon: 'path://M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20V9H13V4H6V20H18M8,12V14H16V12H8M8,16V18H13V16H8Z',
-            onclick: handleCSVExport
-          },
-          saveAsImage: {
-            title: 'Save As Image', 
-            type: 'png',
-            name: 'figure',
-            pixelRatio: 2,
-          },
-        }
-      },
-      series: chartData.series.map((series, index) => ({
-        name: series.name,
-        type: 'line3D',
-        data: generate3DData(series.data, series.depth, chartData.dates),
-        lineStyle: {
-          width: styles.line3D.width,
-          opacity: styles.line3D.opacity
-        },
-        emphasis: {
-          lineStyle: {
-            width: styles.line3D.emphasis.width,
-            opacity: styles.line3D.emphasis.opacity
-          },
-          itemStyle: {
-            opacity: styles.line3D.emphasis.opacity
-          }
-        }
-      }))
-    };
-  };
-
   const option = useMemo(() => {
     if (!chartData) return {};
 
-    const specificConfig = use3D ? get3DSpecificConfig() : get2DSpecificConfig();
+    const specificConfig = get2DSpecificConfig();
 
     return {
       legend: styles.legend,
       ...specificConfig,
     };
-  }, [chartData, styles, use3D]);
+  }, [chartData, styles]);
 
   if (!chartData) {
     const availableStations = data?.stations ? Object.keys(data.stations) : [];
@@ -451,7 +316,6 @@ export const DataCharts: React.FC<DataChartProps> = ({
           opts={{ renderer: 'canvas' }}
           notMerge={true}
           lazyUpdate={false}
-          key={`all-stations-${use3D ? '3d' : '2d'}`}
         />
       </Box>
     </Box>

@@ -1,4 +1,3 @@
-// chartStyles.ts
 import {Theme} from "@mui/material/styles";
 
 export const getChartStyles = (theme: Theme) => ({
@@ -17,7 +16,7 @@ export const getChartStyles = (theme: Theme) => ({
 
   legend: {
     type: "scroll",
-    bottom: 20,
+    top: 10,
     left: "center",
     textStyle: {
       color: theme.palette.text.primary,

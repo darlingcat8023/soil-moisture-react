@@ -59,7 +59,6 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
   
   const [data, setData] = useState<DataSourceSets | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [use3D, setUse3D] = useState<boolean>(false)
 
   useEffect(() => {
     setStations({
@@ -68,7 +67,6 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
     setDateRange(null);
     setSources(null);
     setData(null);
-    setUse3D(false);
     setRequestParam(prev => ({
       ...prev,
       station_id: [selectedStation.properties.station_id],
@@ -210,14 +208,6 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
               searchPlaceholder="Search data sources..."
             />
 
-            <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-              <Switcher
-                checked={use3D} 
-                onChange={(e: any) => setUse3D(e.target.checked)}
-              />
-              <Typography>3D</Typography>
-            </Stack>
-
             <Box sx={getButtonGroupStyles()}>
               <Button
                 variant="text"
@@ -258,7 +248,6 @@ const DatasetsComparatorDrawer: React.FC<DatasetsComparatorDrawerProps> = ({
               <DataCharts
                 data={data}
                 dateRange={dateRange}
-                use3D={use3D}
               />
             ) : (
               <ChartGuide
