@@ -20,7 +20,7 @@ const Header = memo(function Header() {
             sx={headerStyles.logo}
           />
           <Typography {...headerStyles.title}>
-            Soil Moisture Data Visualization
+            Observation Station Data Visualization
           </Typography>
         </Box>
       </Toolbar>

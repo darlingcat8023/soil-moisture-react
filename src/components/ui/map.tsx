@@ -360,6 +360,15 @@ export default function DeckGLMap({
           <ExpandOutlinedIcon />
         </MapButton>
 
+        <MapButton            
+          ariaLabel="map provider"
+          title="map provider"
+          defaultActive={false}
+          onClick={handleClustingClick}
+        >
+          <LayersOutlinedIcon />
+        </MapButton>
+
       </Box>
 
       {renderStationInfoCard()}

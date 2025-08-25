@@ -16,9 +16,7 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material';
 import KeyboardTabOutlinedIcon from '@mui/icons-material/KeyboardTabOutlined';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
-import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 
 import { sideMenuStyles, COLLAPSED_WIDTH, EXPANDED_WIDTH } from '../style/side_menu.styles';
 
@@ -29,10 +27,10 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  { href: '/', label: 'Map View', icon: <MapOutlinedIcon /> },
-  { href: '/page1', label: 'Station Info', icon: <RoomOutlinedIcon /> },
-  { href: '/page2', label: 'Data Assessment', icon: <AssessmentOutlinedIcon />},
-  { href: '/page3', label: 'Data Compensation', icon: <FileUploadOutlinedIcon /> },
+  { href: '/', label: 'Soil Moisture', icon: <MapOutlinedIcon /> },
+  { href: '/page1', label: 'Soil Temperature', icon: <MapOutlinedIcon /> },
+  { href: '/page2', label: 'Temperature', icon: <MapOutlinedIcon /> },
+  { href: '/page3', label: 'Station Info', icon: <RoomOutlinedIcon /> }
 ];
 
 const SideMenu = memo(function SideMenu() {
@@ -109,7 +107,7 @@ const SideMenu = memo(function SideMenu() {
       <Box sx={sideMenuStyles.footer}>
         {expanded ? (
           <Typography {...sideMenuStyles.versionText}>
-            Soil Moisture v1.0
+            Earth Science v1.0
           </Typography>
         ) : (
           <Box sx={sideMenuStyles.statusDot} />
